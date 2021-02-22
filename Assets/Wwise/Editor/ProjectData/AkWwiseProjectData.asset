@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e47d795fb033ed48ab57da97a701ffb, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: c44b2c83847c3a4d8bc2afe2a59861ab
+    GuidInternal: 
+    m_lastTime: -8585876103220625277
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 64af32fcf5557c44bb2f80544b55a7c0
+    GuidInternal: 
+    m_lastTime: -8585876103221084052
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: d44f0ce6e1e29d4fae18affe65690fcd
+    GuidInternal: 
+    m_lastTime: -8585876081842133331
+    List:
+    - name: SFX_Main
+      guid: c36bf06f28f0664ba59e6883b977519e
+      id: 3023356346
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SFX_Main
+        ObjectType: 7
+      Path: Default Work Unit\SFX_Main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 39954f5e6b50734f9867527a9df1ba3c
+    GuidInternal: 
+    m_lastTime: -8585876081906133667
+    List:
+    - name: Play_AMB_Test
+      guid: 25d1bb4464eabb42998e32307650591c
+      id: 2976252989
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Play_AMB_Test
+        ObjectType: 3
+      Path: Default Work Unit\Play_AMB_Test
+      maxAttenuation: 10
+      maxDuration: 10.000431
+      minDuration: 10.000431
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: dad49a2a38bcda44a9ddbbf729dbd83e
+    GuidInternal: 
+    m_lastTime: -8585876103220834715
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 5a4db2cf5f6d814b93187413c67f6ba3
+    GuidInternal: 
+    m_lastTime: -8585876103220715038
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 0c023c358bc65e41af835db9660affcf
+    GuidInternal: 
+    m_lastTime: -8585876103221034184
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: ce5ba7c93c7cae40b67d404c23cb8bd4
+    GuidInternal: 
+    m_lastTime: -8585876103220884586
+    List: []
+  ExpandedItems:
+  - /GJL_WwiseProject
+  - /GJL_WwiseProject/Events
+  - /GJL_WwiseProject/Events/Default Work Unit
+  - /GJL_WwiseProject/SoundBanks
+  - /GJL_WwiseProject/SoundBanks/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
