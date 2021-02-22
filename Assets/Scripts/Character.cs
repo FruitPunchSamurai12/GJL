@@ -10,7 +10,9 @@ public class Character : MonoBehaviour
     private Rotator _rotator;
 
     [SerializeField] float speed = 7f;
+    bool inSafeZone = false;
     public float Speed { get { return speed; } }
+    public bool InSafeZone => inSafeZone;
 
     private void Awake()
     {
