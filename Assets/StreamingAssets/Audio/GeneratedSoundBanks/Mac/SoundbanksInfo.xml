@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>D:\GJL_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\GJL_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>D:\GJL_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\GJL_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2953616821">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3023356346" Language="SFX" Hash="2744378056">
+			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Main</ObjectPath>
+			<ShortName>SFX_Main</ShortName>
+			<Path>SFX_Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2976252989" Name="Play_AMB_Test" ObjectPath="\Events\Default Work Unit\Play_AMB_Test" MaxAttenuation="10.000000" DurationType="OneShot" DurationMin="10.000431" DurationMax="10.000431">
+					<IncludedMemoryFiles>
+						<File Id="859979479" Language="SFX">
+							<ShortName>amb_lo_stream_1.wav</ShortName>
+							<Path>SFX\amb_lo_stream_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
