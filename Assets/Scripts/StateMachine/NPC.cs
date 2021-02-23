@@ -2,8 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour,IInteractable
 {
     [SerializeField] float moveSpeed = 7f;
     [SerializeField] float sightRange = 10f;
@@ -13,15 +14,22 @@ public class NPC : MonoBehaviour
     [SerializeField] float timeNeededToCompletelySeePlayer = 0.8f;
     [SerializeField] LayerMask sightLayer;
     [SerializeField] Transform eyes;
+    [SerializeField] bool hasItemToSteal;
 
     float timeCharacterInSight = 0;
     int audioCuePriority = 0;
     bool hasHeardSomething = false;
 
+    Character characterTalkingWith;
+    bool chitChatting = false;
+
+
     public float MoveSpeed => moveSpeed;
     public Vector3 Target { get; private set; }
     public Character TargetCharacter { get; private set; }
     public bool HeardSomething() => hasHeardSomething;
+    public bool IsChitChatting() => chitChatting;
+    public bool StoppedChitChatting() => !chitChatting;
 
     List<Character> characters = new List<Character>();
 
@@ -41,6 +49,16 @@ public class NPC : MonoBehaviour
                 Target = makeSound.transform.position;
                 hasHeardSomething = true;
             }
+        }
+    }
+
+    public void BabyCrying(Vector3 position,float cryingRange)
+    {
+        if (transform.position.FlatDistance(position) < cryingRange)
+        {
+            audioCuePriority = 10;
+            Target = position;
+            hasHeardSomething = true;           
         }
     }
 
@@ -74,6 +92,25 @@ public class NPC : MonoBehaviour
         return false;
     }
 
+    public bool CanSeeSpecificCharacter(Character character)
+    {
+        Vector3 characterPosition = character.transform.position;
+        Vector3 targetDir = characterPosition - eyes.position;
+        float angle = Vector2.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
+        float distance = transform.position.FlatDistance(characterPosition);
+
+        if (distance < sightRange && angle < sightAngle)
+        {
+            RaycastHit hit;
+            Physics.Raycast(eyes.position, targetDir.normalized, out hit, distance, sightLayer);
+            if (hit.collider == null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public bool HasNoticedPlayer()
     {
         return timeCharacterInSight > timeNeededToEnterAlertModeAfterSeeingPlayer;
@@ -94,5 +131,57 @@ public class NPC : MonoBehaviour
     {
         audioCuePriority = 0;
         hasHeardSomething = false;
+    }
+
+    public void Interact(Character character)
+    {
+        Debug.Log("interacting");
+        if (!chitChatting)
+        {
+            transform.LookAt(character.transform.position);
+            character.transform.LookAt(transform.position);
+            Target = character.transform.position + character.transform.forward * 2f;
+            chitChatting = true;
+            character.RestrictMovement = true;
+            characterTalkingWith = character;
+            
+        }
+        else
+        {
+            StopChitChatting();
+        }
+    }
+
+    private void Update()
+    {
+        if(characterTalkingWith!=null)
+        {
+            characterTalkingWith.SetInteractable(this);
+            transform.LookAt(characterTalkingWith.transform.position);
+        }
+        Debug.Log(GetComponent<NavMeshAgent>().isStopped);
+    }
+
+    public void StopChitChatting()
+    {
+        if (characterTalkingWith != null)
+        {
+            chitChatting = false;
+            characterTalkingWith.RestrictMovement = false;
+            characterTalkingWith = null;
+        }
+    }
+
+    public void StealItem(Character character)
+    {
+        if(hasItemToSteal)
+        {
+            hasItemToSteal = false;
+            Debug.Log("pickpocket successful");
+        }
+        else
+        {
+            Debug.Log("npc has no items to steal");
+        }
     }
 }

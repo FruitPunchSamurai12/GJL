@@ -25,6 +25,10 @@ public class Controller : MonoBehaviour
 
     public bool LeftClick => Input.GetMouseButton(0);
 
+    public bool Ability => Input.GetKeyDown(KeyCode.Space);
+
+    public bool Interact => Input.GetKeyDown(KeyCode.E);
+
     public bool PausePressed => Input.GetKeyDown(KeyCode.Escape);
 
     public Vector2 MousePosition => Input.mousePosition;

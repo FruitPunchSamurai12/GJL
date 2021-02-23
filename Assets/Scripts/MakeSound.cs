@@ -15,7 +15,7 @@ public class MakeSound : MonoBehaviour
 
     public int Priority => priority;
 
-    private void Awake()
+    private void OnEnable()
     {
         GetComponent<AudioSource>().clip = soundClip;
         Destroy(gameObject, duration);

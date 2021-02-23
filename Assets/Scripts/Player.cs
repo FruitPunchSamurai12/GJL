@@ -47,6 +47,11 @@ public class Player : MonoBehaviour
         allCharacters[currentCharacterIndex].Tick();
     }
 
+    private void FixedUpdate()
+    {
+        allCharacters[currentCharacterIndex].LookForInteractables();
+    }
+
     private void OnDestroy()
     {
         Controller.Instance.NumericKeyPressed -= ChangeCurrentCharacter;

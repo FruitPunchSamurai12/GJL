@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5054806414796876323}
   - component: {fileID: 5054806414796876322}
   - component: {fileID: 5054806414796876348}
+  - component: {fileID: 307569201}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -108,7 +109,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5054806414796876320}
-  m_LocalRotation: {x: -0, y: -0.54029995, z: -0, w: 0.8414725}
+  m_LocalRotation: {x: 0, y: -0.5402991, z: 0, w: 0.8414731}
   m_LocalPosition: {x: -0.83, y: 1.012, z: 16.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -129,9 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  sightRange: 10
+  sightRange: 7
   sightAngle: 90
-  hearRange: 15
+  hearRange: 10
   timeNeededToEnterAlertModeAfterSeeingPlayer: 0.5
   timeNeededToCompletelySeePlayer: 0.8
   sightLayer:
@@ -185,6 +186,20 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &307569201
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054806414796876320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5054806414827620192
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +211,6 @@ GameObject:
   - component: {fileID: 5054806414827620193}
   - component: {fileID: 5054806414827620220}
   - component: {fileID: 5054806414827620195}
-  - component: {fileID: 5054806414827620194}
   m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
@@ -267,16 +281,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5054806414827620194
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5054806414827620192}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
