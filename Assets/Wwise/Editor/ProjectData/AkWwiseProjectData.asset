@@ -49,7 +49,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: d44f0ce6e1e29d4fae18affe65690fcd
     GuidInternal: 
-    m_lastTime: -8585876081842133331
+    m_lastTime: -8585875746509111621
     List:
     - name: SFX_Main
       guid: c36bf06f28f0664ba59e6883b977519e
@@ -68,7 +68,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 39954f5e6b50734f9867527a9df1ba3c
     GuidInternal: 
-    m_lastTime: -8585876081906133667
+    m_lastTime: -8585875995587232583
     List:
     - name: Play_AMB_Test
       guid: 25d1bb4464eabb42998e32307650591c
@@ -79,9 +79,9 @@ MonoBehaviour:
       - ElementName: Play_AMB_Test
         ObjectType: 3
       Path: Default Work Unit\Play_AMB_Test
-      maxAttenuation: 10
-      maxDuration: 10.000431
-      minDuration: 10.000431
+      maxAttenuation: 50
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
