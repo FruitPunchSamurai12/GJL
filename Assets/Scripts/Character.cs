@@ -13,12 +13,13 @@ public class Character : MonoBehaviour
     [SerializeField] LayerMask whatCanWeInteractWith;
     [SerializeField] Transform pickedUpHeavyItemPosition;
     [SerializeField] Transform pickedUpLightItemPosition;
-    [SerializeField] float speed = 7f;
+    [SerializeField] float runSpeed = 7f;
+    [SerializeField] float walkSpeed = 5f;
 
     public bool inSafeZone = false;
     public bool RestrictMovement { get; set; }
     IInteractable interactableInFrontOfCharacter;
-    public float Speed { get { return speed; } }
+    public float Speed { get { return Controller.Instance.Walk?walkSpeed:runSpeed; } }
     public bool InSafeZone => inSafeZone;
 
     private void Awake()
@@ -52,6 +53,19 @@ public class Character : MonoBehaviour
         }
         Interact();
         _ability.Tick();
+        DoMelee();
+    }
+
+    void DoMelee()
+    {
+        if(!_ability.Using && Controller.Instance.LeftClick)
+        {
+            var weapon = pickedUpLightItemPosition.GetComponentInChildren<Melee>();
+            if(weapon!=null)
+            {
+                weapon.StartSwing();
+            }
+        }
     }
 
     void Interact()
@@ -74,8 +88,17 @@ public class Character : MonoBehaviour
 
     public void LookForInteractables()
     {
-        RaycastHit hit;
-        if (Physics.BoxCast(transform.position, transform.localScale, transform.forward, out hit, transform.rotation, 2f, whatCanWeInteractWith))
+        //RaycastHit hit;
+        var targets = Physics.OverlapBox(transform.position, transform.localScale, transform.rotation, whatCanWeInteractWith);
+        if(targets.Length>0)
+        {
+            interactableInFrontOfCharacter = targets[0].GetComponent<IInteractable>();
+        }
+        else
+        {
+            interactableInFrontOfCharacter = null;
+        }
+        /*if (Physics.BoxCast(transform.position, transform.localScale, transform.forward, out hit, transform.rotation, 2f, whatCanWeInteractWith))
         {
             interactableInFrontOfCharacter = hit.collider.GetComponent<IInteractable>();
             Debug.Log(interactableInFrontOfCharacter);
@@ -83,9 +106,9 @@ public class Character : MonoBehaviour
         }
         else
         {
-            Debug.Log("nothing");
+           // Debug.Log("nothing");
             interactableInFrontOfCharacter = null;
-        }
+        }*/
     }
 
     public void PickUpItem(IPickable pickable)
@@ -94,6 +117,7 @@ public class Character : MonoBehaviour
 
         pickable.transform.SetParent(pickable.Heavy?pickedUpHeavyItemPosition:pickedUpLightItemPosition);
         pickable.transform.localPosition = Vector3.zero;
+        pickable.transform.localRotation = Quaternion.identity;
         var throwable = pickable as Throwable;
         if (throwable != null)
         {

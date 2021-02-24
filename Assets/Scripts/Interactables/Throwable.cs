@@ -5,8 +5,8 @@ using UnityEngine;
 public class Throwable : MonoBehaviour,IPickable
 {
     [SerializeField] bool heavyItem;
-    bool pickedUp = false;
-    bool throwed = false;
+    protected bool pickedUp = false;
+    protected bool throwed = false;
     Collider col;
     MakeSound sound;
     Rigidbody rb;

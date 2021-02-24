@@ -31,8 +31,12 @@ public class Controller : MonoBehaviour
 
     public bool PausePressed => Input.GetKeyDown(KeyCode.Escape);
 
+    public bool Walk => Input.GetKey(KeyCode.LeftShift);
+
     public Vector2 MousePosition => Input.mousePosition;
 
+    public float MouseX => Input.GetAxis("Mouse X");
+    public float MouseY => Input.GetAxis("Mouse Y");
     
 
     public event Action MoveModeTogglePressed;

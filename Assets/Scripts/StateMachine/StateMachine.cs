@@ -67,7 +67,10 @@ public class StateMachine
         foreach (var transition in _anyStateTransitions)
         {
             if (transition.Condition())
-                return transition;
+            {
+                if(transition.To!=_currentState)
+                    return transition;
+            }
         }
         foreach (var transition in _stateTransitions)
         {

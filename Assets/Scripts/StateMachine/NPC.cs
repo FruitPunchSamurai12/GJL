@@ -23,15 +23,18 @@ public class NPC : MonoBehaviour,IInteractable
     Character characterTalkingWith;
     bool chitChatting = false;
 
-
+    bool stunned = false;
     public float MoveSpeed => moveSpeed;
     public Vector3 Target { get; private set; }
     public Character TargetCharacter { get; private set; }
     public bool HeardSomething() => hasHeardSomething;
     public bool IsChitChatting() => chitChatting;
     public bool StoppedChitChatting() => !chitChatting;
+    public bool IsStunned() => stunned;
 
     List<Character> characters = new List<Character>();
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -158,8 +161,7 @@ public class NPC : MonoBehaviour,IInteractable
         {
             characterTalkingWith.SetInteractable(this);
             transform.LookAt(characterTalkingWith.transform.position);
-        }
-        Debug.Log(GetComponent<NavMeshAgent>().isStopped);
+        }        
     }
 
     public void StopChitChatting()
@@ -183,5 +185,10 @@ public class NPC : MonoBehaviour,IInteractable
         {
             Debug.Log("npc has no items to steal");
         }
+    }
+
+    public void GetStunned(bool stun)
+    {
+        stunned = stun;
     }
 }
