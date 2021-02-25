@@ -1,6 +1,11 @@
 Event	ID	Name			Wwise Object Path	Notes
-	2976252989	Play_AMB_Test			\Default Work Unit\Play_AMB_Test	
+	216919736	sx_amb_trees_loop			\Default Work Unit\sx_amb_trees_loop	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	859979479	amb_lo_stream_1	D:\GJL_WwiseProject\.cache\Windows\SFX\amb_lo_stream_1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\test\testing\amb_lo_stream_1		882102
+	82314786	sfx_amb_trees_birds-005	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-005_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-005		1200064
+	401379032	sfx_amb_trees_birds-004	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-004_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-004		1344064
+	483575577	sfx_amb_trees_birds-003	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-003_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-003		1296064
+	489240032	sfx_amb_trees_birds-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-002_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-002		1149204
+	938649116	sfx_amb_trees_02	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_02_64842ACC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sfx_amb_trees_02		6720064
+	946402218	sfx_amb_trees_birds-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-001_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-001		1296064
 

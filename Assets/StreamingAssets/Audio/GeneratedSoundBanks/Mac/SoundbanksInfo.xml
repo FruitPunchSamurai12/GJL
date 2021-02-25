@@ -11,21 +11,41 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2953616821">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2161880781">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3023356346" Language="SFX" Hash="2744378056">
+		<SoundBank Id="3023356346" Language="SFX" Hash="489900501">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Main</ObjectPath>
 			<ShortName>SFX_Main</ShortName>
 			<Path>SFX_Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2976252989" Name="Play_AMB_Test" ObjectPath="\Events\Default Work Unit\Play_AMB_Test" MaxAttenuation="10.000000" DurationType="OneShot" DurationMin="10.000431" DurationMax="10.000431">
+				<Event Id="216919736" Name="sx_amb_trees_loop" ObjectPath="\Events\Default Work Unit\sx_amb_trees_loop" MaxAttenuation="300.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
-						<File Id="859979479" Language="SFX">
-							<ShortName>amb_lo_stream_1.wav</ShortName>
-							<Path>SFX\amb_lo_stream_1_10C4C929.wem</Path>
+						<File Id="82314786" Language="SFX">
+							<ShortName>sfx_amb_trees_birds-005.wav</ShortName>
+							<Path>SFX\sfx_amb_trees_birds-005_569BE4A2.wem</Path>
+						</File>
+						<File Id="401379032" Language="SFX">
+							<ShortName>sfx_amb_trees_birds-004.wav</ShortName>
+							<Path>SFX\sfx_amb_trees_birds-004_569BE4A2.wem</Path>
+						</File>
+						<File Id="483575577" Language="SFX">
+							<ShortName>sfx_amb_trees_birds-003.wav</ShortName>
+							<Path>SFX\sfx_amb_trees_birds-003_569BE4A2.wem</Path>
+						</File>
+						<File Id="489240032" Language="SFX">
+							<ShortName>sfx_amb_trees_birds-002.wav</ShortName>
+							<Path>SFX\sfx_amb_trees_birds-002_569BE4A2.wem</Path>
+						</File>
+						<File Id="938649116" Language="SFX">
+							<ShortName>sfx_amb_trees_02.wav</ShortName>
+							<Path>SFX\sfx_amb_trees_02_64842ACC.wem</Path>
+						</File>
+						<File Id="946402218" Language="SFX">
+							<ShortName>sfx_amb_trees_birds-001.wav</ShortName>
+							<Path>SFX\sfx_amb_trees_birds-001_569BE4A2.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 64af32fcf5557c44bb2f80544b55a7c0
     GuidInternal: 
-    m_lastTime: -8585876103221084052
+    m_lastTime: -8585873906890146915
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -41,6 +41,15 @@ MonoBehaviour:
       - ElementName: Master Audio Bus
         ObjectType: 2
       Path: Default Work Unit\Master Audio Bus
+    - name: Master Music Bus
+      guid: 25087e114d46ce45b7bab457e68ecc63
+      id: 48433064
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Master Music Bus
+        ObjectType: 2
+      Path: Default Work Unit\Master Music Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -49,8 +58,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: d44f0ce6e1e29d4fae18affe65690fcd
     GuidInternal: 
-    m_lastTime: -8585875746509111621
+    m_lastTime: -8585873909465359501
     List:
+    - name: Music
+      guid: e94e8064f20d024aa8fdd34172c912cb
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 7
+      Path: Default Work Unit\Music
     - name: SFX_Main
       guid: c36bf06f28f0664ba59e6883b977519e
       id: 3023356346
@@ -68,18 +86,54 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 39954f5e6b50734f9867527a9df1ba3c
     GuidInternal: 
-    m_lastTime: -8585875995587232583
+    m_lastTime: -8585873885437593934
     List:
-    - name: Play_AMB_Test
-      guid: 25d1bb4464eabb42998e32307650591c
-      id: 2976252989
+    - name: MX_Play_Base
+      guid: 870eb1a1f8508c4eb0aa1cd05914e89c
+      id: 2849745801
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Play_AMB_Test
+      - ElementName: MX_Play_Base
         ObjectType: 3
-      Path: Default Work Unit\Play_AMB_Test
-      maxAttenuation: 50
+      Path: Default Work Unit\MX_Play_Base
+      maxAttenuation: 0
+      maxDuration: 59.07692
+      minDuration: 59.07692
+    - name: Start_Area_AMB
+      guid: 00d5bcf6c016ae4695a4d8a9bf857215
+      id: 4278971852
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Start_Area_AMB
+        ObjectType: 3
+      Path: Default Work Unit\Start_Area_AMB
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Start_Forest_Ambience
+      guid: 25d1bb4464eabb42998e32307650591c
+      id: 3194767864
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Start_Forest_Ambience
+        ObjectType: 3
+      Path: Default Work Unit\Start_Forest_Ambience
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
+    - name: Start_Fountain_AMB
+      guid: 47947ed7328dc14ea75a9b8c0cac017c
+      id: 3248596991
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Start_Fountain_AMB
+        ObjectType: 3
+      Path: Default Work Unit\Start_Fountain_AMB
+      maxAttenuation: 20
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -90,8 +144,17 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: dad49a2a38bcda44a9ddbbf729dbd83e
     GuidInternal: 
-    m_lastTime: -8585876103220834715
-    List: []
+    m_lastTime: -8585873913079609343
+    List:
+    - name: Current_Character
+      guid: 308e593fc308c34b998cc3938e1d6a7e
+      id: 1176230744
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Current_Character
+        ObjectType: 13
+      Path: Default Work Unit\Current_Character
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -100,8 +163,45 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5a4db2cf5f6d814b93187413c67f6ba3
     GuidInternal: 
-    m_lastTime: -8585876103220715038
-    List: []
+    m_lastTime: -8585873931219358037
+    List:
+    - name: Game_States
+      guid: c745d4233cf40c41a0a4b8db78af435c
+      id: 2721494480
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Game_States
+        ObjectType: 9
+      Path: Default Work Unit\Game_States
+      values:
+      - name: Alert
+        guid: 7b948a6b7322d34ba9a19e25124db008
+        id: 721787521
+        PathAndIcons:
+        - ElementName: Alert
+          ObjectType: 8
+      - name: Idle
+        guid: f490b806cfcb4b43b511f73595e0407d
+        id: 1874288895
+        PathAndIcons:
+        - ElementName: Idle
+          ObjectType: 8
+      - name: None
+        guid: fa763def266dae4bbfa76e46dbfe19f0
+        id: 748895195
+        PathAndIcons:
+        - ElementName: None
+          ObjectType: 8
+      - name: Suspicious
+        guid: 1d3c55825e158948abc38a99d375745b
+        id: 3270337040
+        PathAndIcons:
+        - ElementName: Suspicious
+          ObjectType: 8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     PathAndIcons:
@@ -110,8 +210,39 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 0c023c358bc65e41af835db9660affcf
     GuidInternal: 
-    m_lastTime: -8585876103221034184
-    List: []
+    m_lastTime: -8585873935613113117
+    List:
+    - name: Character_Select
+      guid: cd9a94cad7d60c459889b2913572ad1a
+      id: 3311442969
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Character_Select
+        ObjectType: 11
+      Path: Default Work Unit\Character_Select
+      values:
+      - name: Baby
+        guid: 6a4e6fe59e408b46b93e618bbf412f51
+        id: 1543097833
+        PathAndIcons:
+        - ElementName: Baby
+          ObjectType: 10
+      - name: Dad
+        guid: 7cfffc4af224ad49a59d0a285baba738
+        id: 311764516
+        PathAndIcons:
+        - ElementName: Dad
+          ObjectType: 10
+      - name: Mom
+        guid: 014d0cc48757ca4891f273cc6dcd066f
+        id: 1082004790
+        PathAndIcons:
+        - ElementName: Mom
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -126,7 +257,5 @@ MonoBehaviour:
   - /GJL_WwiseProject
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
-  - /GJL_WwiseProject/SoundBanks
-  - /GJL_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

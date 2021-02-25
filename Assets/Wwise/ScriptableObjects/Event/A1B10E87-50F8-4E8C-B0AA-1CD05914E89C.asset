@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f21b4900e20d14ca228c4d4c9df5c2, type: 3}
+  m_Name: A1B10E87-50F8-4E8C-B0AA-1CD05914E89C
+  m_EditorClassIdentifier: 
+  objectName: MX_Play_Base
+  id: 2849745801
+  guid: A1B10E87-50F8-4E8C-B0AA-1CD05914E89C
