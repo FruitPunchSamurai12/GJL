@@ -91,10 +91,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5054806414796876321}
-  - component: {fileID: 5054806414796876323}
-  - component: {fileID: 5054806414796876322}
   - component: {fileID: 5054806414796876348}
   - component: {fileID: 307569201}
+  - component: {fileID: 6216893928596295536}
+  - component: {fileID: 8434281504162900453}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -117,53 +117,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -65.408, z: 0}
---- !u!114 &5054806414796876323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5054806414796876320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bfb9280b856f447a2de39a599440ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 7
-  sightRange: 7
-  sightAngle: 90
-  hearRange: 10
-  timeNeededToEnterAlertModeAfterSeeingPlayer: 0.5
-  timeNeededToCompletelySeePlayer: 0.8
-  sightLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  eyes: {fileID: 5054806414827620193}
---- !u!114 &5054806414796876322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5054806414796876320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a4fd1969b20b64b8c87e39e8f9a95e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startInIdle: 0
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  timeWaitingBetweenWaypoints: 2
-  timeBeforeActingWhenSuspicious: 1
-  timeInvestigatingWhenSuspicious: 5
-  timeBeforeActingWhenAlerted: 0.5
-  timeInvestigatingWhenAlerted: 15
-  alertMoveSpeed: 10
-  investigationRange: 5
 --- !u!195 &5054806414796876348
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -200,6 +153,54 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6216893928596295536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054806414796876320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8773c044a4d84d141b57438d5ebd26da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 7
+  sightRange: 10
+  sightAngle: 90
+  hearRange: 10
+  timeNeededToEnterAlertModeAfterSeeingPlayer: 0.5
+  timeNeededToCompletelySeePlayer: 0.8
+  sightLayer:
+    serializedVersion: 2
+    m_Bits: 10241
+  eyes: {fileID: 5054806414827620193}
+  hasItemToSteal: 0
+--- !u!114 &8434281504162900453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5054806414796876320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76245f1456cc4a94a9b53b6dd67cd827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startInIdle: 0
+  waypoints: []
+  timeWaitingBetweenWaypoints: 2
+  timeBeforeActingWhenSuspicious: 1
+  timeInvestigatingWhenSuspicious: 5
+  timeBeforeActingWhenAlerted: 0.5
+  timeInvestigatingWhenAlerted: 15
+  alertMoveSpeed: 10
+  investigationRange: 5
+  stunDuration: 5
+  sentryRotationDuration: 4
+  sentryWaitTime: 1
+  sentryAngle: 90
 --- !u!1 &5054806414827620192
 GameObject:
   m_ObjectHideFlags: 0

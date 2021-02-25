@@ -19,8 +19,9 @@ public class Sentry : IState
         _lerpDuration = rotationDuration;
         _waitTime = waitTime;
         startRotation = _ai.transform.rotation;
-        Vector3 endDirection =  Quaternion.Euler(0, angle, 0) * _ai.transform.forward;
-        endRotation = Quaternion.FromToRotation(_ai.transform.forward,endDirection);
+        //Vector3 endDirection =  Quaternion.Euler(0, angle, 0) * _ai.transform.forward;
+       // endRotation = Quaternion.FromToRotation(_ai.transform.forward,endDirection);
+        endRotation = startRotation * Quaternion.Euler(Vector3.up * angle);
     }
 
     public void OnEnter()

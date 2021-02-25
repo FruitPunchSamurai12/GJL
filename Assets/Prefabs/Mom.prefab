@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 8232987474828769379}
   - component: {fileID: 8232987474828769380}
   - component: {fileID: 8232987474828769377}
-  - component: {fileID: 510627999}
+  - component: {fileID: 8969853951094288602}
   m_Layer: 9
   m_Name: Mom
   m_TagString: Untagged
@@ -295,7 +295,9 @@ MonoBehaviour:
     m_Bits: 2304
   pickedUpHeavyItemPosition: {fileID: 2030872512}
   pickedUpLightItemPosition: {fileID: 1931510215}
-  speed: 7
+  runSpeed: 7
+  walkSpeed: 5
+  inSafeZone: 0
 --- !u!195 &8232987474828769377
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -318,7 +320,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &510627999
+--- !u!114 &8969853951094288602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,6 +329,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8232987474828769381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13b4594c7aa450c48b2726ee42835fa7, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f9c028ae84e66b4fbbba8d0066f9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

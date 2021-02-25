@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4950023229677862124}
-  - component: {fileID: 4950023229677862125}
   - component: {fileID: 4950023229677862126}
+  - component: {fileID: 3324124264525214290}
   m_Layer: 0
   m_Name: SoundCue
   m_TagString: Untagged
@@ -32,21 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4950023229677862125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4950023229677862127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e44ee74180fe32f4a8b2abcc74a4fe3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 1
-  soundClip: {fileID: 8300000, guid: 195053663bfbc6a42b10a623c4f8ef32, type: 3}
-  priority: 1
 --- !u!82 &4950023229677862126
 AudioSource:
   m_ObjectHideFlags: 0
@@ -143,3 +128,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3324124264525214290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4950023229677862127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab38ab614c3bfc42a870ca65a51dd7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  soundClip: {fileID: 0}
+  priority: 1

@@ -1,15 +1,16 @@
-﻿using UnityEngine;
+﻿using UnityEngine.AI;
 
 public class Idle : IState
 {
-    public Idle()
+    NavMeshAgent _navMeshAgent;
+    public Idle(NavMeshAgent navMeshAgent)
     {
-
+        _navMeshAgent = navMeshAgent;
     }
 
     public void OnEnter()
     {
-        
+        _navMeshAgent.enabled = false;
     }
 
     public void OnExit()

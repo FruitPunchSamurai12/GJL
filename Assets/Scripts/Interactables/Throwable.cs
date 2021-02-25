@@ -5,11 +5,13 @@ using UnityEngine;
 public class Throwable : MonoBehaviour,IPickable
 {
     [SerializeField] bool heavyItem;
-    protected bool pickedUp = false;
-    protected bool throwed = false;
+    protected bool _pickedUp = false;
+    protected bool _thrown = false;
+    bool _maxPower = false;
     Collider col;
-    MakeSound sound;
-    Rigidbody rb;
+    protected MakeSound sound;
+    protected Rigidbody rb;
+    protected Vector3 _velocity;
 
     public bool Heavy => heavyItem;
 
@@ -17,17 +19,16 @@ public class Throwable : MonoBehaviour,IPickable
     {
         col = GetComponent<Collider>();
         sound = GetComponent<MakeSound>();
-        sound.enabled = false;
         rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
 
     public void Interact(Character character)
     {
-        if (pickedUp)
+        if (_pickedUp)
             return;
         col.enabled = false;
-        pickedUp = true;
+        _pickedUp = true;
         rb.isKinematic = true;
         rb.useGravity = false;
         character.PickUpItem(this);
@@ -36,13 +37,13 @@ public class Throwable : MonoBehaviour,IPickable
     public void Drop()
     {
         transform.SetParent(null);
-        pickedUp = false;
+        _pickedUp = false;
         rb.isKinematic = false;
         rb.useGravity = true;
         col.enabled = true;
     }
 
-    public void Throw(Vector3 velocity)
+    public void Throw(Vector3 velocity,bool maxPower)
     {
         transform.SetParent(null);
         rb.isKinematic = false;
@@ -50,17 +51,51 @@ public class Throwable : MonoBehaviour,IPickable
         rb.velocity = velocity;
         //rb.AddTorque(velocity);
         col.enabled = true;
-        throwed = true;
+        _thrown = true;
+        _maxPower = maxPower;
+        var destructible = GetComponent<Destructible>();
+        if(destructible!=null)
+        {
+            destructible.controlDestructionFromAnotherScipt = true;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        _velocity = rb.velocity;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(throwed)
+        if(_thrown)
         {
-            col.enabled = false;
-            rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
-            sound.enabled = true;
+            if(_maxPower)
+            {
+                var npc = collision.collider.GetComponent<NPC>();
+                Debug.Log(npc);
+                if (npc != null)
+                {
+                    npc.GetStunned(true);
+                }
+                else
+                {
+                    var destructible = collision.collider.GetComponent<Destructible>();
+                    if (destructible != null)
+                    {
+                        destructible.Destruct(rb.velocity);
+                    }
+                }
+            }
+            sound.PlaySound();
+            var destructibleSelf = GetComponent<Destructible>();
+            if (destructibleSelf != null)
+            {
+                Debug.Log("destructible called from throwable");
+                destructibleSelf.Destruct(_velocity);
+                destructibleSelf.controlDestructionFromAnotherScipt = false;
+            }
+            _pickedUp = false;
+            _thrown = false;
         }
     }
 }

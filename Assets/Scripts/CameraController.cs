@@ -68,7 +68,6 @@ public class CameraController : MonoBehaviour
     {
         Vector2 dir2d = PanDirection(x, y);
         Vector3 direction = new Vector3(dir2d.x, 0f, dir2d.y);
-        Debug.Log(direction);
         cameraTransform.position = Vector3.Lerp(cameraTransform.position, cameraTransform.position + direction * panSpeed, Time.deltaTime);
     }
 }

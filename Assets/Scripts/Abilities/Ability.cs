@@ -1,7 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public abstract class Ability:MonoBehaviour
 {
+    [SerializeField]
+    [Range(1, 2)]
+    int abilityNumber = 1;
     public bool Using { get; protected set; }
     protected Character character;
     private void Awake()
@@ -11,7 +15,8 @@ public abstract class Ability:MonoBehaviour
 
     public void Tick()
     {
-        if(Controller.Instance.Ability)
+        bool input = abilityNumber == 1 ? Controller.Instance.Ability1 : Controller.Instance.Ability2;
+        if(input)
         {
             if (!Using)
                 OnTryUse();

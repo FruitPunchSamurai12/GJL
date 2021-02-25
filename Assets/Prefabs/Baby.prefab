@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3252945569734948695}
   - component: {fileID: 3252945569734948694}
   - component: {fileID: 3252945569734948693}
-  - component: {fileID: 1646695238}
+  - component: {fileID: 7794958500278367567}
   m_Layer: 9
   m_Name: Baby
   m_TagString: Untagged
@@ -72,7 +72,9 @@ MonoBehaviour:
     m_Bits: 0
   pickedUpHeavyItemPosition: {fileID: 8398723844360582651}
   pickedUpLightItemPosition: {fileID: 972708111721206021}
-  speed: 7
+  runSpeed: 7
+  walkSpeed: 5
+  inSafeZone: 0
 --- !u!195 &3252945569734948693
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -95,7 +97,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1646695238
+--- !u!114 &7794958500278367567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,9 +106,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3252945569734948689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e138cd9fa77e6c43908f4d08a1175ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 51f664c0fae3a434d851d31196613cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cryRange: 15
 --- !u!1 &3252945570460042820
 GameObject:
   m_ObjectHideFlags: 0

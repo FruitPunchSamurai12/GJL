@@ -9,18 +9,20 @@ public class Character : MonoBehaviour
     private IMover _mover;
     private Rotator _rotator;
     private Ability _ability;
-
+    [SerializeField] int characterIndex = 1;
     [SerializeField] LayerMask whatCanWeInteractWith;
     [SerializeField] Transform pickedUpHeavyItemPosition;
     [SerializeField] Transform pickedUpLightItemPosition;
     [SerializeField] float runSpeed = 7f;
     [SerializeField] float walkSpeed = 5f;
 
-    public bool inSafeZone = false;
+    public bool halfSpeed = false;
+    
     public bool RestrictMovement { get; set; }
     IInteractable interactableInFrontOfCharacter;
-    public float Speed { get { return Controller.Instance.Walk?walkSpeed:runSpeed; } }
-    public bool InSafeZone => inSafeZone;
+    public float Speed { get { return halfSpeed?(Controller.Instance.Walk?walkSpeed:runSpeed)/2: Controller.Instance.Walk ? walkSpeed : runSpeed; } }
+    public bool InSafeZone { get; set; }
+    public int CharacterIndex => characterIndex;
 
     private void Awake()
     {
@@ -28,6 +30,13 @@ public class Character : MonoBehaviour
         _mover = new WASDMover(this);
         _rotator = new Rotator(this);
         _ability = GetComponent<Ability>();
+    }
+
+    public void BackToCheckPoint()
+    {
+        characterController.enabled = false;
+        transform.position = GameManager.Instance.GetCheckpointPosition().position;
+        characterController.enabled = true;
     }
 
     private void Start()
@@ -98,17 +107,6 @@ public class Character : MonoBehaviour
         {
             interactableInFrontOfCharacter = null;
         }
-        /*if (Physics.BoxCast(transform.position, transform.localScale, transform.forward, out hit, transform.rotation, 2f, whatCanWeInteractWith))
-        {
-            interactableInFrontOfCharacter = hit.collider.GetComponent<IInteractable>();
-            Debug.Log(interactableInFrontOfCharacter);
-            
-        }
-        else
-        {
-           // Debug.Log("nothing");
-            interactableInFrontOfCharacter = null;
-        }*/
     }
 
     public void PickUpItem(IPickable pickable)
@@ -149,6 +147,17 @@ public class Character : MonoBehaviour
     }
 
     public IInteractable GetInteractable() => interactableInFrontOfCharacter;
+
+    public void LeaveSafeZoneAfterDelay(float delay)
+    {
+        StartCoroutine(LeaveSafeZone(delay));
+    }
+
+    IEnumerator LeaveSafeZone(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        InSafeZone = false;
+    }
 
     private void OnDestroy()
     {

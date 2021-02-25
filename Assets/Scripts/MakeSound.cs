@@ -6,23 +6,31 @@ using UnityEngine;
 public class MakeSound : MonoBehaviour
 {
     [SerializeField]
-    float duration = 1f;
-    [SerializeField]
     AudioClip soundClip;
     [SerializeField]
     int priority = 1;
-    
+    AudioSource audioSource;
 
     public int Priority => priority;
 
-    private void OnEnable()
+    private void Awake()
     {
-        GetComponent<AudioSource>().clip = soundClip;
-        Destroy(gameObject, duration);
+        audioSource = GetComponent<AudioSource>();
     }
 
-    private void Update()
+    public void PlaySound()
     {
+        audioSource.PlayOneShot(soundClip);
+        var enemies = GameManager.Instance.GetAllEnemies();
+        foreach (var ai in enemies)
+        {
+            ai.HearSound(this);
+        }
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
         var enemies = GameManager.Instance.GetAllEnemies();
         foreach (var ai in enemies)
         {

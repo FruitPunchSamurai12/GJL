@@ -53,7 +53,7 @@ public class Alert : IState
         }
         else
         {
-            if (_navMeshAgent.transform.position.FlatDistance(_ai.Target) < 2f)
+            if (_ai.ReachedDestination())
             {
                 _idleTimer += Time.deltaTime;
                 if (_idleTimer > _idleTime)

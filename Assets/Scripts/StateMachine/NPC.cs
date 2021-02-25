@@ -25,25 +25,29 @@ public class NPC : MonoBehaviour,IInteractable
 
     bool stunned = false;
     public float MoveSpeed => moveSpeed;
-    public Vector3 Target { get; private set; }
+    public Vector3 Target { get; set; }
     public Character TargetCharacter { get; private set; }
     public bool HeardSomething() => hasHeardSomething;
     public bool IsChitChatting() => chitChatting;
     public bool StoppedChitChatting() => !chitChatting;
     public bool IsStunned() => stunned;
+    public bool IgnoreSounds { get; set; }
 
     List<Character> characters = new List<Character>();
+    List<NPC> unseenKnockedOutNPCs = new List<NPC>();
 
-   
-
+    event Action<NPC> onNPCKnockedOut;
     // Start is called before the first frame update
     void Start()
     {
         characters = GameManager.Instance.GetAllCharacters();
+        onNPCKnockedOut += NPCKnockedOut;
     }
 
     public void HearSound(MakeSound makeSound)
     {
+        if (IgnoreSounds)
+            return;
         if(transform.position.FlatDistance(makeSound.transform.position)<hearRange)
         {
             if(makeSound.Priority>audioCuePriority)
@@ -57,6 +61,8 @@ public class NPC : MonoBehaviour,IInteractable
 
     public void BabyCrying(Vector3 position,float cryingRange)
     {
+        if (IgnoreSounds)
+            return;
         if (transform.position.FlatDistance(position) < cryingRange)
         {
             audioCuePriority = 10;
@@ -65,6 +71,28 @@ public class NPC : MonoBehaviour,IInteractable
         }
     }
 
+    public bool CanSeeKnockedOutNPCs()
+    {
+        foreach (var npc in unseenKnockedOutNPCs)
+        {
+            Vector3 npcPosition = npc.transform.position;
+            Vector3 targetDir = npcPosition - eyes.position;
+            float angle = Vector2.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
+            float distance = transform.position.FlatDistance(npcPosition);
+
+            if (distance < sightRange && angle < sightAngle)
+            {
+                RaycastHit hit;
+                Physics.Raycast(eyes.position, targetDir.normalized, out hit, distance, sightLayer);
+                if (hit.collider == null)
+                {
+                    unseenKnockedOutNPCs.Remove(npc);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
     public bool CanSeeCharacter()
     {
@@ -139,6 +167,8 @@ public class NPC : MonoBehaviour,IInteractable
     public void Interact(Character character)
     {
         Debug.Log("interacting");
+        if (CanSeeSpecificCharacter(character))
+            return;
         if (!chitChatting)
         {
             transform.LookAt(character.transform.position);
@@ -147,7 +177,7 @@ public class NPC : MonoBehaviour,IInteractable
             chitChatting = true;
             character.RestrictMovement = true;
             characterTalkingWith = character;
-            
+            character.InSafeZone = true;
         }
         else
         {
@@ -164,12 +194,18 @@ public class NPC : MonoBehaviour,IInteractable
         }        
     }
 
+    public bool ReachedDestination()
+    {
+        return transform.position.FlatDistance(Target) < 2f;
+    }
+
     public void StopChitChatting()
     {
         if (characterTalkingWith != null)
         {
             chitChatting = false;
             characterTalkingWith.RestrictMovement = false;
+            characterTalkingWith.LeaveSafeZoneAfterDelay(2f);
             characterTalkingWith = null;
         }
     }
@@ -190,5 +226,11 @@ public class NPC : MonoBehaviour,IInteractable
     public void GetStunned(bool stun)
     {
         stunned = stun;
+        onNPCKnockedOut?.Invoke(this);
+    }
+
+    void NPCKnockedOut(NPC npc)
+    {
+        unseenKnockedOutNPCs.Add(npc);
     }
 }

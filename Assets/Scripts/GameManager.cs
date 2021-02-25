@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +8,9 @@ public class GameManager : MonoBehaviour
 {
     private List<Character> allCharacters = new List<Character>();
     private List<NPC> allEnemies = new List<NPC>();
+    [SerializeField] Transform checkpoint;
+
+    bool[] chasedCharacters = new bool[3];
 
     public static GameManager Instance;
 
@@ -25,6 +29,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CharacterIsNoLongerBeingChased(Character targetCharacter)
+    {
+        chasedCharacters[targetCharacter.CharacterIndex] = false;
+    }
+
+    public void CharacterIsBeingChased(Character targetCharacter)
+    {
+        chasedCharacters[targetCharacter.CharacterIndex] = true;
+    }
+
+    public bool CanSwitchCharacter(int characterIndex)
+    {
+        if(characterIndex< chasedCharacters.Length)
+        {
+            return !chasedCharacters[characterIndex];
+        }
+        return false;
+    }
+
     public List<Character> GetAllCharacters()
     {
         return allCharacters;
@@ -34,4 +57,6 @@ public class GameManager : MonoBehaviour
     {
         return allEnemies;
     }
+
+    public Transform GetCheckpointPosition() { return checkpoint; }
 }

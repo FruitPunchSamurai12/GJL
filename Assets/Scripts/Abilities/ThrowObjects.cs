@@ -3,9 +3,14 @@
 public class ThrowObjects : Ability
 {
     [SerializeField] GameObject cursor;
-    [SerializeField] LayerMask layer;
-    [SerializeField] float throwRange = 10f;
+    [SerializeField] LayerMask raycastLayer;
+    [SerializeField] float throwMinRange = 5f;
+    [SerializeField] float throwMaxRange = 20f;
+    [SerializeField] float chargeDuration = 2f;
 
+    float chargeTimer = 0;
+    float currentThrowRange;
+    bool startCharging = false;
     Camera cam;
     Throwable _objectToThrow;
 
@@ -21,20 +26,37 @@ public class ThrowObjects : Ability
             Vector3 mousePos = cam.ScreenToWorldPoint(Controller.Instance.MousePosition);
             Ray camRay = cam.ScreenPointToRay(Controller.Instance.MousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(camRay,out hit,100f,layer))
+            if(Physics.Raycast(camRay,out hit,100f,raycastLayer))
             {
                 Vector3 origin = new Vector3(_objectToThrow.transform.position.x,hit.point.y, _objectToThrow.transform.position.z);
                 Vector3 directionalVector = hit.point - origin;
-                Vector3 point = directionalVector.magnitude < throwRange ? hit.point : directionalVector.normalized * throwRange;
+                Vector3 point = directionalVector.magnitude < currentThrowRange ? hit.point : directionalVector.normalized * currentThrowRange;
                 cursor.SetActive(true);
                 cursor.transform.position = point + Vector3.up * 0.1f;
 
                 Vector3 v = CalculateVelocity(point, _objectToThrow.transform.position, 1f);
-                if(Controller.Instance.LeftClick)
+                if(startCharging)
                 {
-                    _objectToThrow.Throw(v);
-                    _objectToThrow = null;
-                    OnTryUnuse();
+                    if(Controller.Instance.LeftClickHold)
+                    {
+                        chargeTimer += Time.deltaTime;
+                        float percentage = chargeTimer / chargeDuration;
+                        percentage = Mathf.Clamp(percentage, 0, 1);
+                        currentThrowRange = throwMinRange + (throwMaxRange - throwMinRange) * percentage;
+                    }
+                    else if(Controller.Instance.LeftClickRelease)
+                    {
+                        _objectToThrow.Throw(v,chargeTimer>=chargeDuration);
+                        _objectToThrow = null;
+                        OnTryUnuse();
+                    }
+                }
+                else
+                {
+                    if(Controller.Instance.LeftClick)
+                    {
+                        startCharging = true;
+                    }
                 }
             }
             else
@@ -62,6 +84,8 @@ public class ThrowObjects : Ability
         if(_objectToThrow!=null)
         {
             Using = true;
+            startCharging = false;
+            chargeTimer = 0;
             character.RestrictMovement = true;
         }
     }

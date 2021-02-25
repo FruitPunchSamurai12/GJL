@@ -30,6 +30,8 @@ public class Player : MonoBehaviour
 
     void ChangeCurrentCharacter(int index)
     {
+        if (!GameManager.Instance.CanSwitchCharacter(allCharacters[currentCharacterIndex].CharacterIndex))
+            return;
         if (index < allCharacters.Count)
             currentCharacterIndex = index;
         cameraController.SetCameraTarget(GetCurrentCharacterTransform());
@@ -37,6 +39,8 @@ public class Player : MonoBehaviour
 
     void ToggleCharacter()
     {
+        if (!GameManager.Instance.CanSwitchCharacter(allCharacters[currentCharacterIndex].CharacterIndex))
+            return;
         currentCharacterIndex++;
         if (currentCharacterIndex >= allCharacters.Count)
             currentCharacterIndex = 0;
