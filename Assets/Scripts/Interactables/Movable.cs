@@ -8,6 +8,8 @@ public class Movable : MonoBehaviour,IPickable
     Rigidbody rb;
 
     bool IPickable.Heavy => heavy;
+    public AK.Wwise.Event Pickup;
+    public AK.Wwise.Event Dropped;
 
 
 
@@ -25,6 +27,7 @@ public class Movable : MonoBehaviour,IPickable
         rb.isKinematic = false;
         rb.useGravity = true;
         col.enabled = true;
+        Dropped.Post(gameObject);
     }
 
     public void Interact(Character character)
@@ -35,6 +38,7 @@ public class Movable : MonoBehaviour,IPickable
         col.enabled = false;
         pickedUp = true;
         character.PickUpItem(this);
+        Pickup.Post(gameObject);
     }
 
 }

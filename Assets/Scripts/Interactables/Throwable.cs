@@ -14,6 +14,12 @@ public class Throwable : MonoBehaviour,IPickable
     protected Vector3 _velocity;
 
     public bool Heavy => heavyItem;
+    public AK.Wwise.Event ItemThrow;
+    public AK.Wwise.Event ItemBreak;
+    public AK.Wwise.Event ItemPickup;
+    public AK.Wwise.Event ItemDrop;
+
+    
 
     private void Awake()
     {
@@ -32,6 +38,8 @@ public class Throwable : MonoBehaviour,IPickable
         rb.isKinematic = true;
         rb.useGravity = false;
         character.PickUpItem(this);
+        ItemPickup.Post(gameObject);
+
     }
 
     public void Drop()
@@ -41,10 +49,12 @@ public class Throwable : MonoBehaviour,IPickable
         rb.isKinematic = false;
         rb.useGravity = true;
         col.enabled = true;
+        ItemDrop.Post(gameObject);
     }
 
     public void Throw(Vector3 velocity,bool maxPower)
     {
+        ItemThrow.Post(gameObject);
         transform.SetParent(null);
         rb.isKinematic = false;
         rb.useGravity = true;
@@ -86,7 +96,7 @@ public class Throwable : MonoBehaviour,IPickable
                     }
                 }
             }
-            sound.PlaySound();
+            ItemBreak.Post(gameObject);
             var destructibleSelf = GetComponent<Destructible>();
             if (destructibleSelf != null)
             {

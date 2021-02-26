@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickPocket : Ability
 {
+    public AK.Wwise.Event Pickpocket;
     protected override void OnTryUnuse()
     {
       
@@ -13,6 +14,7 @@ public class PickPocket : Ability
     {
         var interactable = character.GetInteractable();
         if(interactable!=null)
+        Pickpocket.Post(gameObject);
         {
             var npc = interactable as NPC;
             if(npc!=null)

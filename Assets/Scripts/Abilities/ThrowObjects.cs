@@ -13,6 +13,7 @@ public class ThrowObjects : Ability
     bool startCharging = false;
     Camera cam;
     Throwable _objectToThrow;
+    public AK.Wwise.Event ThrowItem;
 
     private void Start()
     {

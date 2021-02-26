@@ -58,7 +58,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: d44f0ce6e1e29d4fae18affe65690fcd
     GuidInternal: 
-    m_lastTime: -8585873909465359501
+    m_lastTime: -8585873227034004625
     List:
     - name: Music
       guid: e94e8064f20d024aa8fdd34172c912cb
@@ -79,36 +79,28 @@ MonoBehaviour:
         ObjectType: 7
       Path: Default Work Unit\SFX_Main
   EventWwu:
-  - PhysicalPath: Events\Default Work Unit.wwu
+  - PhysicalPath: Events\Ambience.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
       ObjectType: 12
-    ParentPath: Default Work Unit
-    guid: 39954f5e6b50734f9867527a9df1ba3c
+    - ElementName: Ambience
+      ObjectType: 12
+    ParentPath: Default Work Unit\Ambience
+    guid: 1311f6587755a04ea5be839061fed5b3
     GuidInternal: 
-    m_lastTime: -8585873885437593934
+    m_lastTime: -8585873332107689309
     List:
-    - name: MX_Play_Base
-      guid: 870eb1a1f8508c4eb0aa1cd05914e89c
-      id: 2849745801
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MX_Play_Base
-        ObjectType: 3
-      Path: Default Work Unit\MX_Play_Base
-      maxAttenuation: 0
-      maxDuration: 59.07692
-      minDuration: 59.07692
     - name: Start_Area_AMB
       guid: 00d5bcf6c016ae4695a4d8a9bf857215
       id: 4278971852
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 12
       - ElementName: Start_Area_AMB
         ObjectType: 3
-      Path: Default Work Unit\Start_Area_AMB
+      Path: Default Work Unit\Ambience\Start_Area_AMB
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -118,9 +110,11 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 12
       - ElementName: Start_Forest_Ambience
         ObjectType: 3
-      Path: Default Work Unit\Start_Forest_Ambience
+      Path: Default Work Unit\Ambience\Start_Forest_Ambience
       maxAttenuation: 40
       maxDuration: -1
       minDuration: -1
@@ -130,10 +124,211 @@ MonoBehaviour:
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 12
       - ElementName: Start_Fountain_AMB
         ObjectType: 3
-      Path: Default Work Unit\Start_Fountain_AMB
+      Path: Default Work Unit\Ambience\Start_Fountain_AMB
       maxAttenuation: 20
+      maxDuration: -1
+      minDuration: -1
+    - name: Start_Leaves_AMB
+      guid: 54f48ae978c1e34199f858ecc07fbca7
+      id: 3322761575
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 12
+      - ElementName: Start_Leaves_AMB
+        ObjectType: 3
+      Path: Default Work Unit\Ambience\Start_Leaves_AMB
+      maxAttenuation: 20
+      maxDuration: -1
+      minDuration: -1
+    - name: Start_Washing_Machine_AMB
+      guid: a6d8f6542da1bf48a87c4ee2cab26d45
+      id: 3630086782
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 12
+      - ElementName: Start_Washing_Machine_AMB
+        ObjectType: 3
+      Path: Default Work Unit\Ambience\Start_Washing_Machine_AMB
+      maxAttenuation: 10
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    ParentPath: Default Work Unit
+    guid: 39954f5e6b50734f9867527a9df1ba3c
+    GuidInternal: 
+    m_lastTime: -8585873332042676041
+    List: []
+  - PhysicalPath: Events\Interactions.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    - ElementName: Interactions
+      ObjectType: 12
+    ParentPath: Default Work Unit\Interactions
+    guid: 2479bdd108434642b0fad18f4a0971b5
+    GuidInternal: 
+    m_lastTime: -8585873160872758321
+    List:
+    - name: Play_Baby_Crying
+      guid: 35a91f460e103146aa65f113a55c8e47
+      id: 753280365
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Baby_Crying
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Baby_Crying
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Bottle_Smash
+      guid: c0ca21b46c3ab34693b9278dffa2179d
+      id: 1131775195
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Bottle_Smash
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Bottle_Smash
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Box_Drop
+      guid: 1ca3d51f033f824aa98321fd6633086a
+      id: 967761339
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Box_Drop
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Box_Drop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Door_Close
+      guid: c0783c103fbbc8459ebc77c116faae03
+      id: 2292458263
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Door_Close
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Door_Close
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Door_Open
+      guid: 4db41a17294d0e44a5c2e47a188621a0
+      id: 1660008929
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Door_Open
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Door_Open
+      maxAttenuation: 0
+      maxDuration: 1.5
+      minDuration: 1.5
+    - name: Play_Item_Pickup
+      guid: a4fec8d4c3fa2e4788f1054ade49b9c7
+      id: 2652605998
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Item_Pickup
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Item_Pickup
+      maxAttenuation: 0
+      maxDuration: 0.531792
+      minDuration: 0.392612
+    - name: Play_Item_Putdown
+      guid: 6b68492433e8884f931ea5273a361561
+      id: 4250118861
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Item_Putdown
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Item_Putdown
+      maxAttenuation: 0
+      maxDuration: 0.402662
+      minDuration: 0.347854
+    - name: Play_Item_Throw
+      guid: d028d3f842185246b6f3173ed253d944
+      id: 3065584282
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Item_Throw
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Item_Throw
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_Pickpocket_Keys
+      guid: 8497e2aba08b9043a44fc121d713566a
+      id: 1684266438
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Pickpocket_Keys
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Pickpocket_Keys
+      maxAttenuation: 0
+      maxDuration: 1.069438
+      minDuration: 1.069438
+  - PhysicalPath: Events\Music.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    - ElementName: Music
+      ObjectType: 12
+    ParentPath: Default Work Unit\Music
+    guid: c57d352dfc16ba4591ed56c2f436c99d
+    GuidInternal: 
+    m_lastTime: -8585873332041883105
+    List:
+    - name: MX_Play_Base
+      guid: 870eb1a1f8508c4eb0aa1cd05914e89c
+      id: 2849745801
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: MX_Play_Base
+        ObjectType: 3
+      Path: Default Work Unit\Music\MX_Play_Base
+      maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
   RtpcWwu:
@@ -257,5 +452,7 @@ MonoBehaviour:
   - /GJL_WwiseProject
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
+  - /GJL_WwiseProject/Events/Default Work Unit/Ambience
+  - /GJL_WwiseProject/Events/Default Work Unit/Interactions
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

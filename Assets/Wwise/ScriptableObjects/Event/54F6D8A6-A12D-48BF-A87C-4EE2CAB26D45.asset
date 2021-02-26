@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f21b4900e20d14ca228c4d4c9df5c2, type: 3}
+  m_Name: 54F6D8A6-A12D-48BF-A87C-4EE2CAB26D45
+  m_EditorClassIdentifier: 
+  objectName: Start_Washing_Machine_AMB
+  id: 3630086782
+  guid: 54F6D8A6-A12D-48BF-A87C-4EE2CAB26D45

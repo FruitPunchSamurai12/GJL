@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cry : Ability
 {
+    public AK.Wwise.Event BabyCrying;
     bool isCrying = false;
     [SerializeField] float cryRange = 15f;
     //[SerializeField] GameObject cursor;
@@ -34,6 +35,7 @@ public class Cry : Ability
                 foreach (var ai in enemies)
                 {
                     ai.BabyCrying(transform.position, cryRange);
+                    BabyCrying.Post(gameObject);
                 }
             }
             else
