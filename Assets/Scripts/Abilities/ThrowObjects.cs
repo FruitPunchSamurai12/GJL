@@ -7,6 +7,7 @@ public class ThrowObjects : Ability
     [SerializeField] float throwMinRange = 5f;
     [SerializeField] float throwMaxRange = 20f;
     [SerializeField] float chargeDuration = 2f;
+    [SerializeField] float throwTime = 0.5f;
 
     float chargeTimer = 0;
     float currentThrowRange;
@@ -22,19 +23,32 @@ public class ThrowObjects : Ability
     private void Update()
     {
         if(Using)
-        {
-            Vector3 mousePos = cam.ScreenToWorldPoint(Controller.Instance.MousePosition);
+        {            
+            //Vector3 mousePos = Controller.Instance.MousePosition;          
+
+            
             Ray camRay = cam.ScreenPointToRay(Controller.Instance.MousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(camRay,out hit,100f,raycastLayer))
+            if(Physics.Raycast(camRay,out hit,500f,raycastLayer))
             {
-                Vector3 origin = new Vector3(_objectToThrow.transform.position.x,hit.point.y, _objectToThrow.transform.position.z);
-                Vector3 directionalVector = hit.point - origin;
-                Vector3 point = directionalVector.magnitude < currentThrowRange ? hit.point : directionalVector.normalized * currentThrowRange;
+
+                Vector2 mousePos = (Vector2)Camera.main.ScreenToViewportPoint(Controller.Instance.MousePosition);
+                Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+                Vector2 lookDirection = mousePos - positionOnScreen;
+                float targetAngle = Mathf.Atan2(lookDirection.x, lookDirection.y) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                _objectToThrow.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                //new Vector3(_objectToThrow.transform.position.x,hit.point.y, _objectToThrow.transform.position.z);
+                //Vector3 directionalVector = Vector3.ClampMagnitude(mousePoint - origin,currentThrowRange);
+                Vector3 point = transform.position+ transform.forward*currentThrowRange;
+                Debug.Log("point " + point);
+                Debug.Log("pos " + transform.position);
+                //Vector3 point = directionalVector.magnitude < currentThrowRange ? hit.point : directionalVector.normalized * currentThrowRange;
                 cursor.SetActive(true);
+                //cursor.transform.position = point;
                 cursor.transform.position = point + Vector3.up * 0.1f;
 
-                Vector3 v = CalculateVelocity(point, _objectToThrow.transform.position, 1f);
+                Vector3 v = CalculateVelocity(point, _objectToThrow.transform.position, throwTime);
                 if(startCharging)
                 {
                     if(Controller.Instance.LeftClickHold)
@@ -66,16 +80,22 @@ public class ThrowObjects : Ability
         }
     }
 
+    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
     public void PickedUpObjectToThrow(Throwable objToThrow)
     {
         _objectToThrow = objToThrow;
         Debug.Log("ability armed");
     }
 
-    protected override void OnTryUnuse()
+    public override void OnTryUnuse()
     {
         Using = false;
         cursor.SetActive(false);
+        cursor.transform.localPosition = Vector3.zero;
         character.RestrictMovement = false;
     }
 
@@ -87,6 +107,7 @@ public class ThrowObjects : Ability
             startCharging = false;
             chargeTimer = 0;
             character.RestrictMovement = true;
+            currentThrowRange = throwMinRange;
         }
     }
 

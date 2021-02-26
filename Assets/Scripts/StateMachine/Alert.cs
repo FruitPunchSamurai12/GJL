@@ -12,6 +12,7 @@ public class Alert : IState
     float _idleTimer = 0;
     float _totalTimer = 0;
     bool justEntered = true;
+    float _moveSpeed;
     public Alert(NPC ai, NavMeshAgent agent, float searchDistance, float searchDuration, float idleTime,float moveSpeed)
     {
         _ai = ai;
@@ -19,13 +20,14 @@ public class Alert : IState
         _searchDistance = searchDistance;
         _searchDuration = searchDuration;
         _idleTime = idleTime;
-        _navMeshAgent.speed = moveSpeed;
+        _moveSpeed = moveSpeed;
     }
 
 
     public void OnEnter()
     {
         _navMeshAgent.enabled = true;
+        _navMeshAgent.speed = _moveSpeed;
         _idleTimer = 0;
         _totalTimer = 0;
         justEntered = true;

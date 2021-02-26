@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Innocence : Ability
 {
-    protected override void OnTryUnuse()
+    public override void OnTryUnuse()
     {
+        Debug.Log("innocence lost");
         character.InSafeZone = false;
         character.halfSpeed = false;
+        Using = false;
     }
 
     protected override void OnTryUse()
     {
+        if (character.UsingAbility())
+            return;
+        Using = true;
         character.InSafeZone = true;
         character.halfSpeed = true;
     }

@@ -53,7 +53,7 @@ public class StateMachine
     public void Tick()
     {
         var transition = CheckForTransition();
-        Debug.Log("ticking");
+//Debug.Log("ticking");
         if(transition!=null)
         {
             

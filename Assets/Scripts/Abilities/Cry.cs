@@ -8,7 +8,7 @@ public class Cry : Ability
     [SerializeField] float cryRange = 15f;
     //[SerializeField] GameObject cursor;
 
-    protected override void OnTryUnuse()
+    public override void OnTryUnuse()
     {
         isCrying = false;
         Using = false;
@@ -18,8 +18,11 @@ public class Cry : Ability
 
     protected override void OnTryUse()
     {
+        if (character.UsingAbility())
+            return;
         Using = true;
         character.RestrictMovement = true;
+        isCrying = true;
     }
 
     // Update is called once per frame
@@ -36,13 +39,13 @@ public class Cry : Ability
                     ai.BabyCrying(transform.position, cryRange);
                 }
             }
-            else
+           /* else
             {
                 if (Controller.Instance.LeftClick)
                 {
                     isCrying = true;
                 }
-            }
+            }*/
         }
     }
 
