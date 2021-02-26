@@ -20,8 +20,8 @@ public class Controller : MonoBehaviour
         }
     }
 
-    public float Vertical => Input.GetAxis("Vertical");
-    public float Horizontal => Input.GetAxis("Horizontal");
+    public float Vertical => Input.GetAxisRaw("Vertical");
+    public float Horizontal => Input.GetAxisRaw("Horizontal");
 
     public bool LeftClick => Input.GetMouseButtonDown(0);
     public bool LeftClickHold => Input.GetMouseButton(0);
@@ -42,13 +42,10 @@ public class Controller : MonoBehaviour
     public float MouseY => Input.GetAxis("Mouse Y");
     
 
-    public event Action MoveModeTogglePressed;
     public event Action<int> NumericKeyPressed;
     public event Action ToggleKeyPressed;
     private void Update()
     {
-        if (MoveModeTogglePressed != null && Input.GetKeyDown(KeyCode.Minus))
-            MoveModeTogglePressed?.Invoke();
         for (int i = 0; i < 3; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))

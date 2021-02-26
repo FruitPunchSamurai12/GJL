@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PickPocket : Ability
 {
-    public AK.Wwise.Event Pickpocket;
-    protected override void OnTryUnuse()
+    public override void OnTryUnuse()
     {
       
     }
@@ -14,7 +13,6 @@ public class PickPocket : Ability
     {
         var interactable = character.GetInteractable();
         if(interactable!=null)
-        Pickpocket.Post(gameObject);
         {
             var npc = interactable as NPC;
             if(npc!=null)
@@ -22,24 +20,22 @@ public class PickPocket : Ability
                 if(!npc.CanSeeSpecificCharacter(character))
                 {
                     npc.StealItem(character);
+                    Using = true;
+                    StartCoroutine(AnimationDelay());
                 }
                 else
                 {
+                    Using = false;
                     Debug.Log("pickpocket not successful, npc can see you");
                 }
             }
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    IEnumerator AnimationDelay()
     {
-        
+        yield return new WaitForSeconds(0.3f);
+        Using = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

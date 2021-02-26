@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    private CharacterController characterController;
+    private CharacterController _characterController;
     private IMover _mover;
     private Rotator _rotator;
-    private Ability _ability;
+    private Animator _animator;
+    private Ability[] _ability;
     [SerializeField] int characterIndex = 1;
     [SerializeField] LayerMask whatCanWeInteractWith;
     [SerializeField] Transform pickedUpHeavyItemPosition;
@@ -26,31 +27,24 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        characterController = GetComponent<CharacterController>();
+        _characterController = GetComponent<CharacterController>();
         _mover = new WASDMover(this);
         _rotator = new Rotator(this);
-        _ability = GetComponent<Ability>();
+        _animator = GetComponent<Animator>();
+        _ability = GetComponents<Ability>();
     }
 
     public void BackToCheckPoint()
     {
-        characterController.enabled = false;
+        _characterController.enabled = false;
         transform.position = GameManager.Instance.GetCheckpointPosition().position;
-        characterController.enabled = true;
+        foreach (var ability in _ability)
+        {
+            ability.OnTryUnuse();
+        }
+        _characterController.enabled = true;
     }
 
-    private void Start()
-    {
-         Controller.Instance.MoveModeTogglePressed += MoveModeTogglePressed;
-    }
-
-    private void MoveModeTogglePressed()
-    {
-        if (_mover is NavMeshMover)
-            _mover = new WASDMover(this);
-        else
-            _mover = new NavMeshMover(this);
-    }
 
 
     public void Tick()
@@ -61,13 +55,26 @@ public class Character : MonoBehaviour
             _rotator.Tick();
         }
         Interact();
-        _ability.Tick();
+        foreach (var ability in _ability)
+        {
+            ability.Tick();
+        }
         DoMelee();
+        Animate();
     }
 
     void DoMelee()
     {
-        if(!_ability.Using && Controller.Instance.LeftClick)
+        bool usingAbility = false;
+        foreach (var ability in _ability)
+        {
+            if(ability.Using)
+            {
+                usingAbility = true;
+                break;
+            }
+        }
+        if (!usingAbility && Controller.Instance.LeftClick)
         {
             var weapon = pickedUpLightItemPosition.GetComponentInChildren<Melee>();
             if(weapon!=null)
@@ -75,6 +82,14 @@ public class Character : MonoBehaviour
                 weapon.StartSwing();
             }
         }
+    }
+
+    private void Animate()
+    {
+        Vector3 movementInput = new Vector3(Controller.Instance.Horizontal, 0, Controller.Instance.Vertical).normalized;
+        float magnitude = (Controller.Instance.Walk || halfSpeed) ? movementInput.magnitude / 2f : movementInput.magnitude;
+        magnitude = RestrictMovement ? 0 : magnitude;
+        _animator.SetFloat("Speed", magnitude);
     }
 
     void Interact()
@@ -119,10 +134,13 @@ public class Character : MonoBehaviour
         var throwable = pickable as Throwable;
         if (throwable != null)
         {
-            var throwAbility = _ability as ThrowObjects;
-            if (throwAbility != null)
-            {
-                throwAbility.PickedUpObjectToThrow(throwable);
+            foreach (var ability in _ability)
+            {               
+                var throwAbility = ability as ThrowObjects;
+                if (throwAbility != null)
+                {
+                    throwAbility.PickedUpObjectToThrow(throwable);
+                }
             }
         }
     }
@@ -140,6 +158,19 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void Flirt(bool flirtOn)
+    {
+        _animator.SetBool("Flirt", flirtOn);
+        RestrictMovement = flirtOn;
+        if (flirtOn)
+        {
+            InSafeZone = true;
+        }
+        else
+        {
+            LeaveSafeZoneAfterDelay(2f);
+        }
+    }
 
     public void SetInteractable(IInteractable interactable)
     {
@@ -159,8 +190,15 @@ public class Character : MonoBehaviour
         InSafeZone = false;
     }
 
-    private void OnDestroy()
+    public bool UsingAbility()
     {
-        Controller.Instance.MoveModeTogglePressed -= MoveModeTogglePressed;
+        foreach (var ability in _ability)
+        {
+            if (ability.Using)
+                return true;
+        }
+        return false;
     }
+
+
 }

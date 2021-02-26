@@ -167,17 +167,17 @@ public class NPC : MonoBehaviour,IInteractable
     public void Interact(Character character)
     {
         Debug.Log("interacting");
-        if (CanSeeSpecificCharacter(character))
-            return;
+        
         if (!chitChatting)
         {
+            if (CanSeeSpecificCharacter(character))
+            return;
             transform.LookAt(character.transform.position);
             character.transform.LookAt(transform.position);
             Target = character.transform.position + character.transform.forward * 2f;
             chitChatting = true;
-            character.RestrictMovement = true;
+            character.Flirt(true);
             characterTalkingWith = character;
-            character.InSafeZone = true;
         }
         else
         {
@@ -204,8 +204,7 @@ public class NPC : MonoBehaviour,IInteractable
         if (characterTalkingWith != null)
         {
             chitChatting = false;
-            characterTalkingWith.RestrictMovement = false;
-            characterTalkingWith.LeaveSafeZoneAfterDelay(2f);
+            characterTalkingWith.Flirt(false);
             characterTalkingWith = null;
         }
     }

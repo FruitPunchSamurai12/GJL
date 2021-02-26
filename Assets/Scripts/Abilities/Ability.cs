@@ -6,11 +6,14 @@ public abstract class Ability:MonoBehaviour
     [SerializeField]
     [Range(1, 2)]
     int abilityNumber = 1;
+    [SerializeField] protected string animationBool;
+    protected Animator animator;
     public bool Using { get; protected set; }
     protected Character character;
     private void Awake()
     {
         character = GetComponent<Character>();
+        animator = GetComponent<Animator>();
     }
 
     public void Tick()
@@ -21,10 +24,11 @@ public abstract class Ability:MonoBehaviour
             if (!Using)
                 OnTryUse();
             else
-                OnTryUnuse();
+                OnTryUnuse();           
         }
+        animator.SetBool(animationBool, Using);
     }
 
     protected abstract void OnTryUse();
-    protected abstract void OnTryUnuse();
+    public abstract void OnTryUnuse();
 }

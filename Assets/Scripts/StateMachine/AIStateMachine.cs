@@ -68,7 +68,9 @@ public class AIStateMachine : MonoBehaviour
         _stateMachine.AddTransition(talk, sus, _ai.HeardSomething);
         _stateMachine.AddTransition(talk, sus, _ai.StoppedChitChatting);
         _stateMachine.AddTransition(talk, alert, _ai.CanSeeKnockedOutNPCs);
-        _stateMachine.AddTransition(chase, alert, chase.LostCharacter);
+        _stateMachine.AddTransition(reset, sus, _ai.CanSeeCharacter);
+        _stateMachine.AddTransition(reset, sus, _ai.HeardSomething);
+        _stateMachine.AddTransition(reset, talk, _ai.IsChitChatting);
         _stateMachine.AddAnyTransition(stun, _ai.IsStunned);
 
 
@@ -95,11 +97,13 @@ public class AIStateMachine : MonoBehaviour
             _stateMachine.AddTransition(reset, sentry, _ai.ReachedDestination);
             _stateMachine.SetState(sentry);
         }
+        _stateMachine.AddTransition(chase, alert, chase.LostCharacter);
     }
 
     private void Update()
     {
         _stateMachine.Tick();
+       
     }
 
 }
