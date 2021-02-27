@@ -178,7 +178,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Interactions
     guid: 2479bdd108434642b0fad18f4a0971b5
     GuidInternal: 
-    m_lastTime: -8585871682898891622
+    m_lastTime: -8585871544322448159
     List:
     - name: Play_Baby_Crying
       guid: 35a91f460e103146aa65f113a55c8e47
@@ -362,6 +362,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.427528
       minDuration: 0.797019
+    - name: Play_UI_Click
+      guid: 68e618a2dc7f47428d4546de4f059364
+      id: 1749424733
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_UI_Click
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_UI_Click
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_UI_Hover
+      guid: fc3bd456df23d248add4e5fa41c54592
+      id: 1339559671
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_UI_Hover
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_UI_Hover
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
   - PhysicalPath: Events\Music.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -371,7 +399,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Music
     guid: c57d352dfc16ba4591ed56c2f436c99d
     GuidInternal: 
-    m_lastTime: -8585871685123854134
+    m_lastTime: -8585871558069166895
     List:
     - name: MX_Play_Alert
       guid: 25796ec9e64cd149a60eb3ce42a2fc75
@@ -384,20 +412,6 @@ MonoBehaviour:
       - ElementName: MX_Play_Alert
         ObjectType: 3
       Path: Default Work Unit\Music\MX_Play_Alert
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: MX_Play_Base
-      guid: 870eb1a1f8508c4eb0aa1cd05914e89c
-      id: 2849745801
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 12
-      - ElementName: MX_Play_Base
-        ObjectType: 3
-      Path: Default Work Unit\Music\MX_Play_Base
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -468,6 +482,20 @@ MonoBehaviour:
       - ElementName: MX_Play_Sus
         ObjectType: 3
       Path: Default Work Unit\Music\MX_Play_Sus
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MX_setState
+      guid: 870eb1a1f8508c4eb0aa1cd05914e89c
+      id: 1128714786
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: MX_setState
+        ObjectType: 3
+      Path: Default Work Unit\Music\MX_setState
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -708,6 +736,6 @@ MonoBehaviour:
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
   - /GJL_WwiseProject/Events/Default Work Unit/Ambience
-  - /GJL_WwiseProject/Events/Default Work Unit/Music
+  - /GJL_WwiseProject/Events/Default Work Unit/Interactions
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

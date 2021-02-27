@@ -1,11 +1,45 @@
 Event	ID	Name			Wwise Object Path	Notes
-	216919736	sx_amb_trees_loop			\Default Work Unit\sx_amb_trees_loop	
+	1339559671	Play_UI_Hover			\Default Work Unit\Interactions\Play_UI_Hover	
+	1660008929	Play_Door_Open			\Default Work Unit\Interactions\Play_Door_Open	
+	1684266438	Play_Pickpocket_Keys			\Default Work Unit\Interactions\Play_Pickpocket_Keys	
+	2652605998	Play_Item_Pickup			\Default Work Unit\Interactions\Play_Item_Pickup	
+	3065584282	Play_Item_Throw			\Default Work Unit\Interactions\Play_Item_Throw	
+	3194767864	Start_Forest_Ambience			\Default Work Unit\Ambience\Start_Forest_Ambience	
+	3248596991	Start_Fountain_AMB			\Default Work Unit\Ambience\Start_Fountain_AMB	
+	3278353889	Play_Item_Throw_Charge			\Default Work Unit\Interactions\Play_Item_Throw_Charge	
+	3322761575	Start_Leaves_AMB			\Default Work Unit\Ambience\Start_Leaves_AMB	
+	3630086782	Start_Washing_Machine_AMB			\Default Work Unit\Ambience\Start_Washing_Machine_AMB	
+	4250118861	Play_Item_Putdown			\Default Work Unit\Interactions\Play_Item_Putdown	
+	4278971852	Start_Area_AMB			\Default Work Unit\Ambience\Start_Area_AMB	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	82314786	sfx_amb_trees_birds-005	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-005_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-005		1200064
-	401379032	sfx_amb_trees_birds-004	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-004_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-004		1344064
-	483575577	sfx_amb_trees_birds-003	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-003_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-003		1296064
-	489240032	sfx_amb_trees_birds-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-002_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-002		1149204
-	938649116	sfx_amb_trees_02	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_02_64842ACC.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sfx_amb_trees_02		6720064
-	946402218	sfx_amb_trees_birds-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-001_569BE4A2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_trees_loop\sx_amb_trees_birds\sfx_amb_trees_birds-001		1296064
+	23162962	sx_sfx_throw_main	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_sfx_throw_main_A722AD7A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\SX_sfx_item_throw\sx_sfx_throw_main		101104
+	28092808	sx_amb_stream	D:\GJL_WwiseProject\.cache\Windows\SFX\MX_AMB_Steam_A224571F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_stream		1912100
+	37969230	sx_ui_buttons_click_regular	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_ui_buttons_click_regular_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_buttons_click_regular		88264
+	62902393	sx_amb_leaves_rustling-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_leaves_rustling-001_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-001		672060
+	82314786	sfx_amb_trees_birds-005	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-005_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience_Mixer\ForestAmb\sx_amb_trees_birds\sfx_amb_trees_birds-005		2205064
+	105727127	sx_sfx_door_open	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_door_open_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Interactions\SX_sfx_door\sx_sfx_door_open		264660
+	168640584	sx_amb_wind_passbys-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_wind_passbys-002_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_wind_passbys\sx_amb_wind_passbys-002		392062
+	203145624	sx_amb_leaves_rustling-005	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_leaves_rustling-005_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-005		801280
+	274142343	sx_sfx_pick_up-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_ux_pick_up-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_pickup\sx_sfx_pick_up-002		93872
+	367184694	sx_sfx_throw_charge	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_sfx_throw_charge_C40F52F4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\SX_sfx_item_throw_charge\sx_sfx_throw_charge		253184
+	401379032	sfx_amb_trees_birds-004	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-004_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience_Mixer\ForestAmb\sx_amb_trees_birds\sfx_amb_trees_birds-004		2469664
+	424676925	sx_sfx_pick_up-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_ux_pick_up-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_pickup\sx_sfx_pick_up-001		73436
+	475112875	sx_amb_wind_passbys-003	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_wind_passbys-003_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_wind_passbys\sx_amb_wind_passbys-003		392062
+	483575577	sfx_amb_trees_birds-003	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-003_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience_Mixer\ForestAmb\sx_amb_trees_birds\sfx_amb_trees_birds-003		2381464
+	489240032	sfx_amb_trees_birds-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience_Mixer\ForestAmb\sx_amb_trees_birds\sfx_amb_trees_birds-002		2111616
+	568326227	sx_amb_wind_passbys-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_wind_passbys-001_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_wind_passbys\sx_amb_wind_passbys-001		420062
+	594631739	sx_ui_main_start_button	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_ui_main_start_button_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_main_start_button		352864
+	635072610	sfx_pickpocket_key	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_pickpocket_key_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Interactions\SX_sfx_keys\sfx_pickpocket_key		188712
+	642453842	sx_ui_buttons_hover	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_ui_buttons_hover_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_buttons_hover		88264
+	829987952	sx_amb_leaves_rustling-003	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_leaves_rustling-003_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-003		616060
+	839694517	sx_amb_leaves_rustling-004	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_leaves_rustling-004_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-004		654860
+	934744032	sx_ui_character_switch	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_ui_character_switch_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_character_switch		88264
+	938649116	sx_area_amb	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_02_A224571F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_area_amb		12348064
+	946402218	sfx_amb_trees_birds-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_amb_trees_birds-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\Ambience_Mixer\ForestAmb\sx_amb_trees_birds\sfx_amb_trees_birds-001		2381464
+	968768155	sx_sfx_put_down-001	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_ux_put_down-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_putdown\sx_sfx_put_down-001		67104
+	978539188	sx_ui_buttons_click_main	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_ui_buttons_click_main_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_buttons_click_main		88264
+	986647206	sx_sfx_put_down-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sfx_ux_put_down-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_putdown\sx_sfx_put_down-002		61424
+	1034272133	sx_amb_washing_machine	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_washing_machine_cycle_BEEE7070.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_washing_machine		3360094
+	1034697239	sx_amb_leaves_rustling-002	D:\GJL_WwiseProject\.cache\Windows\SFX\sx_amb_leaves_rustling-002_335E8692.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-002		616060
 

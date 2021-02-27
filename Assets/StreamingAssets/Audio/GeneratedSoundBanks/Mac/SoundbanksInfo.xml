@@ -11,45 +11,218 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2161880781">
+		<SoundBank Id="1355168291" Language="SFX" Hash="2938568991">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3023356346" Language="SFX" Hash="489900501">
+		<SoundBank Id="3023356346" Language="SFX" Hash="1838920111">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Main</ObjectPath>
 			<ShortName>SFX_Main</ShortName>
 			<Path>SFX_Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="216919736" Name="sx_amb_trees_loop" ObjectPath="\Events\Default Work Unit\sx_amb_trees_loop" MaxAttenuation="300.000000" DurationType="Infinite">
-					<IncludedMemoryFiles>
-						<File Id="82314786" Language="SFX">
-							<ShortName>sfx_amb_trees_birds-005.wav</ShortName>
-							<Path>SFX\sfx_amb_trees_birds-005_569BE4A2.wem</Path>
-						</File>
-						<File Id="401379032" Language="SFX">
-							<ShortName>sfx_amb_trees_birds-004.wav</ShortName>
-							<Path>SFX\sfx_amb_trees_birds-004_569BE4A2.wem</Path>
-						</File>
-						<File Id="483575577" Language="SFX">
-							<ShortName>sfx_amb_trees_birds-003.wav</ShortName>
-							<Path>SFX\sfx_amb_trees_birds-003_569BE4A2.wem</Path>
-						</File>
-						<File Id="489240032" Language="SFX">
-							<ShortName>sfx_amb_trees_birds-002.wav</ShortName>
-							<Path>SFX\sfx_amb_trees_birds-002_569BE4A2.wem</Path>
-						</File>
-						<File Id="938649116" Language="SFX">
-							<ShortName>sfx_amb_trees_02.wav</ShortName>
-							<Path>SFX\sfx_amb_trees_02_64842ACC.wem</Path>
-						</File>
-						<File Id="946402218" Language="SFX">
-							<ShortName>sfx_amb_trees_birds-001.wav</ShortName>
-							<Path>SFX\sfx_amb_trees_birds-001_569BE4A2.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
-				</Event>
+				<Event Id="1660008929" Name="Play_Door_Open" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Open" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
+				<Event Id="2652605998" Name="Play_Item_Pickup" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Pickup" DurationType="OneShot" DurationMin="0.392612" DurationMax="0.531792"/>
+				<Event Id="4250118861" Name="Play_Item_Putdown" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Putdown" DurationType="OneShot" DurationMin="0.347854" DurationMax="0.380062"/>
+				<Event Id="3065584282" Name="Play_Item_Throw" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw" DurationType="OneShot" DurationMin="0.572774" DurationMax="0.572774"/>
+				<Event Id="3278353889" Name="Play_Item_Throw_Charge" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw_Charge" DurationType="OneShot" DurationMin="1.434932" DurationMax="1.434932"/>
+				<Event Id="1684266438" Name="Play_Pickpocket_Keys" ObjectPath="\Events\Default Work Unit\Interactions\Play_Pickpocket_Keys" DurationType="OneShot" DurationMin="0.797019" DurationMax="1.427528"/>
+				<Event Id="1339559671" Name="Play_UI_Hover" ObjectPath="\Events\Default Work Unit\Interactions\Play_UI_Hover" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="4278971852" Name="Start_Area_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Area_AMB" DurationType="Infinite"/>
+				<Event Id="3194767864" Name="Start_Forest_Ambience" ObjectPath="\Events\Default Work Unit\Ambience\Start_Forest_Ambience" MaxAttenuation="40.000000" DurationType="Infinite"/>
+				<Event Id="3248596991" Name="Start_Fountain_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Fountain_AMB" MaxAttenuation="20.000000" DurationType="Infinite"/>
+				<Event Id="3322761575" Name="Start_Leaves_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Leaves_AMB" MaxAttenuation="20.000000" DurationType="Infinite"/>
+				<Event Id="3630086782" Name="Start_Washing_Machine_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Washing_Machine_AMB" MaxAttenuation="10.000000" DurationType="Infinite"/>
 			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="23162962" Language="SFX">
+					<ShortName>sx_sfx_throw_main.wav</ShortName>
+					<Path>SFX\sx_sfx_throw_main_A722AD7A.wem</Path>
+				</File>
+				<File Id="28092808" Language="SFX">
+					<ShortName>MX_AMB_Steam.wav</ShortName>
+					<Path>SFX\MX_AMB_Steam_A224571F.wem</Path>
+				</File>
+				<File Id="37969230" Language="SFX">
+					<ShortName>sx_ui_buttons_click_regular.wav</ShortName>
+					<Path>SFX\sx_ui_buttons_click_regular_E5FEFA51.wem</Path>
+				</File>
+				<File Id="62902393" Language="SFX">
+					<ShortName>sx_amb_leaves_rustling-001.wav</ShortName>
+					<Path>SFX\sx_amb_leaves_rustling-001_335E8692.wem</Path>
+				</File>
+				<File Id="82314786" Language="SFX">
+					<ShortName>sfx_amb_trees_birds-005.wav</ShortName>
+					<Path>SFX\sfx_amb_trees_birds-005_E5FEFA51.wem</Path>
+				</File>
+				<File Id="105727127" Language="SFX">
+					<ShortName>sfx_door_open.wav</ShortName>
+					<Path>SFX\sfx_door_open_E5FEFA51.wem</Path>
+				</File>
+				<File Id="168640584" Language="SFX">
+					<ShortName>sx_amb_wind_passbys-002.wav</ShortName>
+					<Path>SFX\sx_amb_wind_passbys-002_335E8692.wem</Path>
+				</File>
+				<File Id="203145624" Language="SFX">
+					<ShortName>sx_amb_leaves_rustling-005.wav</ShortName>
+					<Path>SFX\sx_amb_leaves_rustling-005_335E8692.wem</Path>
+				</File>
+				<File Id="274142343" Language="SFX">
+					<ShortName>sfx_ux_pick_up-002.wav</ShortName>
+					<Path>SFX\sfx_ux_pick_up-002_E5FEFA51.wem</Path>
+				</File>
+				<File Id="367184694" Language="SFX">
+					<ShortName>sx_sfx_throw_charge.wav</ShortName>
+					<Path>SFX\sx_sfx_throw_charge_C40F52F4.wem</Path>
+				</File>
+				<File Id="401379032" Language="SFX">
+					<ShortName>sfx_amb_trees_birds-004.wav</ShortName>
+					<Path>SFX\sfx_amb_trees_birds-004_E5FEFA51.wem</Path>
+				</File>
+				<File Id="424676925" Language="SFX">
+					<ShortName>sfx_ux_pick_up-001.wav</ShortName>
+					<Path>SFX\sfx_ux_pick_up-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="475112875" Language="SFX">
+					<ShortName>sx_amb_wind_passbys-003.wav</ShortName>
+					<Path>SFX\sx_amb_wind_passbys-003_335E8692.wem</Path>
+				</File>
+				<File Id="483575577" Language="SFX">
+					<ShortName>sfx_amb_trees_birds-003.wav</ShortName>
+					<Path>SFX\sfx_amb_trees_birds-003_E5FEFA51.wem</Path>
+				</File>
+				<File Id="489240032" Language="SFX">
+					<ShortName>sfx_amb_trees_birds-002.wav</ShortName>
+					<Path>SFX\sfx_amb_trees_birds-002_E5FEFA51.wem</Path>
+				</File>
+				<File Id="568326227" Language="SFX">
+					<ShortName>sx_amb_wind_passbys-001.wav</ShortName>
+					<Path>SFX\sx_amb_wind_passbys-001_335E8692.wem</Path>
+				</File>
+				<File Id="594631739" Language="SFX">
+					<ShortName>sx_ui_main_start_button.wav</ShortName>
+					<Path>SFX\sx_ui_main_start_button_E5FEFA51.wem</Path>
+				</File>
+				<File Id="635072610" Language="SFX">
+					<ShortName>sfx_pickpocket_key.wav</ShortName>
+					<Path>SFX\sfx_pickpocket_key_E5FEFA51.wem</Path>
+				</File>
+				<File Id="642453842" Language="SFX">
+					<ShortName>sx_ui_buttons_hover.wav</ShortName>
+					<Path>SFX\sx_ui_buttons_hover_E5FEFA51.wem</Path>
+				</File>
+				<File Id="829987952" Language="SFX">
+					<ShortName>sx_amb_leaves_rustling-003.wav</ShortName>
+					<Path>SFX\sx_amb_leaves_rustling-003_335E8692.wem</Path>
+				</File>
+				<File Id="839694517" Language="SFX">
+					<ShortName>sx_amb_leaves_rustling-004.wav</ShortName>
+					<Path>SFX\sx_amb_leaves_rustling-004_335E8692.wem</Path>
+				</File>
+				<File Id="934744032" Language="SFX">
+					<ShortName>sx_ui_character_switch.wav</ShortName>
+					<Path>SFX\sx_ui_character_switch_E5FEFA51.wem</Path>
+				</File>
+				<File Id="938649116" Language="SFX">
+					<ShortName>sfx_amb_trees_02.wav</ShortName>
+					<Path>SFX\sfx_amb_trees_02_A224571F.wem</Path>
+				</File>
+				<File Id="946402218" Language="SFX">
+					<ShortName>sfx_amb_trees_birds-001.wav</ShortName>
+					<Path>SFX\sfx_amb_trees_birds-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="968768155" Language="SFX">
+					<ShortName>sfx_ux_put_down-001.wav</ShortName>
+					<Path>SFX\sfx_ux_put_down-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="978539188" Language="SFX">
+					<ShortName>sx_ui_buttons_click_main.wav</ShortName>
+					<Path>SFX\sx_ui_buttons_click_main_E5FEFA51.wem</Path>
+				</File>
+				<File Id="986647206" Language="SFX">
+					<ShortName>sfx_ux_put_down-002.wav</ShortName>
+					<Path>SFX\sfx_ux_put_down-002_E5FEFA51.wem</Path>
+				</File>
+				<File Id="1034272133" Language="SFX">
+					<ShortName>sx_amb_washing_machine_cycle.wav</ShortName>
+					<Path>SFX\sx_amb_washing_machine_cycle_BEEE7070.wem</Path>
+				</File>
+				<File Id="1034697239" Language="SFX">
+					<ShortName>sx_amb_leaves_rustling-002.wav</ShortName>
+					<Path>SFX\sx_amb_leaves_rustling-002_335E8692.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3991942870" Language="SFX" Hash="591781312">
+			<ObjectPath>\SoundBanks\Default Work Unit\Music</ObjectPath>
+			<ShortName>Music</ShortName>
+			<Path>Music.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2749816896" Name="MX_Play_Base_Baby" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Base_Baby" DurationType="Infinite">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1543097833" Name="Baby" ObjectPath="\States\Default Work Unit\Current_Character\Baby"/>
+						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3691357135" Name="MX_Play_Base_Dad" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Base_Dad" DurationType="Infinite">
+					<ActionSetState>
+						<ActionSetStateEntry Id="311764516" Name="Dad" ObjectPath="\States\Default Work Unit\Current_Character\Dad"/>
+						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3656668937" Name="MX_Play_Base_Mom" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Base_Mom" DurationType="Infinite">
+					<ActionSetState>
+						<ActionSetStateEntry Id="1082004790" Name="Mom" ObjectPath="\States\Default Work Unit\Current_Character\Mom"/>
+						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1128714786" Name="MX_setState" ObjectPath="\Events\Default Work Unit\Music\MX_setState" DurationType="Infinite"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="138877302" Language="SFX">
+					<ShortName>base_stem.wav</ShortName>
+					<Path>SFX\base_stem_A224571F.wem</Path>
+				</File>
+				<File Id="153803959" Language="SFX">
+					<ShortName>main_theme.wav</ShortName>
+					<Path>SFX\main_theme_A224571F.wem</Path>
+				</File>
+				<File Id="227360718" Language="SFX">
+					<ShortName>inside_stem.wav</ShortName>
+					<Path>SFX\inside_stem_A224571F.wem</Path>
+				</File>
+				<File Id="681976144" Language="SFX">
+					<ShortName>mx_sus_stem.wav</ShortName>
+					<Path>SFX\mx_sus_stem_A224571F.wem</Path>
+				</File>
+				<File Id="973297071" Language="SFX">
+					<ShortName>alert_stem.wav</ShortName>
+					<Path>SFX\alert_stem_A224571F.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+			<StateGroups>
+				<StateGroup Id="311764516" Name="Dad" ObjectPath="\States\Default Work Unit\Current_Character\Dad">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="1082004790" Name="Mom" ObjectPath="\States\Default Work Unit\Current_Character\Mom">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="1543097833" Name="Baby" ObjectPath="\States\Default Work Unit\Current_Character\Baby">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2721494480" Name="Game_States" ObjectPath="\States\Default Work Unit\Game_States">
+					<States>
+						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Game_States\None"/>
+						<State Id="721787521" Name="Alert" ObjectPath="\States\Default Work Unit\Game_States\Alert"/>
+						<State Id="3270337040" Name="Suspicious" ObjectPath="\States\Default Work Unit\Game_States\Suspicious"/>
+						<State Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
+						<State Id="2563422499" Name="Entered_House" ObjectPath="\States\Default Work Unit\Game_States\Entered_House"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
 </SoundBanksInfo>
