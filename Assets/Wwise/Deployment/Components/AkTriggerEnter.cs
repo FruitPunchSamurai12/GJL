@@ -7,6 +7,7 @@
 public class AkTriggerEnter : AkTriggerBase
 {
 	public UnityEngine.GameObject triggerObject = null;
+	
 
 	private void OnTriggerEnter(UnityEngine.Collider in_other)
 	{
