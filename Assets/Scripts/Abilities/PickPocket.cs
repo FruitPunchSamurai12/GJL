@@ -9,7 +9,7 @@ public class PickPocket : Ability
       
     }
 
-    protected override void OnTryUse()
+    public override void OnTryUse()
     {
         var interactable = character.GetInteractable();
         if(interactable!=null)

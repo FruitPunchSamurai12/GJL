@@ -15,6 +15,11 @@ public class NPC : MonoBehaviour,IInteractable
     [SerializeField] LayerMask sightLayer;
     [SerializeField] Transform eyes;
     [SerializeField] bool hasItemToSteal;
+    [SerializeField] Material calm;
+    [SerializeField] Material sus;
+    [SerializeField] Material alert;
+
+    private Animator _animator;
 
     float timeCharacterInSight = 0;
     int audioCuePriority = 0;
@@ -40,8 +45,12 @@ public class NPC : MonoBehaviour,IInteractable
     // Start is called before the first frame update
     void Start()
     {
-        characters = GameManager.Instance.GetAllCharacters();
         onNPCKnockedOut += NPCKnockedOut;
+    }
+
+    public void CacheCharacters(List<Character> allcharacters)
+    {
+        characters = allcharacters;
     }
 
     public void HearSound(MakeSound makeSound)
@@ -231,5 +240,32 @@ public class NPC : MonoBehaviour,IInteractable
     void NPCKnockedOut(NPC npc)
     {
         unseenKnockedOutNPCs.Add(npc);
+    }
+
+    public void SetAnimatorBool(string animation,bool activate)
+    {
+        if (_animator == null)
+            _animator = GetComponent<Animator>();
+        _animator.SetBool(animation, activate);
+    }
+
+    public void ChangeMaterial(int materialType)
+    {
+        var meshes = GetComponentsInChildren<MeshRenderer>();
+        foreach (var mesh in meshes)
+        {
+            if (materialType == 1)
+            {
+                mesh.material = calm;
+            }
+            else if (materialType == 2)
+            {
+                mesh.material = sus;
+            }
+            else
+            {
+                mesh.material = alert;
+            }
+        }
     }
 }

@@ -17,7 +17,7 @@ public class Cry : Ability
         //cursor.SetActive(false);
     }
 
-    protected override void OnTryUse()
+    public override void OnTryUse()
     {
         if (character.UsingAbility())
             return;

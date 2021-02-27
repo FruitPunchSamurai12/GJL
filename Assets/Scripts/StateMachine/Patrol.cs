@@ -24,6 +24,8 @@ public class Patrol : IState
         _ai.ResetHearing();
         _navMeshAgent.enabled = true;
         _navMeshAgent.isStopped = false;
+        _ai.SetAnimatorBool("Move", true);
+        _ai.ChangeMaterial(1);
     }
 
     public void OnExit()

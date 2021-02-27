@@ -100,7 +100,7 @@ public class ThrowObjects : Ability
         character.RestrictMovement = false;
     }
 
-    protected override void OnTryUse()
+    public override void OnTryUse()
     {
         if(_objectToThrow!=null)
         {

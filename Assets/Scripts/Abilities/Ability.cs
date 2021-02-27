@@ -29,6 +29,6 @@ public abstract class Ability:MonoBehaviour
         animator.SetBool(animationBool, Using);
     }
 
-    protected abstract void OnTryUse();
+    public abstract void OnTryUse();
     public abstract void OnTryUnuse();
 }

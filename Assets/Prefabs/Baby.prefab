@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7794958500278367567}
   - component: {fileID: 994092000}
   - component: {fileID: 994092005}
+  - component: {fileID: 6392733962945194442}
+  - component: {fileID: 3116059284952489346}
   m_Layer: 9
   m_Name: Baby
   m_TagString: Untagged
@@ -68,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efe5c600c3a5d34a8056565d9cd2b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterIndex: 1
+  characterIndex: 3
   whatCanWeInteractWith:
     serializedVersion: 2
     m_Bits: 0
@@ -125,6 +127,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6392733962945194442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252945569734948689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db48c86cd01b8642ad30cccaafa902f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passiveName: Small (passive)
+  passiveTooltip: Able to hide behind half-cover as if full-cover.
+  distractionName: Cry (Distraction)
+  distractionTooltip: Wail in distress to draw enemies to your location. Ends on
+    deactivation.
+  abilityName: Aura of Innocence
+  abilityTooltip: Toggle ability. Avoid enemy detection outdoors but move at half
+    the speed.
+--- !u!65 &3116059284952489346
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252945569734948689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.8, z: 1}
+  m_Center: {x: 0, y: -0.030333877, z: 0}
 --- !u!1 &3252945570460042820
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,12 +6,14 @@ using Cinemachine;
 
 public class Player : MonoBehaviour
 {
+    public event Action<CharacterHUDInformation> OnCharacterChanged;
     private List<Character> allCharacters = new List<Character>();
     private int currentCharacterIndex = 0;
     private CameraController cameraController;
     void Awake()
     {
-        allCharacters = FindObjectsOfType<Character>().ToList();
+        allCharacters = FindObjectsOfType<Character>().OrderBy(t=>t.CharacterIndex).ToList();
+        
         Controller.Instance.NumericKeyPressed += ChangeCurrentCharacter;
         Controller.Instance.ToggleKeyPressed += ToggleCharacter;
         cameraController = GetComponent<CameraController>();
@@ -30,20 +32,26 @@ public class Player : MonoBehaviour
 
     void ChangeCurrentCharacter(int index)
     {
-        if (!GameManager.Instance.CanSwitchCharacter(allCharacters[currentCharacterIndex].CharacterIndex))
+        if (!GameManager.Instance.CanSwitchCharacter(currentCharacterIndex))
+        {            
             return;
+        }
         if (index < allCharacters.Count)
             currentCharacterIndex = index;
+        OnCharacterChanged?.Invoke(allCharacters[currentCharacterIndex].GetComponent<CharacterHUDInformation>());
         cameraController.SetCameraTarget(GetCurrentCharacterTransform());
-    } 
+    }
 
     void ToggleCharacter()
     {
-        if (!GameManager.Instance.CanSwitchCharacter(allCharacters[currentCharacterIndex].CharacterIndex))
+        if (!GameManager.Instance.CanSwitchCharacter(currentCharacterIndex))
+        {            
             return;
+        }
         currentCharacterIndex++;
         if (currentCharacterIndex >= allCharacters.Count)
             currentCharacterIndex = 0;
+        OnCharacterChanged?.Invoke(allCharacters[currentCharacterIndex].GetComponent<CharacterHUDInformation>());
         cameraController.SetCameraTarget(GetCurrentCharacterTransform());
     }
 
@@ -65,4 +73,47 @@ public class Player : MonoBehaviour
     }
 
     public Transform GetCurrentCharacterTransform() { return allCharacters[currentCharacterIndex].transform; }
+
+    public Transform GetSpecificCharacterTransform(int index)
+    {
+        if (index < allCharacters.Count)
+            return allCharacters[index].transform;
+        return null;
+    }
+
+    //this is ugly af
+    //sorry to whoever is reading this
+    public void HandleAbilityClicked(AbilityType type)
+    {
+        if(type==AbilityType.distraction)
+        {
+            if(currentCharacterIndex==0)
+            {
+                allCharacters[currentCharacterIndex].DadDistraction();
+            }
+            else if(currentCharacterIndex==1)
+            {
+                allCharacters[currentCharacterIndex].MomDistraction();
+            }
+            else
+            {
+                allCharacters[currentCharacterIndex].BabyCry();
+            }
+        }
+        else if(type == AbilityType.ability)
+        {
+            if (currentCharacterIndex == 0)
+            {
+                allCharacters[currentCharacterIndex].DadMelee();
+            }
+            else if (currentCharacterIndex == 1)
+            {
+                allCharacters[currentCharacterIndex].MomPickpocket();
+            }
+            else
+            {
+                allCharacters[currentCharacterIndex].BabyInnocence();
+            }
+        }
+    }
 }

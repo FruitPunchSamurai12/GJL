@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 8232987474828769380}
   - component: {fileID: 8969853951094288602}
   - component: {fileID: 1060220396}
+  - component: {fileID: -4404032677900050649}
   m_Layer: 9
   m_Name: Mom
   m_TagString: Untagged
@@ -321,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efe5c600c3a5d34a8056565d9cd2b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterIndex: 1
+  characterIndex: 2
   whatCanWeInteractWith:
     serializedVersion: 2
     m_Bits: 2304
@@ -363,3 +364,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-4404032677900050649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232987474828769381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db48c86cd01b8642ad30cccaafa902f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passiveName: Lightfoot (passive)
+  passiveTooltip: Move silenty at normal speed.
+  distractionName: Flirt (Distraction)
+  distractionTooltip: "Tease an enemy with sultry words. Ends on deactivation. Enemy
+    goes into \u201CSuspicious\u201D immediately afterwards."
+  abilityName: Pickpocket
+  abilityTooltip: Steal an item from an enemy.

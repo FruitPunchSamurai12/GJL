@@ -84,6 +84,8 @@ public class Character : MonoBehaviour
         }
     }
 
+   
+
     private void Animate()
     {
         Vector3 movementInput = new Vector3(Controller.Instance.Horizontal, 0, Controller.Instance.Vertical).normalized;
@@ -127,7 +129,7 @@ public class Character : MonoBehaviour
     public void PickUpItem(IPickable pickable)
     {
         DropHeldItem();
-
+        GameEvents.Instance.ChangedEquippedItem(true);
         pickable.transform.SetParent(pickable.Heavy?pickedUpHeavyItemPosition:pickedUpLightItemPosition);
         pickable.transform.localPosition = Vector3.zero;
         pickable.transform.localRotation = Quaternion.identity;
@@ -149,12 +151,18 @@ public class Character : MonoBehaviour
     {
         var item = pickedUpLightItemPosition.GetComponentInChildren<IPickable>();
         if (item != null)
+        {
             item.Drop();
+            GameEvents.Instance.ChangedEquippedItem(false);
+        }
         else
         {
             item = pickedUpHeavyItemPosition.GetComponentInChildren<IPickable>();
             if (item != null)
+            {
                 item.Drop();
+                GameEvents.Instance.ChangedEquippedItem(false);
+            }
         }
     }
 
@@ -200,5 +208,85 @@ public class Character : MonoBehaviour
         return false;
     }
 
+    //crappy functions for use for the hotbar
 
+    public void DadDistraction()
+    {
+        if(_ability[0].Using)
+        {
+            _ability[0].OnTryUnuse();
+        }
+        else
+        {
+            _ability[0].OnTryUnuse();
+        }
+    }
+
+    public void DadMelee()
+    {
+        bool usingAbility = false;
+        foreach (var ability in _ability)
+        {
+            if (ability.Using)
+            {
+                usingAbility = true;
+                break;
+            }
+        }
+        if (!usingAbility)
+        {
+            var weapon = pickedUpLightItemPosition.GetComponentInChildren<Melee>();
+            if (weapon != null)
+            {
+                weapon.StartSwing();
+            }
+        }
+    }
+
+    public void MomDistraction()
+    {
+        if(interactableInFrontOfCharacter!=null)
+        {
+            var npc = interactableInFrontOfCharacter as NPC;
+            if (npc != null)
+            {
+                npc.Interact(this);
+            }
+        }
+    }
+
+    public void MomPickpocket()
+    {
+        _ability[0].OnTryUse();
+    }
+
+    public void BabyCry()
+    {
+        foreach (var ability in _ability)
+        {
+            var cry = ability as Cry;
+            if(cry!=null)
+            {
+                if (cry.Using)
+                    cry.OnTryUnuse();
+                else
+                    cry.OnTryUse();
+            }
+        }
+    }
+
+    public void BabyInnocence()
+    {
+        foreach (var ability in _ability)
+        {
+            var innocence = ability as Innocence;
+            if (innocence != null)
+            {
+                if (innocence.Using)
+                    innocence.OnTryUnuse();
+                else
+                    innocence.OnTryUse();
+            }
+        }
+    }
 }

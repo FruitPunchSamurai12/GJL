@@ -19,13 +19,21 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            allCharacters = FindObjectsOfType<Character>().ToList();
-            allEnemies = FindObjectsOfType<NPC>().ToList();
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public void InitializeGame()
+    {
+        allCharacters = FindObjectsOfType<Character>().ToList();
+        allEnemies = FindObjectsOfType<NPC>().ToList();
+        foreach (var enemy in allEnemies)
+        {
+            enemy.CacheCharacters(allCharacters);
         }
     }
 
@@ -40,18 +48,15 @@ public class GameManager : MonoBehaviour
     }
 
     public bool CanSwitchCharacter(int characterIndex)
-    {
+    {       
         if(characterIndex< chasedCharacters.Length)
-        {
+        {          
             return !chasedCharacters[characterIndex];
         }
         return false;
     }
 
-    public List<Character> GetAllCharacters()
-    {
-        return allCharacters;
-    }
+
    
     public List<NPC> GetAllEnemies()
     {

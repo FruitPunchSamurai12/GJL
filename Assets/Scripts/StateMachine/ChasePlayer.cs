@@ -18,6 +18,7 @@ public class ChasePlayer : IState
 
     public void OnEnter()
     {
+        GameEvents.Instance.FireAIEvent(AIStateEvents.enterAlert);
         _navMeshAgent.enabled = true;
         _navMeshAgent.isStopped = false;
         _navMeshAgent.speed = _moveSpeed;
@@ -28,6 +29,7 @@ public class ChasePlayer : IState
 
     public void OnExit()
     {
+        GameEvents.Instance.FireAIEvent(AIStateEvents.exitAlert);
         _ai.IgnoreSounds = false;
         GameManager.Instance.CharacterIsNoLongerBeingChased(_ai.TargetCharacter);
     }

@@ -23,6 +23,9 @@ public class Reset:IState
         _navMeshAgent.enabled = true;
         _navMeshAgent.isStopped = false;
         _ai.Target = startPosition;
+        _ai.SetAnimatorBool("Move", true);
+        _ai.SetAnimatorBool("Alert", false);
+        _ai.ChangeMaterial(1);
     }
 
     public void OnExit()

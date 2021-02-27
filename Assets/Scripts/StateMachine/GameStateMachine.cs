@@ -67,6 +67,7 @@ public class Play : IState
 {
     public void OnEnter()
     {
+        GameManager.Instance.InitializeGame();
     }
 
     public void OnExit()
@@ -87,7 +88,7 @@ public class LoadLevel : IState
     public void OnEnter()
     {
         _operations.Add(SceneManager.LoadSceneAsync(PlayButton.LevelToLoad));
-        _operations.Add(SceneManager.LoadSceneAsync("UI", LoadSceneMode.Additive));
+        _operations.Add(SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive));
     }
 
     public void OnExit()

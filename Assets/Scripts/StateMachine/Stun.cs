@@ -16,6 +16,9 @@ public class Stun : IState
     {
         _ai.IgnoreSounds = true;
         _navMeshAgent.enabled = false;
+        _ai.SetAnimatorBool("Alert", false);
+        _ai.SetAnimatorBool("Move", false);
+        _ai.ChangeMaterial(1);
     }
 
     public void OnExit()

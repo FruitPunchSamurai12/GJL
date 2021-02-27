@@ -31,6 +31,7 @@ public class Suspicious : IState
 
     public void OnEnter()
     {
+        GameEvents.Instance.FireAIEvent(AIStateEvents.enterSuspicious);
         _navMeshAgent.enabled = true;
         _idleTimer = 0;
         _sweepTimer = 0;
@@ -38,10 +39,12 @@ public class Suspicious : IState
         _navMeshAgent.isStopped = true;
         _sweepStarted = false;
         _ai.StopChitChatting();
+        _ai.ChangeMaterial(2);
     }
 
     public void OnExit()
     {
+        GameEvents.Instance.FireAIEvent(AIStateEvents.exitSuspicious);
         _navMeshAgent.isStopped = false;
     }
 
@@ -71,6 +74,7 @@ public class Suspicious : IState
                     //endRotation = Quaternion.FromToRotation(_ai.transform.forward, endDirection);
                     endRotation = startRotation * Quaternion.Euler(Vector3.up * _sweepAngle);
                     _sweepStarted = true;
+                    _ai.SetAnimatorBool("Move", false);
                 }
                 else
                 {
@@ -84,11 +88,13 @@ public class Suspicious : IState
                         endRotation = temp;
                         _timeLerpStarted = Time.time;
                     }
+                    
                 }
                 _sweepTimer += Time.deltaTime;
             }
             else
             {
+                _ai.SetAnimatorBool("Move", true);
                 _navMeshAgent.SetDestination(_ai.Target);
             }
             

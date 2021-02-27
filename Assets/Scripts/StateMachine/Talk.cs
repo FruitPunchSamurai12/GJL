@@ -15,6 +15,8 @@ public class Talk : IState
     {
         _ai.ResetHearing();
         _navMeshAgent.enabled = true;
+        _ai.SetAnimatorBool("Move", false);
+        _ai.ChangeMaterial(1);
     }
 
     public void OnExit()

@@ -39,7 +39,7 @@ public class AIStateMachine : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _ai = GetComponent<NPC>();
         _navMeshAgent.speed = _ai.MoveSpeed;
-        var idle = new Idle(_navMeshAgent);
+        var idle = new Idle(_ai,_navMeshAgent);
         var talk = new Talk(_ai, _navMeshAgent, _ai.MoveSpeed);
         var patrol = new Patrol(_ai,_navMeshAgent, waypoints, timeWaitingBetweenWaypoints, _ai.MoveSpeed);
         var sus = new Suspicious(_ai, _navMeshAgent, sweepRotationSpeedWhenSuspicious, sweepDurationWhenSuspicious, timeBeforeActingWhenSuspicious, _ai.MoveSpeed);

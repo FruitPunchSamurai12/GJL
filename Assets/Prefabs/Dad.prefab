@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 9083286634807856737}
   - component: {fileID: 1072005463209991118}
   - component: {fileID: 1585906812}
+  - component: {fileID: -2126395012052911871}
   m_Layer: 9
   m_Name: Dad
   m_TagString: Untagged
@@ -290,6 +291,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2126395012052911871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9083286634807856742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db48c86cd01b8642ad30cccaafa902f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passiveName: Muscular (passive)
+  passiveTooltip: Lift heavy objects.
+  distractionName: Missile (Distraction)
+  distractionTooltip: "Throw an object. Charge up ability. \u2022 Short duration
+    = toss \u2022 Medium duration = medium distance \u2022 Max duration = high velocity,
+    glass shattering, blunt trauma missile."
+  abilityName: Melee
+  abilityTooltip: Attack enemies with an object. No cooldown - go nuts!
 --- !u!1 &9083286634931411842
 GameObject:
   m_ObjectHideFlags: 0

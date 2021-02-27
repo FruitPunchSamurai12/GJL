@@ -26,16 +26,20 @@ public class Alert : IState
 
     public void OnEnter()
     {
+        GameEvents.Instance.FireAIEvent(AIStateEvents.enterAlert);
         _navMeshAgent.enabled = true;
         _navMeshAgent.speed = _moveSpeed;
         _idleTimer = 0;
         _totalTimer = 0;
         justEntered = true;
         _navMeshAgent.isStopped = true;
+        _ai.SetAnimatorBool("Alert", true);
+        _ai.ChangeMaterial(3);
     }
 
     public void OnExit()
     {
+        GameEvents.Instance.FireAIEvent(AIStateEvents.exitAlert);
         _ai.ResetHearing();
     }
 

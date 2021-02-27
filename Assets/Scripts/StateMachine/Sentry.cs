@@ -29,6 +29,8 @@ public class Sentry : IState
         _navMeshAgent.enabled = false;
         _timeLerpStarted = Time.time;
         _waitTimer = 0;
+        _ai.SetAnimatorBool("Move", false);
+        _ai.ChangeMaterial(1);
     }
 
     public void OnExit()

@@ -12,7 +12,7 @@ public class Innocence : Ability
         Using = false;
     }
 
-    protected override void OnTryUse()
+    public override void OnTryUse()
     {
         if (character.UsingAbility())
             return;
