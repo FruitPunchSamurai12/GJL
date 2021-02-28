@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 64af32fcf5557c44bb2f80544b55a7c0
     GuidInternal: 
-    m_lastTime: -8585871227443762426
+    m_lastTime: -8585870799638458997
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -206,8 +206,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Baby_Crying
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Bottle_Smash
       guid: c0ca21b46c3ab34693b9278dffa2179d
       id: 1131775195
@@ -219,7 +219,7 @@ MonoBehaviour:
       - ElementName: Play_Bottle_Smash
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Bottle_Smash
-      maxAttenuation: 100
+      maxAttenuation: 80
       maxDuration: 1.635762
       minDuration: 1.415811
     - name: Play_Door_Close
@@ -234,8 +234,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Door_Close
       maxAttenuation: 0
-      maxDuration: 2
-      minDuration: 2
+      maxDuration: 2.181015
+      minDuration: 1.781797
     - name: Play_Door_Open
       guid: 4db41a17294d0e44a5c2e47a188621a0
       id: 1660008929
@@ -248,8 +248,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Door_Open
       maxAttenuation: 0
-      maxDuration: 1.5
-      minDuration: 1.5
+      maxDuration: 1.635762
+      minDuration: 1.336348
     - name: Play_Flirt
       guid: d512b4e50155314caa0e9940f451eb2e
       id: 1692061147
@@ -262,8 +262,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Flirt
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Footsteps
       guid: de6f84d9c594f347bb72bd664adf1df0
       id: 3854155799
@@ -401,7 +401,7 @@ MonoBehaviour:
       - ElementName: Play_Vase_Smash
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Vase_Smash
-      maxAttenuation: 100
+      maxAttenuation: 80
       maxDuration: 1.683693
       minDuration: 1.415811
     - name: Play_Window_Smash
@@ -415,7 +415,7 @@ MonoBehaviour:
       - ElementName: Play_Window_Smash
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Window_Smash
-      maxAttenuation: 100
+      maxAttenuation: 80
       maxDuration: 2
       minDuration: 2
   - PhysicalPath: Events\Music.wwu
@@ -427,7 +427,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Music
     guid: c57d352dfc16ba4591ed56c2f436c99d
     GuidInternal: 
-    m_lastTime: -8585870964795981140
+    m_lastTime: -8585870719679174693
     List:
     - name: MX_Play_Alert
       guid: 25796ec9e64cd149a60eb3ce42a2fc75
@@ -443,48 +443,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: MX_Play_Base_Baby
-      guid: e78e6c40e01fd64abd78ca22bbc1d0f9
-      id: 2749816896
+    - name: MX_Play_Finale
+      guid: de93e4117c2d504fb70afb2b9ce38870
+      id: 4065079687
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Music
         ObjectType: 12
-      - ElementName: MX_Play_Base_Baby
+      - ElementName: MX_Play_Finale
         ObjectType: 3
-      Path: Default Work Unit\Music\MX_Play_Base_Baby
+      Path: Default Work Unit\Music\MX_Play_Finale
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: MX_Play_Base_Dad
-      guid: d3f7c769c054f347823ef47c4935b47b
-      id: 3691357135
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 12
-      - ElementName: MX_Play_Base_Dad
-        ObjectType: 3
-      Path: Default Work Unit\Music\MX_Play_Base_Dad
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: MX_Play_Base_Mom
-      guid: b309f9c566808d4db9e0661be8c4c13e
-      id: 3656668937
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Music
-        ObjectType: 12
-      - ElementName: MX_Play_Base_Mom
-        ObjectType: 3
-      Path: Default Work Unit\Music\MX_Play_Base_Mom
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 59.076923
+      minDuration: 59.076923
     - name: MX_Play_Inside
       guid: 17d53bf6abc6be45ac1edc8909f922e8
       id: 1925193974
@@ -735,7 +707,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5a4db2cf5f6d814b93187413c67f6ba3
     GuidInternal: 
-    m_lastTime: -8585872108899182758
+    m_lastTime: -8585870802264702242
     List:
     - name: Current_Character
       guid: 2498265beb32c3448bd3c3ba4b384a3b
@@ -904,6 +876,5 @@ MonoBehaviour:
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
   - /GJL_WwiseProject/Events/Default Work Unit/Ambience
-  - /GJL_WwiseProject/Events/Default Work Unit/Music
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

@@ -13,18 +13,31 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID MX_PLAY_BASE_BABY = 2749816896U;
-        static const AkUniqueID MX_PLAY_BASE_DAD = 3691357135U;
-        static const AkUniqueID MX_PLAY_BASE_MOM = 3656668937U;
+        static const AkUniqueID MX_PLAY_FINALE = 4065079687U;
+        static const AkUniqueID MX_PLAY_MAIN_MENU = 890084909U;
         static const AkUniqueID MX_SETSTATE = 1128714786U;
+        static const AkUniqueID PLAY_BABY_CRYING = 753280365U;
+        static const AkUniqueID PLAY_BOTTLE_SMASH = 1131775195U;
+        static const AkUniqueID PLAY_DOOR_CLOSE = 2292458263U;
         static const AkUniqueID PLAY_DOOR_OPEN = 1660008929U;
+        static const AkUniqueID PLAY_FLIRT = 1692061147U;
+        static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
+        static const AkUniqueID PLAY_FRYING_PAN_KNOCKOUT = 3561477708U;
+        static const AkUniqueID PLAY_FRYING_PAN_SWING = 4261233702U;
         static const AkUniqueID PLAY_ITEM_PICKUP = 2652605998U;
         static const AkUniqueID PLAY_ITEM_PUTDOWN = 4250118861U;
         static const AkUniqueID PLAY_ITEM_THROW = 3065584282U;
         static const AkUniqueID PLAY_ITEM_THROW_CHARGE = 3278353889U;
         static const AkUniqueID PLAY_PICKPOCKET_KEYS = 1684266438U;
+        static const AkUniqueID PLAY_UI_CHARACTER_SWITCH = 3663550651U;
+        static const AkUniqueID PLAY_UI_CLICK_DECISION = 2581004938U;
+        static const AkUniqueID PLAY_UI_CLICK_REGULAR = 1319291932U;
         static const AkUniqueID PLAY_UI_HOVER = 1339559671U;
+        static const AkUniqueID PLAY_UI_MAIN_START_BUTTON = 703069780U;
+        static const AkUniqueID PLAY_VASE_SMASH = 2250361604U;
+        static const AkUniqueID PLAY_WINDOW_SMASH = 3352654671U;
         static const AkUniqueID START_AREA_AMB = 4278971852U;
+        static const AkUniqueID START_BBQ_AMB = 2771104862U;
         static const AkUniqueID START_FOREST_AMBIENCE = 3194767864U;
         static const AkUniqueID START_FOUNTAIN_AMB = 3248596991U;
         static const AkUniqueID START_LEAVES_AMB = 3322761575U;
@@ -75,6 +88,18 @@ namespace AK
                 static const AkUniqueID MOM = 1082004790U;
             } // namespace SWITCH
         } // namespace CHARACTER_SELECT
+
+        namespace SURFACE_TYPE
+        {
+            static const AkUniqueID GROUP = 4064446173U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CONCRETE = 841620460U;
+                static const AkUniqueID GRASS = 4248645337U;
+                static const AkUniqueID INTERIOR = 1132214669U;
+            } // namespace SWITCH
+        } // namespace SURFACE_TYPE
 
     } // namespace SWITCHES
 
