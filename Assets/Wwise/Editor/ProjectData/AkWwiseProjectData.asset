@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 64af32fcf5557c44bb2f80544b55a7c0
     GuidInternal: 
-    m_lastTime: -8585870799638458997
+    m_lastTime: -8585870622130458983
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -58,7 +58,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: d44f0ce6e1e29d4fae18affe65690fcd
     GuidInternal: 
-    m_lastTime: -8585872101734914945
+    m_lastTime: -8585870550860975661
     List:
     - name: Music
       guid: e94e8064f20d024aa8fdd34172c912cb
@@ -192,7 +192,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Interactions
     guid: 2479bdd108434642b0fad18f4a0971b5
     GuidInternal: 
-    m_lastTime: -8585870881882702947
+    m_lastTime: -8585870568886932477
     List:
     - name: Play_Baby_Crying
       guid: 35a91f460e103146aa65f113a55c8e47
@@ -318,8 +318,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Frying_Pan_Throw
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Item_Pickup
       guid: a4fec8d4c3fa2e4788f1054ade49b9c7
       id: 2652605998
@@ -390,6 +390,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.235577
       minDuration: 0.873685
+    - name: Play_Safe_Door_Open
+      guid: 5cf8a38242d53d409f8e22c3626d6aa5
+      id: 2092973319
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Safe_Door_Open
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Safe_Door_Open
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Vase_Smash
       guid: 1e59051aa0429647bef008770a5f1abe
       id: 2250361604
@@ -522,7 +536,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\NPC
     guid: 6182b64fe17f134aa45cea768648da58
     GuidInternal: 
-    m_lastTime: -8585872346998977732
+    m_lastTime: -8585870565821022104
     List:
     - name: Play_NPC_Baby_Cry_React
       guid: 50cb906860163b4c928f77ea5a3187c6
@@ -535,6 +549,34 @@ MonoBehaviour:
       - ElementName: Play_NPC_Baby_Cry_React
         ObjectType: 3
       Path: Default Work Unit\NPC\Play_NPC_Baby_Cry_React
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_NPC_Chase_Begins
+      guid: 34900dad3961304dad1802e057b1cb7b
+      id: 2186934673
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 12
+      - ElementName: Play_NPC_Chase_Begins
+        ObjectType: 3
+      Path: Default Work Unit\NPC\Play_NPC_Chase_Begins
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_NPC_Chase_Reset
+      guid: 94c08792a27cda49a8a496657874dae7
+      id: 112986220
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 12
+      - ElementName: Play_NPC_Chase_Reset
+        ObjectType: 3
+      Path: Default Work Unit\NPC\Play_NPC_Chase_Reset
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -594,6 +636,34 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_NPC_Sus_React
+      guid: 603fa24f928aa34f867d14dcac288658
+      id: 1431496273
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 12
+      - ElementName: Play_NPC_Sus_React
+        ObjectType: 3
+      Path: Default Work Unit\NPC\Play_NPC_Sus_React
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_NPC_Sus_Reset
+      guid: 90b70506358c3c48b53ec2baafc0d84a
+      id: 2206120793
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NPC
+        ObjectType: 12
+      - ElementName: Play_NPC_Sus_Reset
+        ObjectType: 3
+      Path: Default Work Unit\NPC\Play_NPC_Sus_Reset
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   - PhysicalPath: Events\UI.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -697,8 +767,26 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: dad49a2a38bcda44a9ddbbf729dbd83e
     GuidInternal: 
-    m_lastTime: -8585872129135943674
-    List: []
+    m_lastTime: -8585870554765555992
+    List:
+    - name: Music_Volume
+      guid: 95f96c932a74ce488193b8a4375fd8b7
+      id: 1006694123
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music_Volume
+        ObjectType: 13
+      Path: Default Work Unit\Music_Volume
+    - name: Sound_Volume
+      guid: 60079ccfb4c7f6489c8ebc91ce274aea
+      id: 495870151
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sound_Volume
+        ObjectType: 13
+      Path: Default Work Unit\Sound_Volume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -876,5 +964,6 @@ MonoBehaviour:
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
   - /GJL_WwiseProject/Events/Default Work Unit/Ambience
+  - /GJL_WwiseProject/Events/Default Work Unit/Interactions
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

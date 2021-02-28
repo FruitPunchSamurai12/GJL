@@ -44,6 +44,7 @@ public class Suspicious : IState
         _ai.StopChitChatting();
         _failSafeTimer = 0;
         _ai.ChangeMaterial(2);
+        AkSoundEngine.PostEvent("Play_NPC_Sus_React", _ai.gameObject);
     }
 
     public void OnExit()

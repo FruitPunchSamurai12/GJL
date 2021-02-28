@@ -15,6 +15,8 @@ public class Melee : Throwable
     Animator _animator;
 
     bool activateAttack = false;
+    public AK.Wwise.Event PanSwing;
+    public AK.Wwise.Event PanHit;
 
     private void Start()
     {
@@ -40,6 +42,7 @@ public class Melee : Throwable
     public void StartSwing()
     {
         _animator.SetBool("Swing", true);
+        PanSwing.Post(gameObject);
     }
 
     void MakeAttack()
@@ -57,6 +60,7 @@ public class Melee : Throwable
                 enemy.GetStunned(hitVelocity);
                 sound.PlaySound();
                 hitSomething = true;
+                PanHit.Post(gameObject);
             }
             else
             {

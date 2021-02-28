@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 60171}
   - component: {fileID: 60173}
   - component: {fileID: 60172}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Concrete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1716,7 @@ GameObject:
   - component: {fileID: 45921233}
   - component: {fileID: 45921235}
   - component: {fileID: 45921234}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Concrete (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3173,7 +3173,7 @@ GameObject:
   - component: {fileID: 100098394}
   - component: {fileID: 100098396}
   - component: {fileID: 100098395}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Window Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5831,6 +5831,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5464360483385332349, guid: e7fbc39bcdefd1640ad78829ef82fdb6, type: 3}
+      propertyPath: OpenDoor.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b8832b3cd4a59c468b89505cf7775a2, type: 2}
     - target: {fileID: 6206400535071469434, guid: e7fbc39bcdefd1640ad78829ef82fdb6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -21673,7 +21677,7 @@ GameObject:
   - component: {fileID: 772642254}
   - component: {fileID: 772642256}
   - component: {fileID: 772642255}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Concrete (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23242,7 +23246,7 @@ GameObject:
   - component: {fileID: 862233757}
   - component: {fileID: 862233759}
   - component: {fileID: 862233758}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Front Garden Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23922,15 +23926,15 @@ MonoBehaviour:
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 16746646683728446ab55a9ad358eda3, type: 2}
   ItemPickup:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
   ItemDrop:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
 --- !u!114 &874949156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26673,7 +26677,7 @@ GameObject:
   - component: {fileID: 967937184}
   - component: {fileID: 967937186}
   - component: {fileID: 967937185}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Concrete (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27832,15 +27836,15 @@ MonoBehaviour:
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 16746646683728446ab55a9ad358eda3, type: 2}
   ItemPickup:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
   ItemDrop:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
 --- !u!114 &1013840605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28851,7 +28855,7 @@ GameObject:
   - component: {fileID: 1044983236}
   - component: {fileID: 1044983238}
   - component: {fileID: 1044983237}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Porch Concrete
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30108,31 +30112,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
---- !u!114 &1090163553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090163551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 061ae45dc8b9f5c4cab662ca61d84640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heavyItem: 0
-  ItemThrow:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  ItemPickup:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
-  ItemDrop:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
 --- !u!114 &1090163554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30932,15 +30911,15 @@ MonoBehaviour:
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 16746646683728446ab55a9ad358eda3, type: 2}
   ItemPickup:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
   ItemDrop:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
 --- !u!114 &1127096754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34119,7 +34098,7 @@ GameObject:
   - component: {fileID: 1249388543}
   - component: {fileID: 1249388545}
   - component: {fileID: 1249388544}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Concrete (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36044,6 +36023,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: ItemThrow.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: ItemPickup.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: ItemDrop.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
 --- !u!1 &1347278510
@@ -36057,7 +36048,7 @@ GameObject:
   - component: {fileID: 1347278513}
   - component: {fileID: 1347278512}
   - component: {fileID: 1347278511}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Forest Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39391,6 +39382,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3136423974454844025, guid: 275c65913219d4e4c83b9940f6ded5f8, type: 3}
+      propertyPath: ItemThrow.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 16746646683728446ab55a9ad358eda3, type: 2}
+    - target: {fileID: 3136423974454844025, guid: 275c65913219d4e4c83b9940f6ded5f8, type: 3}
+      propertyPath: ItemPickup.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
+    - target: {fileID: 3136423974454844025, guid: 275c65913219d4e4c83b9940f6ded5f8, type: 3}
+      propertyPath: ItemDrop.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
     - target: {fileID: 3136423974454844026, guid: 275c65913219d4e4c83b9940f6ded5f8, type: 3}
       propertyPath: m_Name
       value: Vase
@@ -39467,6 +39470,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -2.445
       objectReference: {fileID: 0}
+    - target: {fileID: 6227348130736345770, guid: 275c65913219d4e4c83b9940f6ded5f8, type: 3}
+      propertyPath: ItemBreak.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7236020012e70524fb66a8f7d610aa8d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 275c65913219d4e4c83b9940f6ded5f8, type: 3}
 --- !u!1 &1502206680
@@ -41711,7 +41718,7 @@ GameObject:
   - component: {fileID: 1580190521}
   - component: {fileID: 1580190523}
   - component: {fileID: 1580190522}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Concrete (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42110,7 +42117,7 @@ GameObject:
   - component: {fileID: 1608277233}
   - component: {fileID: 1608277235}
   - component: {fileID: 1608277234}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Driveway Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56425,6 +56432,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: ItemPickup.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: ItemDrop.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
 --- !u!1001 &754091142169575896
@@ -56524,6 +56539,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: FryingPan
       objectReference: {fileID: 0}
+    - target: {fileID: 6608595335820885035, guid: 859a02c51327aa540b53c579e81b43f1, type: 3}
+      propertyPath: ItemPickup.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b1ff3f33f6e2a4d8fb0aa1c67cfdfd, type: 2}
+    - target: {fileID: 6608595335820885035, guid: 859a02c51327aa540b53c579e81b43f1, type: 3}
+      propertyPath: ItemDrop.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
+    - target: {fileID: 6608595335820885035, guid: 859a02c51327aa540b53c579e81b43f1, type: 3}
+      propertyPath: PanSwing.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 983b6f934de86ce4981b718361e26022, type: 2}
+    - target: {fileID: 6608595335820885035, guid: 859a02c51327aa540b53c579e81b43f1, type: 3}
+      propertyPath: PanHit.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4ab349907df9de445a070570c683b5bb, type: 2}
+    - target: {fileID: 6608595335820885035, guid: 859a02c51327aa540b53c579e81b43f1, type: 3}
+      propertyPath: ItemThrow.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eea4e3cd3583564186d81e65d5d0a1c, type: 2}
     - target: {fileID: 8570554155590901700, guid: 859a02c51327aa540b53c579e81b43f1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.548
