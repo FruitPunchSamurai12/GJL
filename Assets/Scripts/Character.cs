@@ -10,6 +10,7 @@ public class Character : MonoBehaviour,IInteractable
     private Rotator _rotator;
     private Animator _animator;
     private Ability[] _ability;
+    MakeSound _footstepSound;
     [SerializeField] int characterIndex = 1;
     [SerializeField] LayerMask whatCanWeInteractWith;
     [SerializeField] Transform pickedUpHeavyItemPosition;
@@ -26,6 +27,7 @@ public class Character : MonoBehaviour,IInteractable
     public float Speed { get { return halfSpeed?(Controller.Instance.Walk?walkSpeed:runSpeed)/2: Controller.Instance.Walk ? walkSpeed : runSpeed; } }
     public bool InSafeZone { get; set; }
     public int CharacterIndex => characterIndex;
+    
     public AK.Wwise.Event PlayFootsteps;
     public AK.Wwise.Event PlayFlirt;
 
@@ -36,6 +38,7 @@ public class Character : MonoBehaviour,IInteractable
         _rotator = new Rotator(this);
         _animator = GetComponent<Animator>();
         _ability = GetComponents<Ability>();
+        _footstepSound = GetComponent<MakeSound>();
     }
 
     public void BackToCheckPoint()
@@ -149,6 +152,63 @@ public class Character : MonoBehaviour,IInteractable
             interactableInFrontOfCharacter = null;
         }
     }
+    //this is horrible T_T
+    public void ToggleInteractPrompt()
+    {
+        if (interactableInFrontOfCharacter == null)
+            InteractPrompt.DeactivateInteractPrompt();
+        else
+        {
+            var e = interactableInFrontOfCharacter as IPickable;
+            if (e != null)
+                InteractPrompt.ActivateInteractPrompt(InteractType.pickUp);
+            else
+            {
+                var d = interactableInFrontOfCharacter as Door;
+                if (d != null)
+                {
+                    if (d.IsLocked)
+                    {
+                        if (HasKey(false))
+                            InteractPrompt.ActivateInteractPrompt(InteractType.unlock);
+                    }
+                    else
+                    {
+                        InteractPrompt.ActivateInteractPrompt(InteractType.open);
+                    }
+                }
+                else
+                {
+                    if (characterIndex == 2)
+                    {
+                        var npc = interactableInFrontOfCharacter as NPC;
+                        if(npc!=null && !npc.CanSeeSpecificCharacter(this))
+                        {
+                            InteractPrompt.ActivateInteractPrompt(InteractType.flirt);
+                        }
+                    }
+                    else
+                    {
+                        var c = interactableInFrontOfCharacter as Character;
+                        if(c!=null && (c.HasKey(false) || c.HasSafeKey(false)))
+                        {
+                            InteractPrompt.ActivateInteractPrompt(InteractType.pickUp);
+                        }
+                        else
+                        {
+                            var safe = interactableInFrontOfCharacter as Safe;
+                            if (HasSafeKey(false))
+                                InteractPrompt.ActivateInteractPrompt(InteractType.unlock);
+                            else
+                                InteractPrompt.DeactivateInteractPrompt();
+                        }
+                    }
+                
+
+                }
+            }
+        }
+    }
 
     public void PickUpItem(IPickable pickable)
     {
@@ -171,12 +231,12 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
-    public void PickUpKey(Key key)
+    public void PickUpKey(Transform key)
     {
-        key.transform.SetParent(keyPosition);
-        key.transform.localPosition = Vector3.zero;
-        key.transform.localRotation = Quaternion.identity;
-        key.PlayKeyPickup();
+        key.SetParent(keyPosition);
+        key.localPosition = Vector3.zero;
+        key.localRotation = Quaternion.identity;
+        //key.PlayKeyPickup();
     }
 
     private void DropHeldItem()
@@ -242,12 +302,13 @@ public class Character : MonoBehaviour,IInteractable
         return false;
     }
 
-    public bool HasKey()
+    public bool HasKey(bool destroyKey)
     {
         var key = keyPosition.GetComponentInChildren<Key>();
         if (key != null)
         {
-            Destroy(key.gameObject);
+            if (destroyKey)
+                Destroy(key.gameObject);
             return true;
         }
         else
@@ -256,12 +317,13 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
-    public bool HasSafeKey()
+    public bool HasSafeKey(bool destroyKey)
     {
         var key = keyPosition.GetComponentInChildren<SafeKey>();
         if (key != null)
         {
-            Destroy(key);
+            if (destroyKey)
+                Destroy(key.gameObject);
             return true;
         }
         else
@@ -269,6 +331,8 @@ public class Character : MonoBehaviour,IInteractable
             return false;
         }
     }
+
+
 
     public bool HasDocument()
     {
@@ -374,6 +438,10 @@ public class Character : MonoBehaviour,IInteractable
     public void PlayCharacterFS()
     {
         PlayFootsteps.Post(gameObject);
+        if (_footstepSound != null)
+        {
+            _footstepSound.PlaySound();
+        }
     }
 
 }

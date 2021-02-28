@@ -8,7 +8,9 @@ public class Destructible : MonoBehaviour
     public AK.Wwise.Event ItemBreak;
     Rigidbody rb;
     [SerializeField]
-    float _velocityThreshold;
+    protected float _velocityThreshold;
+    [SerializeField]
+    Broken brokenPrefab;
     Vector3 _velocity;
     public bool controlDestructionFromAnotherScipt = false;
     private void Awake()
@@ -28,12 +30,18 @@ public class Destructible : MonoBehaviour
         Destruct(_velocity);
     }
 
-    public void Destruct(Vector3 velocity)
+    public virtual void Destruct(Vector3 velocity)
     {
 
         if (velocity.magnitude > _velocityThreshold)
         {
             ItemBreak.Post(gameObject);
+            if(brokenPrefab!=null)
+            {
+                brokenPrefab.gameObject.SetActive(true);
+                brokenPrefab.transform.SetParent(null);
+                brokenPrefab.Initialize(velocity);
+            }
             Destroy(gameObject);
         }
     }

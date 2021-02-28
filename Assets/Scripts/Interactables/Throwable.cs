@@ -83,15 +83,15 @@ public class Throwable : MonoBehaviour,IPickable
                 var npc = collision.collider.GetComponent<NPC>();
                 Debug.Log(npc);
                 if (npc != null)
-                {
-                    npc.GetStunned(true);
+                {                    
+                    npc.GetStunned(_velocity/4f);
                 }
                 else
                 {
                     var destructible = collision.collider.GetComponent<Destructible>();
                     if (destructible != null)
                     {
-                        destructible.Destruct(rb.velocity);
+                        destructible.Destruct(_velocity);
                     }
                 }
             }

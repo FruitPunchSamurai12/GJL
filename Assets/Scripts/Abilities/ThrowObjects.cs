@@ -24,63 +24,54 @@ public class ThrowObjects : Ability
 
     private void Update()
     {
-        if(Using)
-        {            
+        if (Using)
+        {
             //Vector3 mousePos = Controller.Instance.MousePosition;          
+            Vector2 mousePos = (Vector2)Camera.main.ScreenToViewportPoint(Controller.Instance.MousePosition);
+            Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+            Vector2 lookDirection = mousePos - positionOnScreen;
+            float targetAngle = Mathf.Atan2(lookDirection.x, lookDirection.y) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            _objectToThrow.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            //new Vector3(_objectToThrow.transform.position.x,hit.point.y, _objectToThrow.transform.position.z);
+            //Vector3 directionalVector = Vector3.ClampMagnitude(mousePoint - origin,currentThrowRange);
+            Vector3 point = transform.position + transform.forward * currentThrowRange;
+            //Vector3 point = directionalVector.magnitude < currentThrowRange ? hit.point : directionalVector.normalized * currentThrowRange;
+            cursor.SetActive(true);
+            //cursor.transform.position = point;
+            cursor.transform.position = point + Vector3.up * 0.1f;
 
-            
-            Ray camRay = cam.ScreenPointToRay(Controller.Instance.MousePosition);
-            RaycastHit hit;
-            if(Physics.Raycast(camRay,out hit,500f,raycastLayer))
+            Vector3 v = CalculateVelocity(point, _objectToThrow.transform.position, throwTime);
+            if (startCharging)
             {
-
-                Vector2 mousePos = (Vector2)Camera.main.ScreenToViewportPoint(Controller.Instance.MousePosition);
-                Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-                Vector2 lookDirection = mousePos - positionOnScreen;
-                float targetAngle = Mathf.Atan2(lookDirection.x, lookDirection.y) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-                _objectToThrow.transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-                //new Vector3(_objectToThrow.transform.position.x,hit.point.y, _objectToThrow.transform.position.z);
-                //Vector3 directionalVector = Vector3.ClampMagnitude(mousePoint - origin,currentThrowRange);
-                Vector3 point = transform.position+ transform.forward*currentThrowRange;
-                Debug.Log("point " + point);
-                Debug.Log("pos " + transform.position);
-                //Vector3 point = directionalVector.magnitude < currentThrowRange ? hit.point : directionalVector.normalized * currentThrowRange;
-                cursor.SetActive(true);
-                //cursor.transform.position = point;
-                cursor.transform.position = point + Vector3.up * 0.1f;
-
-                Vector3 v = CalculateVelocity(point, _objectToThrow.transform.position, throwTime);
-                if(startCharging)
+                if (Controller.Instance.LeftClickHold)
                 {
-                    if(Controller.Instance.LeftClickHold)
-                    {
-                        chargeTimer += Time.deltaTime;
-                        float percentage = chargeTimer / chargeDuration;
-                        percentage = Mathf.Clamp(percentage, 0, 1);
-                        currentThrowRange = throwMinRange + (throwMaxRange - throwMinRange) * percentage;
-                    }
-                    else if(Controller.Instance.LeftClickRelease)
-                    {
-                        _objectToThrow.Throw(v,chargeTimer>=chargeDuration);
-                        _objectToThrow = null;
-                        OnTryUnuse();
-                    }
+                    chargeTimer += Time.deltaTime;
+                    float percentage = chargeTimer / chargeDuration;
+                    percentage = Mathf.Clamp(percentage, 0, 1);
+                    currentThrowRange = throwMinRange + (throwMaxRange - throwMinRange) * percentage;
                 }
-                else
+                else if (Controller.Instance.LeftClickRelease)
                 {
-                    if(Controller.Instance.LeftClick)
-                    {
-                        startCharging = true;
-                        ChargeThrow.Post(gameObject);
-                    }
+                    _objectToThrow.Throw(v, chargeTimer >= chargeDuration);
+                    _objectToThrow = null;
+                    OnTryUnuse();
                 }
             }
             else
             {
-                cursor.SetActive(false);
+                if (Controller.Instance.LeftClick)
+                {
+                    startCharging = true;
+                    ChargeThrow.Post(gameObject);
+                }
             }
         }
+        else
+        {
+            cursor.SetActive(false);
+        }
+
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
