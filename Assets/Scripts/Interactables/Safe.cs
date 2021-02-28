@@ -7,6 +7,8 @@ public class Safe : MonoBehaviour, IInteractable
     public AK.Wwise.Event OpenDoor;
     Animator _animator;  
     bool isLocked = true;
+    [SerializeField]
+    Document document;
 
     private void Awake()
     {
@@ -23,6 +25,6 @@ public class Safe : MonoBehaviour, IInteractable
         }
         OpenDoor.Post(gameObject);
         _animator.SetTrigger("Open");
-
+        document.Interact(character);
     }   
 }

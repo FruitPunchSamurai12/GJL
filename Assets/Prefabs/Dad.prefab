@@ -283,7 +283,7 @@ MonoBehaviour:
   keyPosition: {fileID: 2281674544374287661}
   runSpeed: 7
   walkSpeed: 5
-  hardcodedYValue: 1
+  hardcodedYValue: 1.1
   halfSpeed: 0
   PlayFootsteps:
     idInternal: 0

@@ -37,9 +37,9 @@ public class ThrowObjects : Ability
             //Vector3 directionalVector = Vector3.ClampMagnitude(mousePoint - origin,currentThrowRange);
             Vector3 point = transform.position + transform.forward * currentThrowRange;
             //Vector3 point = directionalVector.magnitude < currentThrowRange ? hit.point : directionalVector.normalized * currentThrowRange;
-            cursor.SetActive(true);
+            //cursor.SetActive(true);
             //cursor.transform.position = point;
-            cursor.transform.position = point + Vector3.up * 0.1f;
+            //cursor.transform.position = point + Vector3.up * 0.1f;
 
             Vector3 v = CalculateVelocity(point, _objectToThrow.transform.position, throwTime);
             if (startCharging)
@@ -69,7 +69,7 @@ public class ThrowObjects : Ability
         }
         else
         {
-            cursor.SetActive(false);
+            //cursor.SetActive(false);
         }
 
     }

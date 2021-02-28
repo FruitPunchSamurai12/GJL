@@ -136,7 +136,7 @@ public class CreditsState : IState
 
     public void OnExit()
     {
-
+        GameManager.Instance.GameCleared = false;
     }
 
     public void Tick()

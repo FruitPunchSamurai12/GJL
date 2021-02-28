@@ -14,7 +14,6 @@ public class Melee : Throwable
     float power = 10f;
     Animator _animator;
 
-    public bool Swinging { get; private set; }
     bool activateAttack = false;
 
     private void Start()
@@ -26,20 +25,14 @@ public class Melee : Throwable
     {
         if(phase ==0)
         {
-            Swinging = true;
-        }
-        else if(phase == 1)
-        {
             activateAttack = true;
         }
-        else if(phase ==2)
+        else if(phase ==1)
         {
-            activateAttack = false;
+            activateAttack = false;     
         }
         else
         {
-            Swinging = false;
-            activateAttack = false;
             _animator.SetBool("Swing", false);
         }
     }
