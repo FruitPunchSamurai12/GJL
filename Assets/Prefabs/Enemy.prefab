@@ -112,9 +112,10 @@ Transform:
   m_GameObject: {fileID: 5054806414796876320}
   m_LocalRotation: {x: 0, y: -0.5402991, z: 0, w: 0.8414731}
   m_LocalPosition: {x: -0.83, y: 1.012, z: 16.38}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.7, z: 0.8}
   m_Children:
   - {fileID: 4903356147274283053}
+  - {fileID: 7891626188460414087}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -65.408, z: 0}
@@ -127,7 +128,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5054806414796876320}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 3.5
   m_Acceleration: 20
   avoidancePriority: 50
@@ -136,7 +137,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 1.7
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -170,13 +171,14 @@ MonoBehaviour:
   sightRange: 10
   sightAngle: 45
   hearRange: 10
-  timeNeededToEnterAlertModeAfterSeeingPlayer: 1
-  timeNeededToCompletelySeePlayer: 1.5
+  timeNeededToEnterAlertModeAfterSeeingPlayer: 2
+  timeNeededToCompletelySeePlayer: 1
   sightLayer:
     serializedVersion: 2
     m_Bits: 10241
   eyes: {fileID: 5054806414827620193}
   hasItemToSteal: 1
+  keyPos: {fileID: 7891626188460414087}
   calm: {fileID: 2100000, guid: 05d7ab65fb301c847bdc321dea1f8c6c, type: 2}
   sus: {fileID: 2100000, guid: bd91eca881bbc0e4b93ab482e88ca55f, type: 2}
   alert: {fileID: 2100000, guid: dd74e8fff76eb80448e5265828ec3ded, type: 2}
@@ -192,15 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76245f1456cc4a94a9b53b6dd67cd827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startInIdle: 0
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  waypoint: {fileID: 0}
   timeWaitingBetweenWaypoints: 2
   startState: 1
-  timeBeforeActingWhenSuspicious: 1
+  timeBeforeActingWhenSuspicious: 2
   sweepDurationWhenSuspicious: 5
   sweepRotationSpeedWhenSuspicious: 2.5
   timeBeforeActingWhenAlerted: 0.5
@@ -255,8 +252,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5054806414827620192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.761, z: 0.335}
-  m_LocalScale: {x: 0.7, y: 0.1, z: 0.5}
+  m_LocalPosition: {x: -0, y: 0.761, z: 0.306}
+  m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 5054806414722591681}
   m_RootOrder: 0
@@ -310,6 +307,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7872897350963736276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7891626188460414087}
+  m_Layer: 0
+  m_Name: KeysPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7891626188460414087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7872897350963736276}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.534, y: -0.109, z: -0.059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5054806414796876321}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8097171371420864787
 GameObject:
   m_ObjectHideFlags: 0

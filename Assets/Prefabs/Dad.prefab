@@ -28,7 +28,37 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9083286634807856739}
-  m_RootOrder: 1
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &92240747566506987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2281674544374287661}
+  m_Layer: 9
+  m_Name: KeysPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2281674544374287661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92240747566506987}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.55, y: -0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9083286634807856739}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1025193462379375493
 GameObject:
@@ -59,7 +89,7 @@ Transform:
   m_Children:
   - {fileID: 9083286634698454945}
   m_Father: {fileID: 9083286634807856739}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5789298026574485110
 GameObject:
@@ -89,7 +119,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9083286634807856739}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9083286634698454950
 GameObject:
@@ -205,6 +235,7 @@ Transform:
   m_LocalPosition: {x: 0.207, y: 1, z: -0.187}
   m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_Children:
+  - {fileID: 2281674544374287661}
   - {fileID: 857496567847369102}
   - {fileID: 465762325}
   - {fileID: 2789734938611829003}
@@ -244,10 +275,10 @@ MonoBehaviour:
   characterIndex: 1
   whatCanWeInteractWith:
     serializedVersion: 2
-    m_Bits: 15360
+    m_Bits: 48640
   pickedUpHeavyItemPosition: {fileID: 465762325}
   pickedUpLightItemPosition: {fileID: 857496567847369102}
-  keyPosition: {fileID: 0}
+  keyPosition: {fileID: 2281674544374287661}
   runSpeed: 7
   walkSpeed: 5
   hardcodedYValue: 1.1
@@ -264,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0ae13b1fc1cb04ba5916af9da3be85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 1
+  abilityNumber: 2
   animationBool: Throw
   cursor: {fileID: 0}
   raycastLayer:

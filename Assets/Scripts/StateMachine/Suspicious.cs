@@ -15,6 +15,9 @@ public class Suspicious : IState
     bool justEntered = true;
     private float _timeLerpStarted;
 
+    float _failSafeTimer = 0;
+    float _failSafeDuration = 15f;
+
     Quaternion startRotation;
     Quaternion endRotation;
     bool _sweepStarted = false;
@@ -39,6 +42,7 @@ public class Suspicious : IState
         _navMeshAgent.isStopped = true;
         _sweepStarted = false;
         _ai.StopChitChatting();
+        _failSafeTimer = 0;
         _ai.ChangeMaterial(2);
     }
 
@@ -64,14 +68,17 @@ public class Suspicious : IState
         }
         else
         {
-            if (_ai.ReachedDestination())
+            var path = new NavMeshPath();
+            bool canReach = _navMeshAgent.CalculatePath(_ai.Target, path);//this doesnt work
+            _failSafeTimer += Time.deltaTime;
+            canReach = _failSafeTimer > _failSafeDuration;
+            Debug.Log("can reach " + canReach);
+            if (_ai.ReachedDestination() || !canReach)
             {
                 if(!_sweepStarted)
                 {
                     _timeLerpStarted = Time.time;
                     startRotation = _ai.transform.rotation;
-                    //Vector3 endDirection = Quaternion.Euler(0, _sweepAngle, 0) * _ai.transform.forward;
-                    //endRotation = Quaternion.FromToRotation(_ai.transform.forward, endDirection);
                     endRotation = startRotation * Quaternion.Euler(Vector3.up * _sweepAngle);
                     _sweepStarted = true;
                     _ai.SetAnimatorBool("Move", false);

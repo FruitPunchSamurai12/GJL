@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour,IInteractable
     [SerializeField] LayerMask sightLayer;
     [SerializeField] Transform eyes;
     [SerializeField] bool hasItemToSteal;
+    [SerializeField] Transform keyPos;
     [SerializeField] Material calm;
     [SerializeField] Material sus;
     [SerializeField] Material alert;
@@ -205,7 +206,7 @@ public class NPC : MonoBehaviour,IInteractable
 
     public bool ReachedDestination()
     {
-        return transform.position.FlatDistance(Target) < 2f;
+        return transform.position.FlatDistance(Target) < 1f;
     }
 
     public void StopChitChatting()
@@ -223,7 +224,16 @@ public class NPC : MonoBehaviour,IInteractable
         if(hasItemToSteal)
         {
             hasItemToSteal = false;
-            Debug.Log("pickpocket successful");
+            var key = keyPos.GetComponentInChildren<Key>();
+            if(key)
+            {
+                character.PickUpKey(key.transform);
+                Debug.Log("pickpocket successful");
+            }
+            else
+            {
+                Debug.Log("pickpocket not successful. missing key");
+            }
         }
         else
         {
@@ -233,6 +243,11 @@ public class NPC : MonoBehaviour,IInteractable
 
     public void GetStunned(bool stun)
     {
+        var key = keyPos.GetComponentInChildren<Key>();
+        if (key)
+        {
+            key.EnableCollider();
+        }
         stunned = stun;
         onNPCKnockedOut?.Invoke(this);
     }
@@ -254,6 +269,8 @@ public class NPC : MonoBehaviour,IInteractable
         var meshes = GetComponentsInChildren<MeshRenderer>();
         foreach (var mesh in meshes)
         {
+            if (mesh.GetComponentInParent<Key>())
+                break;
             if (materialType == 1)
             {
                 mesh.material = calm;

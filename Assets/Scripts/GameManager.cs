@@ -55,12 +55,12 @@ public class GameManager : MonoBehaviour
 
     public void CharacterIsNoLongerBeingChased(Character targetCharacter)
     {
-        chasedCharacters[targetCharacter.CharacterIndex] = false;
+        chasedCharacters[targetCharacter.CharacterIndex-1] = false;
     }
 
     public void CharacterIsBeingChased(Character targetCharacter)
     {
-        chasedCharacters[targetCharacter.CharacterIndex] = true;
+        chasedCharacters[targetCharacter.CharacterIndex-1] = true;
     }
 
     public bool CanSwitchCharacter(int characterIndex)
@@ -79,5 +79,5 @@ public class GameManager : MonoBehaviour
         return allEnemies;
     }
 
-    public Transform GetCheckpointPosition() { return checkpoint; }
+    public Transform GetCheckpointPosition() { return _checkpoint; }
 }

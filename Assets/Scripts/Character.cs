@@ -242,7 +242,7 @@ public class Character : MonoBehaviour,IInteractable
         var key = keyPosition.GetComponentInChildren<Key>();
         if (key != null)
         {
-            Destroy(key);
+            Destroy(key.gameObject);
             return true;
         }
         else

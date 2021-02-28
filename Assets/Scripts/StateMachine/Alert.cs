@@ -13,6 +13,7 @@ public class Alert : IState
     float _totalTimer = 0;
     bool justEntered = true;
     float _moveSpeed;
+
     public Alert(NPC ai, NavMeshAgent agent, float searchDistance, float searchDuration, float idleTime,float moveSpeed)
     {
         _ai = ai;
