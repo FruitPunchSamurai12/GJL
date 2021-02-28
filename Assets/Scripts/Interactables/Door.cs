@@ -11,6 +11,8 @@ public class Door : MonoBehaviour,IInteractable
     [SerializeField]
     bool isLocked;
 
+    public bool IsLocked => isLocked;
+
     private void Awake()
     {
         _animator = GetComponentInParent<Animator>();
@@ -19,7 +21,7 @@ public class Door : MonoBehaviour,IInteractable
     {
         if(isLocked)
         {
-            if (character.HasKey())
+            if (character.HasKey(true))
                 isLocked = false;
             else
                 return;

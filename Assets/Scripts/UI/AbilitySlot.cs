@@ -25,10 +25,11 @@ public class AbilitySlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     string _slotTooltip;
     bool _activated = false;
 
-    public void SetAbilitySlot(string slotName,string slotTooltip)
+    public void SetAbilitySlot(string slotName,string slotTooltip,Sprite sprite)
     {
         _slotName = slotName;
         _slotTooltip = slotTooltip;
+        _image.sprite = sprite;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -42,7 +43,7 @@ public class AbilitySlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     {
         if(!_activated)
         {
-            _image.sprite = _hoverSprite;
+           // _image.sprite = _hoverSprite;
         }
         _tooltip.ActivateTooltip(_slotName, _slotTooltip);
     }
@@ -51,7 +52,7 @@ public class AbilitySlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
     {
         if (!_activated)
         {
-            _image.sprite = _normalSprite;
+            //_image.sprite = _normalSprite;
         }
         _tooltip.DeactivateTooltip();
     }

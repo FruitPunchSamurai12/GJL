@@ -61,7 +61,7 @@ public class Melee : Throwable
             if(enemy!=null)
             {
                 //play hit sound
-                enemy.GetStunned(true);
+                enemy.GetStunned(hitVelocity);
                 sound.PlaySound();
                 hitSomething = true;
             }

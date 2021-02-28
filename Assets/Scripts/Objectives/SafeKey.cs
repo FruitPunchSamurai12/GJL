@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeKey : Key, IPickable
+public class SafeKey : MonoBehaviour, IPickable
 {
     
     bool cleared = false;
 
-    Collider col;
     Rigidbody rb;
+    Collider col;
+
+    public bool Heavy => false;
 
     private void Awake()
     {
-        col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+        col = GetComponent<Collider>();
+        col.enabled = false;
     }
 
     public void Interact(Character character)
@@ -21,7 +25,7 @@ public class SafeKey : Key, IPickable
         col.enabled = false;
         rb.isKinematic = true;
         rb.useGravity = false;
-        character.PickUpKey(this);
+        character.PickUpKey(transform);
         if (!cleared)
         {
             cleared = true;

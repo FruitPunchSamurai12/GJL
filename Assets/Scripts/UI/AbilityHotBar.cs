@@ -47,8 +47,8 @@ public class AbilityHotBar : MonoBehaviour
 
     private void HandleCharacterChanged(CharacterHUDInformation character)
     {
-        _passiveSlot.SetAbilitySlot(character.PassiveName, character.PassiveTooltip);
-        _distractionSlot.SetAbilitySlot(character.DistractionName, character.DistractionTooltip);
-        _abilitySlot.SetAbilitySlot(character.AbilityName, character.AbilityTooltip);
+        _passiveSlot.SetAbilitySlot(character.PassiveName, character.PassiveTooltip,character.PassiveImage);
+        _distractionSlot.SetAbilitySlot(character.DistractionName, character.DistractionTooltip,character.DistractionImage);
+        _abilitySlot.SetAbilitySlot(character.AbilityName, character.AbilityTooltip,character.AbilityImage);
     }
 }

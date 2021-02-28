@@ -27,7 +27,7 @@ public class GameStateMachine : MonoBehaviour
         var loading = new LoadLevel();
         var play = new Play();
         var pause = new Pause();
-        var credits = new Credits();
+        var credits = new CreditsState();
 
         _stateMachine.SetState(menu);
 
@@ -35,8 +35,11 @@ public class GameStateMachine : MonoBehaviour
         _stateMachine.AddTransition(loading, play, loading.Finished);
         _stateMachine.AddTransition(play, pause, () => Controller.Instance.PausePressed);
         _stateMachine.AddTransition(pause, play, () => Controller.Instance.PausePressed);
-        _stateMachine.AddTransition(pause, menu, () => RestartButton.Pressed);
+        _stateMachine.AddTransition(pause, play, () => Continue.Pressed);
+        _stateMachine.AddTransition(pause, menu, () => BackButton.Pressed);
         _stateMachine.AddTransition(play, credits,() => GameManager.Instance.GameCleared);
+        _stateMachine.AddTransition(credits, menu, () => BackButton.Pressed);
+
     }
 
     private void Update()
@@ -124,7 +127,7 @@ public class Pause : IState
     }
 }
 
-public class Credits : IState
+public class CreditsState : IState
 {
     public void OnEnter()
     {

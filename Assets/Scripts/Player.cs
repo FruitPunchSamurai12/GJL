@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         allCharacters[currentCharacterIndex].LookForInteractables();
+        allCharacters[currentCharacterIndex].ToggleInteractPrompt();
     }
 
     private void OnDestroy()

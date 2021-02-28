@@ -227,7 +227,7 @@ public class NPC : MonoBehaviour,IInteractable
             var key = keyPos.GetComponentInChildren<Key>();
             if(key)
             {
-                character.PickUpKey(key);
+                character.PickUpKey(key.transform);
                 Debug.Log("pickpocket successful");
             }
             else
@@ -243,6 +243,8 @@ public class NPC : MonoBehaviour,IInteractable
 
     public void GetStunned(bool stun)
     {
+        if (stunned)
+            return;
         var key = keyPos.GetComponentInChildren<Key>();
         if (key)
         {
@@ -250,6 +252,15 @@ public class NPC : MonoBehaviour,IInteractable
         }
         stunned = stun;
         onNPCKnockedOut?.Invoke(this);
+    }
+
+    public void GetStunned(Vector3 velocity)
+    {
+        if (stunned)
+            return;
+        var rb = gameObject.AddComponent<Rigidbody>();
+        rb.AddForce(velocity, ForceMode.Impulse);
+        GetStunned(true);
     }
 
     void NPCKnockedOut(NPC npc)
