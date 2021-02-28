@@ -28,16 +28,19 @@ public class GameStateMachine : MonoBehaviour
         var play = new Play();
         var pause = new Pause();
         var credits = new CreditsState();
-
+        var cutscene1 = new StartCutscene();
+        var cutscene2 = new EndCutscene();
         _stateMachine.SetState(menu);
 
-        _stateMachine.AddTransition(menu, loading, () => PlayButton.LevelToLoad != null);
+        _stateMachine.AddTransition(menu, cutscene1, () => PlayButton.LevelToLoad != null);
+        _stateMachine.AddTransition(cutscene1, loading, () => Cuscene.completed);
         _stateMachine.AddTransition(loading, play, loading.Finished);
         _stateMachine.AddTransition(play, pause, () => Controller.Instance.PausePressed);
         _stateMachine.AddTransition(pause, play, () => Controller.Instance.PausePressed);
         _stateMachine.AddTransition(pause, play, () => Continue.Pressed);
         _stateMachine.AddTransition(pause, menu, () => BackButton.Pressed);
-        _stateMachine.AddTransition(play, credits,() => GameManager.Instance.GameCleared);
+        _stateMachine.AddTransition(play, cutscene2,() => GameManager.Instance.GameCleared);
+        _stateMachine.AddTransition(cutscene2, credits, () => Cuscene.completed);
         _stateMachine.AddTransition(credits, menu, () => BackButton.Pressed);
 
     }
@@ -54,6 +57,44 @@ public class Menu : IState
     {
         PlayButton.LevelToLoad = null;
         SceneManager.LoadSceneAsync("Menu");
+    }
+
+    public void OnExit()
+    {
+
+    }
+
+    public void Tick()
+    {
+
+    }
+}
+
+public class StartCutscene : IState
+{
+    public void OnEnter()
+    {
+        Cuscene.completed = false;
+        SceneManager.LoadSceneAsync("Cutscene1");
+    }
+
+    public void OnExit()
+    {
+
+    }
+
+    public void Tick()
+    {
+
+    }
+}
+
+public class EndCutscene : IState
+{
+    public void OnEnter()
+    {
+        Cuscene.completed = false;
+        SceneManager.LoadSceneAsync("Cutscene2");
     }
 
     public void OnExit()
@@ -91,7 +132,7 @@ public class LoadLevel : IState
     private List<AsyncOperation> _operations = new List<AsyncOperation>();
     public void OnEnter()
     {
-        _operations.Add(SceneManager.LoadSceneAsync(PlayButton.LevelToLoad));
+        _operations.Add(SceneManager.LoadSceneAsync("MainLevel"));
         _operations.Add(SceneManager.LoadSceneAsync("HUD", LoadSceneMode.Additive));
     }
 
