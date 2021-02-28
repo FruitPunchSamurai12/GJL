@@ -49,6 +49,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 2c967604ed5803d47a52bd7c77c5e509, type: 3}
 --- !u!136 &2340039946405677203
 CapsuleCollider:
   m_ObjectHideFlags: 0

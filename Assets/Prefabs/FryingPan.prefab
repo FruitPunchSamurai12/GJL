@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 21300000, guid: d9140bd5734d5ae4081951ac5ffd3206, type: 3}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -95,6 +96,14 @@ MonoBehaviour:
   radius: 2
   hitOrigin: {fileID: 5447772947889463490}
   power: 10
+  PanSwing:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  PanHit:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!95 &6676423958932342808
 Animator:
   serializedVersion: 3

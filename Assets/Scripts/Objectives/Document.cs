@@ -9,7 +9,10 @@ public class Document : MonoBehaviour,IPickable
 
     Collider col;
     Rigidbody rb;
+    [SerializeField]
+    Sprite _icon;
 
+    public Sprite Icon => _icon;
     private void Awake()
     {
         col = GetComponent<Collider>();

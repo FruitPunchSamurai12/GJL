@@ -227,7 +227,7 @@ public class NPC : MonoBehaviour,IInteractable
             var key = keyPos.GetComponentInChildren<Key>();
             if(key)
             {
-                character.PickUpKey(key.transform);
+                character.PickUpKey(key.transform,key._icon);
                 Debug.Log("pickpocket successful");
             }
             else

@@ -213,7 +213,7 @@ public class Character : MonoBehaviour,IInteractable
     public void PickUpItem(IPickable pickable)
     {
         DropHeldItem();
-        GameEvents.Instance.ChangedEquippedItem(true);
+        GameEvents.Instance.ChangedEquippedItem(true,pickable.Icon);
         pickable.transform.SetParent(pickable.Heavy?pickedUpHeavyItemPosition:pickedUpLightItemPosition);
         pickable.transform.localPosition = Vector3.zero;
         pickable.transform.localRotation = Quaternion.identity;
@@ -231,11 +231,12 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
-    public void PickUpKey(Transform key)
+    public void PickUpKey(Transform key,Sprite icon)
     {
         key.SetParent(keyPosition);
         key.localPosition = Vector3.zero;
         key.localRotation = Quaternion.identity;
+        GameEvents.Instance.ChangedEquippedItem(true,icon);
         //key.PlayKeyPickup();
     }
 
@@ -245,7 +246,7 @@ public class Character : MonoBehaviour,IInteractable
         if (item != null)
         {
             item.Drop();
-            GameEvents.Instance.ChangedEquippedItem(false);
+            GameEvents.Instance.ChangedEquippedItem(false,null);
         }
         else
         {
@@ -253,7 +254,7 @@ public class Character : MonoBehaviour,IInteractable
             if (item != null)
             {
                 item.Drop();
-                GameEvents.Instance.ChangedEquippedItem(false);
+                GameEvents.Instance.ChangedEquippedItem(false,null);
             }
         }
     }

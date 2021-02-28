@@ -60,10 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee5a7a69d4440f438d1bf2e37806dde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickupKey:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+  _icon: {fileID: 21300000, guid: 3e7cc79aeb0c7e544ad573760e0e5e27, type: 3}
 --- !u!54 &2463959728688351291
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,12 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
+    path: Assets/Scenes/Cutscene1.unity
+    guid: d8c9ecd2262e69441a0be6bc0a88732c
+  - enabled: 1
     path: Assets/Scenes/MainLevel.unity
     guid: 81c465e1f26df804a8a9ec8d44b1afd7
   - enabled: 1
-    path: Assets/Scenes/HUD.unity
-    guid: 260169e5f2faf3c4d8136dc84269c86e
+    path: Assets/Scenes/Cutscene2.unity
+    guid: e4c967e7f12b36649ba8b5f233297661
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 6eb6cc466ec3f384d8cd5cd7f8fae775
+  - enabled: 1
+    path: Assets/Scenes/HUD.unity
+    guid: 260169e5f2faf3c4d8136dc84269c86e
   m_configObjects: {}

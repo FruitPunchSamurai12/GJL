@@ -3699,6 +3699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a52b208264141c8479754c1ebc487d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
   Pickup:
     idInternal: 0
     valueGuidInternal: 
@@ -5835,6 +5836,10 @@ PrefabInstance:
       propertyPath: OpenDoor.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 7b8832b3cd4a59c468b89505cf7775a2, type: 2}
+    - target: {fileID: 5464360483385332349, guid: e7fbc39bcdefd1640ad78829ef82fdb6, type: 3}
+      propertyPath: document
+      value: 
+      objectReference: {fileID: 620907816}
     - target: {fileID: 6206400535071469434, guid: e7fbc39bcdefd1640ad78829ef82fdb6, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -15745,6 +15750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -18355,6 +18361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -18597,6 +18604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed4e9a969636ff4fb3cd4fe710a68fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _icon: {fileID: 0}
 --- !u!4 &620907817
 Transform:
   m_ObjectHideFlags: 0
@@ -20509,6 +20517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -23923,6 +23932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 21300000, guid: d7463d67c03a2c9469dd26c012a8e062, type: 3}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -24628,6 +24638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -27833,6 +27844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 21300000, guid: d7463d67c03a2c9469dd26c012a8e062, type: 3}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -30100,6 +30112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 21300000, guid: d7463d67c03a2c9469dd26c012a8e062, type: 3}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -30908,6 +30921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 21300000, guid: d7463d67c03a2c9469dd26c012a8e062, type: 3}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -36035,6 +36049,10 @@ PrefabInstance:
       propertyPath: ItemDrop.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: _icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ee7e471ebea7f5488479e350e18f125, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
 --- !u!1 &1347278510
@@ -36547,6 +36565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -44866,6 +44885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -49157,7 +49177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3252945569734948694, guid: 92a87c5f430888e49afe979f319f1705, type: 3}
       propertyPath: whatCanWeInteractWith.m_Bits
-      value: 2048
+      value: 36352
       objectReference: {fileID: 0}
     - target: {fileID: 3252945570460042874, guid: 92a87c5f430888e49afe979f319f1705, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -49966,6 +49986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 0}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 
@@ -56440,6 +56461,10 @@ PrefabInstance:
       propertyPath: ItemDrop.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: baba11c036cd5a64aa66d860db65e632, type: 2}
+    - target: {fileID: 7848655346269566498, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
+      propertyPath: _icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ee7e471ebea7f5488479e350e18f125, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1d37c70ffa6dc242821a6690da0c7fe, type: 3}
 --- !u!1001 &754091142169575896

@@ -11,7 +11,10 @@ public class SafeKey : MonoBehaviour, IPickable
     Collider col;
 
     public bool Heavy => false;
+    [SerializeField]
+    Sprite _icon;
 
+    public Sprite Icon => _icon;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,7 +28,7 @@ public class SafeKey : MonoBehaviour, IPickable
         col.enabled = false;
         rb.isKinematic = true;
         rb.useGravity = false;
-        character.PickUpKey(transform);
+        character.PickUpKey(transform,_icon);
         if (!cleared)
         {
             cleared = true;

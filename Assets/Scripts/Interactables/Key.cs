@@ -6,7 +6,7 @@ public class Key : MonoBehaviour,IInteractable
 {
     public AK.Wwise.Event PickupKey;
     public bool Heavy => false;
-
+    public Sprite _icon;
     protected Collider col;
 
     private void Awake()
@@ -18,7 +18,7 @@ public class Key : MonoBehaviour,IInteractable
     public void Interact(Character character)
     {
         col.enabled = false;
-        character.PickUpKey(transform);
+        character.PickUpKey(transform,_icon);
     }
 
     public void PlayKeyPickup()

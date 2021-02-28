@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heavyItem: 0
+  _icon: {fileID: 21300000, guid: 2c3478776c71305419abbd09001e7d7d, type: 3}
   ItemThrow:
     idInternal: 0
     valueGuidInternal: 

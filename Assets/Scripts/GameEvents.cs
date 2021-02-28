@@ -17,7 +17,7 @@ public class GameEvents : MonoBehaviour
     public event Action OnEnemyEnterAlert;
     public event Action OnEnemyExitAlert;
     public event Action OnObjectiveClear;
-    public event Action<bool> OnItemEquipped;
+    public event Action<bool,Sprite> OnItemEquipped;
 
     public static GameEvents Instance;
 
@@ -58,8 +58,8 @@ public class GameEvents : MonoBehaviour
         }
     }
 
-    public void ChangedEquippedItem(bool equiped)
+    public void ChangedEquippedItem(bool equiped,Sprite icon)
     {
-        OnItemEquipped?.Invoke(equiped);
+        OnItemEquipped?.Invoke(equiped,icon);
     }
 }

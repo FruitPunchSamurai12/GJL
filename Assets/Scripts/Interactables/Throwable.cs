@@ -14,6 +14,11 @@ public class Throwable : MonoBehaviour,IPickable
     protected Vector3 _velocity;
 
     public bool Heavy => heavyItem;
+    [SerializeField]
+    Sprite _icon;
+
+    public Sprite Icon => _icon;
+
     public AK.Wwise.Event ItemThrow;
     public AK.Wwise.Event ItemPickup;
     public AK.Wwise.Event ItemDrop;

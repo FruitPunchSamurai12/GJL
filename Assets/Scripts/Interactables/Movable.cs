@@ -6,8 +6,13 @@ public class Movable : MonoBehaviour,IPickable
     bool pickedUp = false;
     Collider col;
     Rigidbody rb;
+    [SerializeField]
+    Sprite _icon;
 
     bool IPickable.Heavy => heavy;
+
+    public Sprite Icon =>  _icon;
+
     public AK.Wwise.Event Pickup;
     public AK.Wwise.Event Dropped;
 

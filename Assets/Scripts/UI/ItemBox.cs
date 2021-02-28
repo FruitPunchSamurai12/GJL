@@ -25,11 +25,11 @@ public class ItemBox : MonoBehaviour
         GameEvents.Instance.OnItemEquipped -= EquipItem;
     }
 
-    public void EquipItem(bool equipped)
+    public void EquipItem(bool equipped,Sprite icon)
     {
         if(equipped)
         {
-            _image.sprite = equippedSprite;
+            _image.sprite = icon;
         }
         else
         {
