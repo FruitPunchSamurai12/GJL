@@ -8,7 +8,20 @@
 		<ExternalSourcesOutputRoot>D:\GJL_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
+	<StreamedFiles>
+		<File Id="138877302" Language="SFX">
+			<ShortName>base_stem.wav</ShortName>
+			<Path>SFX\base_stem_A224571F.wem</Path>
+		</File>
+		<File Id="153803959" Language="SFX">
+			<ShortName>main_theme.wav</ShortName>
+			<Path>SFX\main_theme_A224571F.wem</Path>
+		</File>
+		<File Id="938649116" Language="SFX">
+			<ShortName>sfx_amb_trees_02.wav</ShortName>
+			<Path>SFX\sfx_amb_trees_02_D79FB2B7.wem</Path>
+		</File>
+	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
 		<SoundBank Id="1355168291" Language="SFX" Hash="2381892985">
@@ -16,40 +29,81 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3023356346" Language="SFX" Hash="1838920111">
+		<SoundBank Id="3023356346" Language="SFX" Hash="3853492585">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Main</ObjectPath>
 			<ShortName>SFX_Main</ShortName>
 			<Path>SFX_Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="753280365" Name="Play_Baby_Crying" ObjectPath="\Events\Default Work Unit\Interactions\Play_Baby_Crying" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="1131775195" Name="Play_Bottle_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Bottle_Smash" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="1.635762"/>
+				<Event Id="2292458263" Name="Play_Door_Close" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Close" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
 				<Event Id="1660008929" Name="Play_Door_Open" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Open" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
+				<Event Id="1692061147" Name="Play_Flirt" ObjectPath="\Events\Default Work Unit\Interactions\Play_Flirt" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Interactions\Play_Footsteps" DurationType="OneShot" DurationMin="0.458502" DurationMax="0.612027"/>
+				<Event Id="3561477708" Name="Play_Frying_Pan_Knockout" ObjectPath="\Events\Default Work Unit\Interactions\Play_Frying_Pan_Knockout" DurationType="OneShot" DurationMin="1.785495" DurationMax="2.067421"/>
+				<Event Id="4261233702" Name="Play_Frying_Pan_Swing" ObjectPath="\Events\Default Work Unit\Interactions\Play_Frying_Pan_Swing" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 				<Event Id="2652605998" Name="Play_Item_Pickup" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Pickup" DurationType="OneShot" DurationMin="0.392612" DurationMax="0.531792"/>
 				<Event Id="4250118861" Name="Play_Item_Putdown" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Putdown" DurationType="OneShot" DurationMin="0.347854" DurationMax="0.380062"/>
-				<Event Id="3065584282" Name="Play_Item_Throw" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw" DurationType="OneShot" DurationMin="0.572774" DurationMax="0.572774"/>
-				<Event Id="3278353889" Name="Play_Item_Throw_Charge" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw_Charge" DurationType="OneShot" DurationMin="1.434932" DurationMax="1.434932"/>
-				<Event Id="1684266438" Name="Play_Pickpocket_Keys" ObjectPath="\Events\Default Work Unit\Interactions\Play_Pickpocket_Keys" DurationType="OneShot" DurationMin="0.797019" DurationMax="1.427528"/>
-				<Event Id="1339559671" Name="Play_UI_Hover" ObjectPath="\Events\Default Work Unit\Interactions\Play_UI_Hover" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="3065584282" Name="Play_Item_Throw" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw" DurationType="OneShot" DurationMin="0.525236" DurationMax="0.572774"/>
+				<Event Id="3278353889" Name="Play_Item_Throw_Charge" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw_Charge" DurationType="OneShot" DurationMin="1.434932" DurationMax="1.610656"/>
+				<Event Id="1684266438" Name="Play_Pickpocket_Keys" ObjectPath="\Events\Default Work Unit\Interactions\Play_Pickpocket_Keys" DurationType="OneShot" DurationMin="0.873685" DurationMax="1.235577"/>
+				<Event Id="3663550651" Name="Play_UI_Character_Switch" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Character_Switch" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="2581004938" Name="Play_UI_Click_Decision" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Click_Decision" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="1319291932" Name="Play_UI_Click_Regular" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Click_Regular" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="1339559671" Name="Play_UI_Hover" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Hover" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
+				<Event Id="703069780" Name="Play_UI_Main_Start_Button" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Main_Start_Button" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
+				<Event Id="2250361604" Name="Play_Vase_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Vase_Smash" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="1.683693"/>
+				<Event Id="3352654671" Name="Play_Window_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Window_Smash" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
 				<Event Id="4278971852" Name="Start_Area_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Area_AMB" DurationType="Infinite"/>
+				<Event Id="2771104862" Name="Start_BBQ_Amb" ObjectPath="\Events\Default Work Unit\Ambience\Start_BBQ_Amb" MaxAttenuation="25.000000" DurationType="Infinite"/>
 				<Event Id="3194767864" Name="Start_Forest_Ambience" ObjectPath="\Events\Default Work Unit\Ambience\Start_Forest_Ambience" MaxAttenuation="40.000000" DurationType="Infinite"/>
 				<Event Id="3248596991" Name="Start_Fountain_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Fountain_AMB" MaxAttenuation="20.000000" DurationType="Infinite"/>
 				<Event Id="3322761575" Name="Start_Leaves_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Leaves_AMB" MaxAttenuation="20.000000" DurationType="Infinite"/>
 				<Event Id="3630086782" Name="Start_Washing_Machine_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Washing_Machine_AMB" MaxAttenuation="10.000000" DurationType="Infinite"/>
 			</IncludedEvents>
+			<ReferencedStreamedFiles>
+				<File Id="938649116"/>
+			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="11093955" Language="SFX">
+					<ShortName>sx_sfx_door_close.wav</ShortName>
+					<Path>SFX\sx_sfx_door_close_E5FEFA51.wem</Path>
+				</File>
 				<File Id="23162962" Language="SFX">
 					<ShortName>sx_sfx_throw_main.wav</ShortName>
 					<Path>SFX\sx_sfx_throw_main_A722AD7A.wem</Path>
 				</File>
+				<File Id="27786229" Language="SFX">
+					<ShortName>sx_amb_bbq_layer3-001.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer3-001_CA692E25.wem</Path>
+				</File>
 				<File Id="28092808" Language="SFX">
 					<ShortName>MX_AMB_Steam.wav</ShortName>
-					<Path>SFX\MX_AMB_Steam_A224571F.wem</Path>
+					<Path>SFX\MX_AMB_Steam_DBF1C385.wem</Path>
+				</File>
+				<File Id="35677237" Language="SFX">
+					<ShortName>sx_sfx_glass_bottle_shatter-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_bottle_shatter-002_E5FEFA51.wem</Path>
 				</File>
 				<File Id="37969230" Language="SFX">
 					<ShortName>sx_ui_buttons_click_regular.wav</ShortName>
-					<Path>SFX\sx_ui_buttons_click_regular_E5FEFA51.wem</Path>
+					<Path>SFX\sx_ui_buttons_click_regular_C5D55EE6.wem</Path>
+				</File>
+				<File Id="41019342" Language="SFX">
+					<ShortName>sx_sfx_glass_shards-003.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_shards-003_E5FEFA51.wem</Path>
+				</File>
+				<File Id="54626847" Language="SFX">
+					<ShortName>sx_amb_bbq_layer3-002.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer3-002_CA692E25.wem</Path>
+				</File>
+				<File Id="56553029" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-005.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-005_E5FEFA51.wem</Path>
 				</File>
 				<File Id="62902393" Language="SFX">
 					<ShortName>sx_amb_leaves_rustling-001.wav</ShortName>
-					<Path>SFX\sx_amb_leaves_rustling-001_335E8692.wem</Path>
+					<Path>SFX\sx_amb_leaves_rustling-001_C7840AB1.wem</Path>
 				</File>
 				<File Id="82314786" Language="SFX">
 					<ShortName>sfx_amb_trees_birds-005.wav</ShortName>
@@ -59,33 +113,129 @@
 					<ShortName>sfx_door_open.wav</ShortName>
 					<Path>SFX\sfx_door_open_E5FEFA51.wem</Path>
 				</File>
+				<File Id="139189593" Language="SFX">
+					<ShortName>sx_sfx_fs_concrete-002.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_concrete-002_E5FEFA51.wem</Path>
+				</File>
+				<File Id="141003708" Language="SFX">
+					<ShortName>sx_sfx_frying_pan_swing.wav</ShortName>
+					<Path>SFX\sx_sfx_frying_pan_swing_C7840AB1.wem</Path>
+				</File>
+				<File Id="144258475" Language="SFX">
+					<ShortName>sx_sfx_fs_concrete-003.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_concrete-003_E5FEFA51.wem</Path>
+				</File>
+				<File Id="150945664" Language="SFX">
+					<ShortName>sx_amb_bbq_layer1-002.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer1-002_CA692E25.wem</Path>
+				</File>
+				<File Id="157689388" Language="SFX">
+					<ShortName>sx_sfx_fs_interior-002.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_interior-002_E5FEFA51.wem</Path>
+				</File>
 				<File Id="168640584" Language="SFX">
 					<ShortName>sx_amb_wind_passbys-002.wav</ShortName>
-					<Path>SFX\sx_amb_wind_passbys-002_335E8692.wem</Path>
+					<Path>SFX\sx_amb_wind_passbys-002_C7840AB1.wem</Path>
+				</File>
+				<File Id="176426117" Language="SFX">
+					<ShortName>sx_sfx_fs_concrete-004.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_concrete-004_E5FEFA51.wem</Path>
+				</File>
+				<File Id="177288706" Language="SFX">
+					<ShortName>sx_sfx_glass_bottle_shatter_mid-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_bottle_shatter_mid-002_E5FEFA51.wem</Path>
+				</File>
+				<File Id="180501363" Language="SFX">
+					<ShortName>sx_sfx_glass_bottle_shatter-003.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_bottle_shatter-003_E5FEFA51.wem</Path>
 				</File>
 				<File Id="203145624" Language="SFX">
 					<ShortName>sx_amb_leaves_rustling-005.wav</ShortName>
-					<Path>SFX\sx_amb_leaves_rustling-005_335E8692.wem</Path>
+					<Path>SFX\sx_amb_leaves_rustling-005_C7840AB1.wem</Path>
+				</File>
+				<File Id="204035089" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-004.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-004_E5FEFA51.wem</Path>
+				</File>
+				<File Id="226528795" Language="SFX">
+					<ShortName>sx_sfx_glass_window_shards-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_shards-002_E4E8F682.wem</Path>
+				</File>
+				<File Id="244116871" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-002.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-002_E5FEFA51.wem</Path>
 				</File>
 				<File Id="274142343" Language="SFX">
 					<ShortName>sfx_ux_pick_up-002.wav</ShortName>
 					<Path>SFX\sfx_ux_pick_up-002_E5FEFA51.wem</Path>
 				</File>
+				<File Id="294095654" Language="SFX">
+					<ShortName>sx_sfx_glass_window_impacts-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_impacts-002_E4E8F682.wem</Path>
+				</File>
+				<File Id="299048166" Language="SFX">
+					<ShortName>sx_amb_bbq_layer1-001.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer1-001_CA692E25.wem</Path>
+				</File>
+				<File Id="299153027" Language="SFX">
+					<ShortName>sx_sfx_frying_pan_impact.wav</ShortName>
+					<Path>SFX\sx_sfx_frying_pan_impact_E4E8F682.wem</Path>
+				</File>
+				<File Id="315861922" Language="SFX">
+					<ShortName>sfx_amb_trees_01 (1).wav</ShortName>
+					<Path>SFX\sfx_amb_trees_01 (1)_DBF1C385.wem</Path>
+				</File>
+				<File Id="331025411" Language="SFX">
+					<ShortName>sx_sfx_glass_bottle_shatter_mid-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_bottle_shatter_mid-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="356368535" Language="SFX">
+					<ShortName>sx_amb_bbq_layer2-003.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer2-003_CA692E25.wem</Path>
+				</File>
+				<File Id="356679941" Language="SFX">
+					<ShortName>sx_sfx_fs_concrete-005.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_concrete-005_E5FEFA51.wem</Path>
+				</File>
 				<File Id="367184694" Language="SFX">
 					<ShortName>sx_sfx_throw_charge.wav</ShortName>
 					<Path>SFX\sx_sfx_throw_charge_C40F52F4.wem</Path>
+				</File>
+				<File Id="374762465" Language="SFX">
+					<ShortName>sx_sfx_frying_pan_swing_2.wav</ShortName>
+					<Path>SFX\sx_sfx_frying_pan_swing_2_C7840AB1.wem</Path>
 				</File>
 				<File Id="401379032" Language="SFX">
 					<ShortName>sfx_amb_trees_birds-004.wav</ShortName>
 					<Path>SFX\sfx_amb_trees_birds-004_E5FEFA51.wem</Path>
 				</File>
+				<File Id="404560654" Language="SFX">
+					<ShortName>sx_sfx_fs_concrete-001.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_concrete-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="411417809" Language="SFX">
+					<ShortName>sx_sfx_glass_shards-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_shards-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="422480757" Language="SFX">
+					<ShortName>sx_sfx_glass_shards-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_shards-002_E5FEFA51.wem</Path>
+				</File>
 				<File Id="424676925" Language="SFX">
 					<ShortName>sfx_ux_pick_up-001.wav</ShortName>
 					<Path>SFX\sfx_ux_pick_up-001_E5FEFA51.wem</Path>
 				</File>
+				<File Id="429599463" Language="SFX">
+					<ShortName>sx_sfx_vase_smash.wav</ShortName>
+					<Path>SFX\sx_sfx_vase_smash_E5FEFA51.wem</Path>
+				</File>
+				<File Id="471301565" Language="SFX">
+					<ShortName>sx_sfx_glass_window_shatter-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_shatter-002_E4E8F682.wem</Path>
+				</File>
 				<File Id="475112875" Language="SFX">
 					<ShortName>sx_amb_wind_passbys-003.wav</ShortName>
-					<Path>SFX\sx_amb_wind_passbys-003_335E8692.wem</Path>
+					<Path>SFX\sx_amb_wind_passbys-003_C7840AB1.wem</Path>
 				</File>
 				<File Id="483575577" Language="SFX">
 					<ShortName>sfx_amb_trees_birds-003.wav</ShortName>
@@ -95,13 +245,25 @@
 					<ShortName>sfx_amb_trees_birds-002.wav</ShortName>
 					<Path>SFX\sfx_amb_trees_birds-002_E5FEFA51.wem</Path>
 				</File>
+				<File Id="497243520" Language="SFX">
+					<ShortName>sx_sfx_glass_window_shards-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_shards-001_E4E8F682.wem</Path>
+				</File>
+				<File Id="555159532" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-006.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-006_E5FEFA51.wem</Path>
+				</File>
 				<File Id="568326227" Language="SFX">
 					<ShortName>sx_amb_wind_passbys-001.wav</ShortName>
-					<Path>SFX\sx_amb_wind_passbys-001_335E8692.wem</Path>
+					<Path>SFX\sx_amb_wind_passbys-001_C7840AB1.wem</Path>
 				</File>
 				<File Id="594631739" Language="SFX">
 					<ShortName>sx_ui_main_start_button.wav</ShortName>
-					<Path>SFX\sx_ui_main_start_button_E5FEFA51.wem</Path>
+					<Path>SFX\sx_ui_main_start_button_C5D55EE6.wem</Path>
+				</File>
+				<File Id="621133243" Language="SFX">
+					<ShortName>sx_amb_bbq_layer2-001.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer2-001_CA692E25.wem</Path>
 				</File>
 				<File Id="635072610" Language="SFX">
 					<ShortName>sfx_pickpocket_key.wav</ShortName>
@@ -109,51 +271,120 @@
 				</File>
 				<File Id="642453842" Language="SFX">
 					<ShortName>sx_ui_buttons_hover.wav</ShortName>
-					<Path>SFX\sx_ui_buttons_hover_E5FEFA51.wem</Path>
+					<Path>SFX\sx_ui_buttons_hover_C5D55EE6.wem</Path>
+				</File>
+				<File Id="656405936" Language="SFX">
+					<ShortName>sx_sfx_glass_window_mids-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_mids-001_E4E8F682.wem</Path>
+				</File>
+				<File Id="680283232" Language="SFX">
+					<ShortName>sx_sfx_fs_interior-003.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_interior-003_E5FEFA51.wem</Path>
+				</File>
+				<File Id="705492196" Language="SFX">
+					<ShortName>sx_sfx_fs_interior-004.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_interior-004_E5FEFA51.wem</Path>
+				</File>
+				<File Id="765126809" Language="SFX">
+					<ShortName>sx_amb_bbq_layer2-002.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer2-002_CA692E25.wem</Path>
+				</File>
+				<File Id="785243468" Language="SFX">
+					<ShortName>sx_sfx_glass_window_shatter-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_shatter-001_E4E8F682.wem</Path>
 				</File>
 				<File Id="829987952" Language="SFX">
 					<ShortName>sx_amb_leaves_rustling-003.wav</ShortName>
-					<Path>SFX\sx_amb_leaves_rustling-003_335E8692.wem</Path>
+					<Path>SFX\sx_amb_leaves_rustling-003_C7840AB1.wem</Path>
 				</File>
 				<File Id="839694517" Language="SFX">
 					<ShortName>sx_amb_leaves_rustling-004.wav</ShortName>
-					<Path>SFX\sx_amb_leaves_rustling-004_335E8692.wem</Path>
+					<Path>SFX\sx_amb_leaves_rustling-004_C7840AB1.wem</Path>
+				</File>
+				<File Id="853548007" Language="SFX">
+					<ShortName>sx_sfx_fs_interior-001.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_interior-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="866079698" Language="SFX">
+					<ShortName>sx_sfx_glass_window_mids-002.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_mids-002_E4E8F682.wem</Path>
+				</File>
+				<File Id="895676721" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-007.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-007_E5FEFA51.wem</Path>
 				</File>
 				<File Id="934744032" Language="SFX">
 					<ShortName>sx_ui_character_switch.wav</ShortName>
-					<Path>SFX\sx_ui_character_switch_E5FEFA51.wem</Path>
+					<Path>SFX\sx_ui_character_switch_C5D55EE6.wem</Path>
 				</File>
-				<File Id="938649116" Language="SFX">
-					<ShortName>sfx_amb_trees_02.wav</ShortName>
-					<Path>SFX\sfx_amb_trees_02_A224571F.wem</Path>
+				<File Id="936717524" Language="SFX">
+					<ShortName>sx_sfx_glass_window_impacts-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_window_impacts-001_E4E8F682.wem</Path>
 				</File>
 				<File Id="946402218" Language="SFX">
 					<ShortName>sfx_amb_trees_birds-001.wav</ShortName>
 					<Path>SFX\sfx_amb_trees_birds-001_E5FEFA51.wem</Path>
 				</File>
+				<File Id="965143166" Language="SFX">
+					<ShortName>sx_sfx_glass_bottle_shatter_mid-003.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_bottle_shatter_mid-003_E5FEFA51.wem</Path>
+				</File>
 				<File Id="968768155" Language="SFX">
 					<ShortName>sfx_ux_put_down-001.wav</ShortName>
 					<Path>SFX\sfx_ux_put_down-001_E5FEFA51.wem</Path>
 				</File>
+				<File Id="972281538" Language="SFX">
+					<ShortName>sx_amb_bbq_layer1-003.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer1-003_CA692E25.wem</Path>
+				</File>
 				<File Id="978539188" Language="SFX">
 					<ShortName>sx_ui_buttons_click_main.wav</ShortName>
-					<Path>SFX\sx_ui_buttons_click_main_E5FEFA51.wem</Path>
+					<Path>SFX\sx_ui_buttons_click_main_C5D55EE6.wem</Path>
+				</File>
+				<File Id="986386667" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-003.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-003_E5FEFA51.wem</Path>
 				</File>
 				<File Id="986647206" Language="SFX">
 					<ShortName>sfx_ux_put_down-002.wav</ShortName>
 					<Path>SFX\sfx_ux_put_down-002_E5FEFA51.wem</Path>
 				</File>
+				<File Id="991614367" Language="SFX">
+					<ShortName>sx_sfx_fs_grass-001.wav</ShortName>
+					<Path>SFX\sx_sfx_fs_grass-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="1009503655" Language="SFX">
+					<ShortName>sx_sfx_frying_pan_impact_2.wav</ShortName>
+					<Path>SFX\sx_sfx_frying_pan_impact_2_E4E8F682.wem</Path>
+				</File>
 				<File Id="1034272133" Language="SFX">
 					<ShortName>sx_amb_washing_machine_cycle.wav</ShortName>
-					<Path>SFX\sx_amb_washing_machine_cycle_BEEE7070.wem</Path>
+					<Path>SFX\sx_amb_washing_machine_cycle_F0EDCF02.wem</Path>
 				</File>
 				<File Id="1034697239" Language="SFX">
 					<ShortName>sx_amb_leaves_rustling-002.wav</ShortName>
-					<Path>SFX\sx_amb_leaves_rustling-002_335E8692.wem</Path>
+					<Path>SFX\sx_amb_leaves_rustling-002_C7840AB1.wem</Path>
+				</File>
+				<File Id="1043318795" Language="SFX">
+					<ShortName>sx_sfx_glass_bottle_shatter-001.wav</ShortName>
+					<Path>SFX\sx_sfx_glass_bottle_shatter-001_E5FEFA51.wem</Path>
+				</File>
+				<File Id="1065790181" Language="SFX">
+					<ShortName>sx_amb_bbq_layer3-003.wav</ShortName>
+					<Path>SFX\sx_amb_bbq_layer3-003_CA692E25.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
+			<SwitchGroups>
+				<SwitchGroup Id="4064446173" Name="Surface_Type" ObjectPath="\Switches\Default Work Unit\Surface_Type">
+					<Switches>
+						<Switch Id="841620460" Name="Concrete" ObjectPath="\Switches\Default Work Unit\Surface_Type\Concrete"/>
+						<Switch Id="4248645337" Name="Grass" ObjectPath="\Switches\Default Work Unit\Surface_Type\Grass"/>
+						<Switch Id="1132214669" Name="Interior" ObjectPath="\Switches\Default Work Unit\Surface_Type\Interior"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3991942870" Language="SFX" Hash="591781312">
+		<SoundBank Id="3991942870" Language="SFX" Hash="274626832">
 			<ObjectPath>\SoundBanks\Default Work Unit\Music</ObjectPath>
 			<ShortName>Music</ShortName>
 			<Path>Music.bnk</Path>
@@ -176,28 +407,41 @@
 						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
 					</ActionSetState>
 				</Event>
+				<Event Id="890084909" Name="MX_Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Main_Menu" DurationType="OneShot" DurationMin="72.285698" DurationMax="72.285698"/>
 				<Event Id="1128714786" Name="MX_setState" ObjectPath="\Events\Default Work Unit\Music\MX_setState" DurationType="Infinite"/>
 			</IncludedEvents>
+			<ReferencedStreamedFiles>
+				<File Id="138877302"/>
+				<File Id="153803959"/>
+			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="129827003" Language="SFX">
+					<ShortName>mom_stem.wav</ShortName>
+					<Path>SFX\mom_stem_A224571F.wem</Path>
+				</File>
 				<File Id="138877302" Language="SFX">
 					<ShortName>base_stem.wav</ShortName>
 					<Path>SFX\base_stem_A224571F.wem</Path>
 				</File>
-				<File Id="153803959" Language="SFX">
-					<ShortName>main_theme.wav</ShortName>
-					<Path>SFX\main_theme_A224571F.wem</Path>
+				<File Id="166089722" Language="SFX">
+					<ShortName>baby_stem.wav</ShortName>
+					<Path>SFX\baby_stem_A224571F.wem</Path>
 				</File>
 				<File Id="227360718" Language="SFX">
 					<ShortName>inside_stem.wav</ShortName>
 					<Path>SFX\inside_stem_A224571F.wem</Path>
 				</File>
+				<File Id="279221035" Language="SFX">
+					<ShortName>alert_stem (1).wav</ShortName>
+					<Path>SFX\alert_stem (1)_A224571F.wem</Path>
+				</File>
+				<File Id="665314860" Language="SFX">
+					<ShortName>dad_stem.wav</ShortName>
+					<Path>SFX\dad_stem_A224571F.wem</Path>
+				</File>
 				<File Id="681976144" Language="SFX">
 					<ShortName>mx_sus_stem.wav</ShortName>
 					<Path>SFX\mx_sus_stem_A224571F.wem</Path>
-				</File>
-				<File Id="973297071" Language="SFX">
-					<ShortName>alert_stem.wav</ShortName>
-					<Path>SFX\alert_stem_A224571F.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<StateGroups>

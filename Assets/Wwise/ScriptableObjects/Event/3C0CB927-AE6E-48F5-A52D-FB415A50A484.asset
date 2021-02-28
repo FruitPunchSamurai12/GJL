@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f21b4900e20d14ca228c4d4c9df5c2, type: 3}
+  m_Name: 3C0CB927-AE6E-48F5-A52D-FB415A50A484
+  m_EditorClassIdentifier: 
+  objectName: Play_Window_Smash
+  id: 3352654671
+  guid: 3C0CB927-AE6E-48F5-A52D-FB415A50A484

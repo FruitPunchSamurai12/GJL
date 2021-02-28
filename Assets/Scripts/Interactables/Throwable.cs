@@ -15,7 +15,6 @@ public class Throwable : MonoBehaviour,IPickable
 
     public bool Heavy => heavyItem;
     public AK.Wwise.Event ItemThrow;
-    public AK.Wwise.Event ItemBreak;
     public AK.Wwise.Event ItemPickup;
     public AK.Wwise.Event ItemDrop;
 
@@ -96,7 +95,6 @@ public class Throwable : MonoBehaviour,IPickable
                     }
                 }
             }
-            ItemBreak.Post(gameObject);
             var destructibleSelf = GetComponent<Destructible>();
             if (destructibleSelf != null)
             {

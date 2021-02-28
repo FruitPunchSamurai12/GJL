@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SafeKey : MonoBehaviour, IPickable
+public class SafeKey : Key, IPickable
 {
-    public bool Heavy => false;
+    
     bool cleared = false;
 
     Collider col;
@@ -21,7 +21,7 @@ public class SafeKey : MonoBehaviour, IPickable
         col.enabled = false;
         rb.isKinematic = true;
         rb.useGravity = false;
-        character.PickUpKey(transform);
+        character.PickUpKey(this);
         if (!cleared)
         {
             cleared = true;

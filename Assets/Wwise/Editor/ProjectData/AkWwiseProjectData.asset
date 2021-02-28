@@ -30,7 +30,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 64af32fcf5557c44bb2f80544b55a7c0
     GuidInternal: 
-    m_lastTime: -8585873906890146915
+    m_lastTime: -8585871227443762426
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -88,7 +88,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Ambience
     guid: 1311f6587755a04ea5be839061fed5b3
     GuidInternal: 
-    m_lastTime: -8585872346999087439
+    m_lastTime: -8585871411275568858
     List:
     - name: Start_Area_AMB
       guid: 00d5bcf6c016ae4695a4d8a9bf857215
@@ -102,6 +102,20 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Ambience\Start_Area_AMB
       maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Start_BBQ_Amb
+      guid: e23f9a9ec577294fa585b617e052056d
+      id: 2771104862
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 12
+      - ElementName: Start_BBQ_Amb
+        ObjectType: 3
+      Path: Default Work Unit\Ambience\Start_BBQ_Amb
+      maxAttenuation: 25
       maxDuration: -1
       minDuration: -1
     - name: Start_Forest_Ambience
@@ -167,7 +181,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 39954f5e6b50734f9867527a9df1ba3c
     GuidInternal: 
-    m_lastTime: -8585872348266129353
+    m_lastTime: -8585871421966558733
     List: []
   - PhysicalPath: Events\Interactions.wwu
     PathAndIcons:
@@ -178,7 +192,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Interactions
     guid: 2479bdd108434642b0fad18f4a0971b5
     GuidInternal: 
-    m_lastTime: -8585871544322448159
+    m_lastTime: -8585870881882702947
     List:
     - name: Play_Baby_Crying
       guid: 35a91f460e103146aa65f113a55c8e47
@@ -205,23 +219,9 @@ MonoBehaviour:
       - ElementName: Play_Bottle_Smash
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Bottle_Smash
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_Box_Drop
-      guid: 1ca3d51f033f824aa98321fd6633086a
-      id: 967761339
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Interactions
-        ObjectType: 12
-      - ElementName: Play_Box_Drop
-        ObjectType: 3
-      Path: Default Work Unit\Interactions\Play_Box_Drop
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxAttenuation: 100
+      maxDuration: 1.635762
+      minDuration: 1.415811
     - name: Play_Door_Close
       guid: c0783c103fbbc8459ebc77c116faae03
       id: 2292458263
@@ -234,8 +234,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Door_Close
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2
+      minDuration: 2
     - name: Play_Door_Open
       guid: 4db41a17294d0e44a5c2e47a188621a0
       id: 1660008929
@@ -250,20 +250,62 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.5
       minDuration: 1.5
-    - name: Play_Footstep
-      guid: de6f84d9c594f347bb72bd664adf1df0
-      id: 1602358412
+    - name: Play_Flirt
+      guid: d512b4e50155314caa0e9940f451eb2e
+      id: 1692061147
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Interactions
         ObjectType: 12
-      - ElementName: Play_Footstep
+      - ElementName: Play_Flirt
         ObjectType: 3
-      Path: Default Work Unit\Interactions\Play_Footstep
+      Path: Default Work Unit\Interactions\Play_Flirt
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_Footsteps
+      guid: de6f84d9c594f347bb72bd664adf1df0
+      id: 3854155799
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Footsteps
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Footsteps
+      maxAttenuation: 0
+      maxDuration: 0.612027
+      minDuration: 0.458502
+    - name: Play_Frying_Pan_Knockout
+      guid: 879e13ac1b74fe4ca745f487e0862be0
+      id: 3561477708
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Frying_Pan_Knockout
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Frying_Pan_Knockout
+      maxAttenuation: 0
+      maxDuration: 2.067421
+      minDuration: 1.785495
+    - name: Play_Frying_Pan_Swing
+      guid: 142f92db3d3de3468a4bc7d59af7b159
+      id: 4261233702
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Frying_Pan_Swing
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Frying_Pan_Swing
+      maxAttenuation: 0
+      maxDuration: 1
+      minDuration: 1
     - name: Play_Frying_Pan_Throw
       guid: 7e360800ba7fcb4aac24fed7221932e2
       id: 1939857692
@@ -319,7 +361,7 @@ MonoBehaviour:
       Path: Default Work Unit\Interactions\Play_Item_Throw
       maxAttenuation: 0
       maxDuration: 0.572774
-      minDuration: 0.572774
+      minDuration: 0.525236
     - name: Play_Item_Throw_Charge
       guid: a1a37f975afdb740b752d3c3c0ce0ef8
       id: 3278353889
@@ -332,22 +374,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Item_Throw_Charge
       maxAttenuation: 0
-      maxDuration: 1.434932
+      maxDuration: 1.610656
       minDuration: 1.434932
-    - name: Play_Pan_Knockout
-      guid: 879e13ac1b74fe4ca745f487e0862be0
-      id: 3863493802
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: Interactions
-        ObjectType: 12
-      - ElementName: Play_Pan_Knockout
-        ObjectType: 3
-      Path: Default Work Unit\Interactions\Play_Pan_Knockout
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Play_Pickpocket_Keys
       guid: 8497e2aba08b9043a44fc121d713566a
       id: 1684266438
@@ -360,36 +388,36 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Pickpocket_Keys
       maxAttenuation: 0
-      maxDuration: 1.427528
-      minDuration: 0.797019
-    - name: Play_UI_Click
-      guid: 68e618a2dc7f47428d4546de4f059364
-      id: 1749424733
+      maxDuration: 1.235577
+      minDuration: 0.873685
+    - name: Play_Vase_Smash
+      guid: 1e59051aa0429647bef008770a5f1abe
+      id: 2250361604
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Interactions
         ObjectType: 12
-      - ElementName: Play_UI_Click
+      - ElementName: Play_Vase_Smash
         ObjectType: 3
-      Path: Default Work Unit\Interactions\Play_UI_Click
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-    - name: Play_UI_Hover
-      guid: fc3bd456df23d248add4e5fa41c54592
-      id: 1339559671
+      Path: Default Work Unit\Interactions\Play_Vase_Smash
+      maxAttenuation: 100
+      maxDuration: 1.683693
+      minDuration: 1.415811
+    - name: Play_Window_Smash
+      guid: 27b90c3c6eaef548a52dfb415a50a484
+      id: 3352654671
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
       - ElementName: Interactions
         ObjectType: 12
-      - ElementName: Play_UI_Hover
+      - ElementName: Play_Window_Smash
         ObjectType: 3
-      Path: Default Work Unit\Interactions\Play_UI_Hover
-      maxAttenuation: 0
-      maxDuration: 0.5
-      minDuration: 0.5
+      Path: Default Work Unit\Interactions\Play_Window_Smash
+      maxAttenuation: 100
+      maxDuration: 2
+      minDuration: 2
   - PhysicalPath: Events\Music.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -399,7 +427,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Music
     guid: c57d352dfc16ba4591ed56c2f436c99d
     GuidInternal: 
-    m_lastTime: -8585871558069166895
+    m_lastTime: -8585870964795981140
     List:
     - name: MX_Play_Alert
       guid: 25796ec9e64cd149a60eb3ce42a2fc75
@@ -471,6 +499,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: MX_Play_Main_Menu
+      guid: 280a7747a351dc41be7530304b1ed81a
+      id: 890084909
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Music
+        ObjectType: 12
+      - ElementName: MX_Play_Main_Menu
+        ObjectType: 3
+      Path: Default Work Unit\Music\MX_Play_Main_Menu
+      maxAttenuation: 0
+      maxDuration: 72.2857
+      minDuration: 72.2857
     - name: MX_Play_Sus
       guid: 622bbdc406469440bbe8bc6031ea9847
       id: 3785699005
@@ -577,6 +619,101 @@ MonoBehaviour:
       - ElementName: Play_NPC_Reset
         ObjectType: 3
       Path: Default Work Unit\NPC\Play_NPC_Reset
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\UI.wwu
+    PathAndIcons:
+    - ElementName: Default Work Unit
+      ObjectType: 12
+    - ElementName: UI
+      ObjectType: 12
+    ParentPath: Default Work Unit\UI
+    guid: 10dab0613709944fb039e08211916e53
+    GuidInternal: 
+    m_lastTime: -8585870893923907671
+    List:
+    - name: Play_UI_Character_Switch
+      guid: f2c992da1271d944b9a7feb0192c68d3
+      id: 3663550651
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Play_UI_Character_Switch
+        ObjectType: 3
+      Path: Default Work Unit\UI\Play_UI_Character_Switch
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_UI_Click_Decision
+      guid: 9a08d6a6e78a5649b32eabb3cf76d00d
+      id: 2581004938
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Play_UI_Click_Decision
+        ObjectType: 3
+      Path: Default Work Unit\UI\Play_UI_Click_Decision
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_UI_Click_Regular
+      guid: 68e618a2dc7f47428d4546de4f059364
+      id: 1319291932
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Play_UI_Click_Regular
+        ObjectType: 3
+      Path: Default Work Unit\UI\Play_UI_Click_Regular
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_UI_Hover
+      guid: fc3bd456df23d248add4e5fa41c54592
+      id: 1339559671
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Play_UI_Hover
+        ObjectType: 3
+      Path: Default Work Unit\UI\Play_UI_Hover
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_UI_Main_Start_Button
+      guid: 70c27acb04352e4497f30a78dbeb580f
+      id: 703069780
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Play_UI_Main_Start_Button
+        ObjectType: 3
+      Path: Default Work Unit\UI\Play_UI_Main_Start_Button
+      maxAttenuation: 0
+      maxDuration: 2
+      minDuration: 2
+    - name: Play_UI_Objective_Clear
+      guid: 1da6df3e58a0f048a0912a51cd451f52
+      id: 2164133502
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: UI
+        ObjectType: 12
+      - ElementName: Play_UI_Objective_Clear
+        ObjectType: 3
+      Path: Default Work Unit\UI\Play_UI_Objective_Clear
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -688,7 +825,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 0c023c358bc65e41af835db9660affcf
     GuidInternal: 
-    m_lastTime: -8585872129136103250
+    m_lastTime: -8585871224840955292
     List:
     - name: Character_Select
       guid: cd9a94cad7d60c459889b2913572ad1a
@@ -721,6 +858,37 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
+    - name: Surface_Type
+      guid: 4f5298e151d2264bb349d7147cb45e66
+      id: 4064446173
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Surface_Type
+        ObjectType: 11
+      Path: Default Work Unit\Surface_Type
+      values:
+      - name: Concrete
+        guid: aababdbad3017f4caf4af219fbb19a99
+        id: 841620460
+        PathAndIcons:
+        - ElementName: Concrete
+          ObjectType: 10
+      - name: Grass
+        guid: 7f4ac51edb8f294982fdef0b1ccc7664
+        id: 4248645337
+        PathAndIcons:
+        - ElementName: Grass
+          ObjectType: 10
+      - name: Interior
+        guid: df5100ed06fac947b2253201a242b7df
+        id: 1132214669
+        PathAndIcons:
+        - ElementName: Interior
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -736,6 +904,6 @@ MonoBehaviour:
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
   - /GJL_WwiseProject/Events/Default Work Unit/Ambience
-  - /GJL_WwiseProject/Events/Default Work Unit/Interactions
+  - /GJL_WwiseProject/Events/Default Work Unit/Music
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

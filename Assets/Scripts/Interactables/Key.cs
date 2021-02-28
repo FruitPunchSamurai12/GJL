@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Key : MonoBehaviour,IInteractable
 {
+    public AK.Wwise.Event PickupKey;
     public bool Heavy => false;
 
     Collider col;
@@ -17,7 +18,13 @@ public class Key : MonoBehaviour,IInteractable
     public void Interact(Character character)
     {
         col.enabled = false;
-        character.PickUpKey(transform);
+        character.PickUpKey(this);
+    }
+
+    public void PlayKeyPickup()
+    {
+        PickupKey.Post(gameObject);
+
     }
 
     public void EnableCollider() { col.enabled = true; }

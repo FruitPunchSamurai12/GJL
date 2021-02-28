@@ -26,6 +26,8 @@ public class Character : MonoBehaviour,IInteractable
     public float Speed { get { return halfSpeed?(Controller.Instance.Walk?walkSpeed:runSpeed)/2: Controller.Instance.Walk ? walkSpeed : runSpeed; } }
     public bool InSafeZone { get; set; }
     public int CharacterIndex => characterIndex;
+    public AK.Wwise.Event PlayFootsteps;
+    public AK.Wwise.Event PlayFlirt;
 
     private void Awake()
     {
@@ -169,11 +171,12 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
-    public void PickUpKey(Transform key)
+    public void PickUpKey(Key key)
     {
-        key.SetParent(keyPosition);
-        key.localPosition = Vector3.zero;
-        key.localRotation = Quaternion.identity;
+        key.transform.SetParent(keyPosition);
+        key.transform.localPosition = Vector3.zero;
+        key.transform.localRotation = Quaternion.identity;
+        key.PlayKeyPickup();
     }
 
     private void DropHeldItem()
@@ -201,10 +204,12 @@ public class Character : MonoBehaviour,IInteractable
         RestrictMovement = flirtOn;
         if (flirtOn)
         {
+            PlayFlirt.Post(gameObject);
             InSafeZone = true;
         }
         else
         {
+            PlayFlirt.Stop(gameObject);
             LeaveSafeZoneAfterDelay(2f);
         }
     }
@@ -364,6 +369,11 @@ public class Character : MonoBehaviour,IInteractable
                     innocence.OnTryUse();
             }
         }
+    
+    }
+    public void PlayCharacterFS()
+    {
+        PlayFootsteps.Post(gameObject);
     }
 
 }

@@ -1,10 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Destructible : MonoBehaviour
 {
+    public AK.Wwise.Event ItemBreak;
     Rigidbody rb;
     [SerializeField]
     float _velocityThreshold;
@@ -32,6 +33,7 @@ public class Destructible : MonoBehaviour
 
         if (velocity.magnitude > _velocityThreshold)
         {
+            ItemBreak.Post(gameObject);
             Destroy(gameObject);
         }
     }

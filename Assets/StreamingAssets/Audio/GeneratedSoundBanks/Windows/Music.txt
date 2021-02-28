@@ -1,23 +1,43 @@
 Event	ID	Name			Wwise Object Path	Notes
+	890084909	MX_Play_Main_Menu			\Default Work Unit\Music\MX_Play_Main_Menu	
 	1128714786	MX_setState			\Default Work Unit\Music\MX_setState	
 	2749816896	MX_Play_Base_Baby			\Default Work Unit\Music\MX_Play_Base_Baby	
 	3656668937	MX_Play_Base_Mom			\Default Work Unit\Music\MX_Play_Base_Mom	
 	3691357135	MX_Play_Base_Dad			\Default Work Unit\Music\MX_Play_Base_Dad	
 
 State Group	ID	Name			Wwise Object Path	Notes
+	1176230744	Current_Character			\Default Work Unit\Current_Character	
 	2721494480	Game_States			\Default Work Unit\Game_States	
 
 State	ID	Name	State Group			Notes
+	311764516	Dad	Current_Character			
+	748895195	None	Current_Character			
+	1082004790	Mom	Current_Character			
+	1543097833	Baby	Current_Character			
 	721787521	Alert	Game_States			
 	748895195	None	Game_States			
 	1874288895	Idle	Game_States			
 	2563422499	Entered_House	Game_States			
 	3270337040	Suspicious	Game_States			
 
+Custom State	ID	Name	State Group	Owner		Notes
+	278559874	Mom	Current_Character	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Dad_Stem		
+	465284014	Baby	Current_Character	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Mom_Stem		
+	625766414	Mom	Current_Character	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Baby_Stem		
+	859548709	Dad	Current_Character	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Baby_Stem		
+	1017467510	Baby	Current_Character	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Dad_Stem		
+	1048703490	Dad	Current_Character	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Mom_Stem		
+
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	129827003	MX_Mom_Stem	D:\GJL_WwiseProject\.cache\Windows\SFX\mom_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Mom_Stem		10421232
 	138877302	MX_Base_Stem	D:\GJL_WwiseProject\.cache\Windows\SFX\base_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Alert_Layer\MX_Alert_Layer\MX_Base_Stem		10421232
-	153803959	MX_Main_Theme	D:\GJL_WwiseProject\.cache\Windows\SFX\main_theme_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Main_Menu_Theme\MX_Main_Theme		12751260
+	166089722	MX_Baby_Stem	D:\GJL_WwiseProject\.cache\Windows\SFX\baby_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Baby_Stem		10421232
 	227360718	MX_Inside_stem	D:\GJL_WwiseProject\.cache\Windows\SFX\inside_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Enter_House_Layer\MX_Inside_Stem\MX_Inside_stem		10421232
-	681976144	mx_sus_stem	D:\GJL_WwiseProject\.cache\Windows\SFX\mx_sus_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Sus_Layer\MX_Sus_Layer\mx_sus_stem		10421232
-	973297071	MX_Alert_Layer	D:\GJL_WwiseProject\.cache\Windows\SFX\alert_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Alert_Layer\MX_Alert_Layer\MX_Alert_Layer		10421232
+	279221035	MX_Alert_Layer	D:\GJL_WwiseProject\.cache\Windows\SFX\alert_stem (1)_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Alert_Layer\MX_Alert_Layer\MX_Alert_Layer		10421232
+	665314860	MX_Dad_Stem	D:\GJL_WwiseProject\.cache\Windows\SFX\dad_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Characters\MX_Dad_Stem		10421232
+	681976144	MX_Sus_Stem	D:\GJL_WwiseProject\.cache\Windows\SFX\mx_sus_stem_A224571F.wem		\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Alert_Layer\MX_Alert_Layer\MX_Sus_Stem		10421232
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	138877302	MX_Base_Stem	D:\GJL_WwiseProject\.cache\Windows\SFX\base_stem_A224571F.wem	138877302.wem	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Switch\MX_Base_Layer\MX_Base_Layer\MX_Base_Stem	
+	153803959	MX_Main_Theme	D:\GJL_WwiseProject\.cache\Windows\SFX\main_theme_A224571F.wem	153803959.wem	\Interactive Music Hierarchy\Default Work Unit\Music\MX_Main_Menu_Theme\MX_Main_Theme	
 

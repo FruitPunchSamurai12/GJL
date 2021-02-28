@@ -15,6 +15,7 @@ public class ThrowObjects : Ability
     Camera cam;
     Throwable _objectToThrow;
     public AK.Wwise.Event ThrowItem;
+    public AK.Wwise.Event ChargeThrow;
 
     private void Start()
     {
@@ -71,6 +72,7 @@ public class ThrowObjects : Ability
                     if(Controller.Instance.LeftClick)
                     {
                         startCharging = true;
+                        ChargeThrow.Post(gameObject);
                     }
                 }
             }

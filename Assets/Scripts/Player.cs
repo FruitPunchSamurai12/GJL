@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
             currentCharacterIndex = index;
         OnCharacterChanged?.Invoke(allCharacters[currentCharacterIndex].GetComponent<CharacterHUDInformation>());
         cameraController.SetCameraTarget(GetCurrentCharacterTransform());
+        AkSoundEngine.PostEvent("Play_UI_Character_Switch", gameObject);
     }
 
     void ToggleCharacter()
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
             currentCharacterIndex = 0;
         OnCharacterChanged?.Invoke(allCharacters[currentCharacterIndex].GetComponent<CharacterHUDInformation>());
         cameraController.SetCameraTarget(GetCurrentCharacterTransform());
+        AkSoundEngine.PostEvent("Play_UI_Character_Switch", gameObject);
     }
 
     // Update is called once per frame

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour,IInteractable
 {
+    public AK.Wwise.Event OpenDoor;
     Animator _animator;
     [SerializeField]
     bool open1;
@@ -23,6 +24,7 @@ public class Door : MonoBehaviour,IInteractable
             else
                 return;
         }
+        OpenDoor.Post(gameObject);
         if (open1)
         {
             _animator.SetTrigger("Open");

@@ -15,6 +15,7 @@ public class Cry : Ability
         Using = false;
         character.RestrictMovement = false;
         //cursor.SetActive(false);
+        BabyCrying.Stop(gameObject);
     }
 
     public override void OnTryUse()
@@ -24,6 +25,7 @@ public class Cry : Ability
         Using = true;
         character.RestrictMovement = true;
         isCrying = true;
+        BabyCrying.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -38,7 +40,6 @@ public class Cry : Ability
                 foreach (var ai in enemies)
                 {
                     ai.BabyCrying(transform.position, cryRange);
-                    BabyCrying.Post(gameObject);
                 }
             }
            /* else

@@ -14,12 +14,17 @@ public class MainMenu : MonoBehaviour
     GameObject _startText;
 
     bool _click = false;
+    public AK.Wwise.Event MX_MainMenu;
 
     private void Awake()
     {
         _click = false;
         _menuPanel.SetActive(false);
         _startText.SetActive(true);
+    }
+    void Start()
+    {
+        MX_MainMenu.Post(gameObject);
     }
 
     // Update is called once per frame
@@ -39,4 +44,11 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void onClickPlay()
+    {
+        MX_MainMenu.Stop(gameObject);
+    
+    }
+
 }

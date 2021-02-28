@@ -33,6 +33,7 @@ public class Objectives : MonoBehaviour
             return;
         _checkBoxes[_currentObjectiveIndex].sprite = _checkedSprite;
         _currentObjectiveIndex++;
+        AkSoundEngine.PostEvent("Play_UI_Objective_Clear", gameObject);
     }
 
 }

@@ -900,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547245439958966, guid: 97fa5d2e177822c4084dda50fa0986c6, type: 3}
       propertyPath: m_RootOrder
-      value: 44
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4547245439958966, guid: 97fa5d2e177822c4084dda50fa0986c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1106,6 +1106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &41846277
@@ -3768,6 +3772,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &174010805
@@ -3982,7 +3990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4547245439958966, guid: 97fa5d2e177822c4084dda50fa0986c6, type: 3}
       propertyPath: m_RootOrder
-      value: 42
+      value: 43
       objectReference: {fileID: 0}
     - target: {fileID: 4547245439958966, guid: 97fa5d2e177822c4084dda50fa0986c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4987,7 +4995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3132af27592d712429c646bf3809ab43, type: 3}
       propertyPath: m_RootOrder
-      value: 33
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3132af27592d712429c646bf3809ab43, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5049,6 +5057,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &222036284
@@ -6303,6 +6315,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 441386, guid: ab5e0beb1c36778479983f28b65d97dd, type: 3}
   m_PrefabInstance: {fileID: 270300598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272967223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272967224}
+  m_Layer: 14
+  m_Name: Footstep_Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272967224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272967223}
+  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 47.27, y: 0.15, z: 5.01}
+  m_LocalScale: {x: 31.76964, y: 0.76, z: 7.7862}
+  m_Children:
+  - {fileID: 1347278513}
+  m_Father: {fileID: 0}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274866579
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,7 +6410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &276246699
 PrefabInstance:
@@ -6533,7 +6576,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6917,6 +6960,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &312301744
@@ -10511,7 +10558,7 @@ Transform:
   m_LocalScale: {x: 0.82586, y: 0.82586, z: 0.82586}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &479330993
 PrefabInstance:
@@ -10961,6 +11008,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38ed83dd6b1ce42aa1ad5075dce19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpenDoor:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
   open1: 1
   isLocked: 0
 --- !u!65 &487578374
@@ -11383,6 +11434,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38ed83dd6b1ce42aa1ad5075dce19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpenDoor:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
   open1: 0
   isLocked: 0
 --- !u!65 &501995191
@@ -14074,6 +14129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &608538458
@@ -14911,6 +14970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38ed83dd6b1ce42aa1ad5075dce19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpenDoor:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
   open1: 1
   isLocked: 1
 --- !u!1001 &648922208
@@ -14950,7 +15013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 404b5817ea6bbb34b96c8c2a153564cf, type: 3}
       propertyPath: m_RootOrder
-      value: 32
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 404b5817ea6bbb34b96c8c2a153564cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -17967,7 +18030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4388997623891732, guid: a47d7ad739a48614babdcba6106ead5f, type: 3}
       propertyPath: m_RootOrder
-      value: 41
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 4388997623891732, guid: a47d7ad739a48614babdcba6106ead5f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18496,6 +18559,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38ed83dd6b1ce42aa1ad5075dce19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpenDoor:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
   open1: 0
   isLocked: 0
 --- !u!65 &872785056
@@ -19099,7 +19166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19864,6 +19931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &948089289
@@ -20856,6 +20927,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4d8e62f5885b4c746ad9a100c401d90b, type: 3}
   m_PrefabInstance: {fileID: 987300573}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &991940265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3252945569734948689, guid: 92a87c5f430888e49afe979f319f1705, type: 3}
+  m_PrefabInstance: {fileID: 1892304284}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &991940266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991940265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d240b5182d4e86479a0a40ff360b830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footsteps:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6f67c13a0d4128c45a0b1d7202642001, type: 2}
 --- !u!1001 &993544532
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20915,6 +21007,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8232987474828769380, guid: 172aad47595a1374282d8dfb81d880ff, type: 3}
+      propertyPath: PlayFlirt.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4aedfc37fd008664a9431d498dde4407, type: 2}
     - target: {fileID: 8232987474828769381, guid: 172aad47595a1374282d8dfb81d880ff, type: 3}
       propertyPath: m_Name
       value: Mom
@@ -22231,6 +22327,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &1076874791
@@ -23482,6 +23582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &1132495777
@@ -24024,6 +24128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef38ed83dd6b1ce42aa1ad5075dce19f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpenDoor:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
   open1: 0
   isLocked: 0
 --- !u!65 &1149833672
@@ -24767,6 +24875,27 @@ Transform:
   m_Father: {fileID: 1504033082}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1181550037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8232987474828769381, guid: 172aad47595a1374282d8dfb81d880ff, type: 3}
+  m_PrefabInstance: {fileID: 993544532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1181550038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181550037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d240b5182d4e86479a0a40ff360b830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footsteps:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6f67c13a0d4128c45a0b1d7202642001, type: 2}
 --- !u!1001 &1182642873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26188,6 +26317,10 @@ PrefabInstance:
       propertyPath: isLocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 483706190708713473, guid: 3f0edbc90fb925541adf82719cc0c09d, type: 3}
+      propertyPath: OpenDoor.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
     - target: {fileID: 754091143328614234, guid: 3f0edbc90fb925541adf82719cc0c09d, type: 3}
       propertyPath: m_Name
       value: Door (2)
@@ -27062,6 +27195,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4631977158232566, guid: 6dcae7204dd466c4c862bc640ea7c02e, type: 3}
   m_PrefabInstance: {fileID: 1339057623}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1347278510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347278513}
+  - component: {fileID: 1347278512}
+  - component: {fileID: 1347278511}
+  m_Layer: 14
+  m_Name: ForestCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1347278511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347278510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16157620c4a37aa4688971889eb2e9ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7f422d6
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f361ade3900175f438b8513ac89a2b22, type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
+--- !u!65 &1347278512
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347278510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1347278513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347278510}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 2.6222}
+  m_Children: []
+  m_Father: {fileID: 272967224}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1349623169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27371,7 +27573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27908,6 +28110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
   _velocityThreshold: 1
   controlDestructionFromAnotherScipt: 0
 --- !u!54 &1410747551
@@ -29923,7 +30129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -31014,7 +31220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -32063,7 +32269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d38d22ffaf849dc43a482db790ad3b39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -36744,6 +36950,7 @@ GameObject:
   - component: {fileID: 1911584397}
   - component: {fileID: 1911584396}
   - component: {fileID: 1911584395}
+  - component: {fileID: 1911584402}
   - component: {fileID: 1911584394}
   m_Layer: 10
   m_Name: Bottle
@@ -36895,10 +37102,6 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 16746646683728446ab55a9ad358eda3, type: 2}
-  ItemBreak:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: aee128d57e14b7e419ea655b277210bd, type: 2}
   ItemPickup:
     idInternal: 0
     valueGuidInternal: 
@@ -36984,6 +37187,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1911584402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911584393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ccad0c77e692f4ba800ba0a9b231d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemBreak:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: aee128d57e14b7e419ea655b277210bd, type: 2}
+  _velocityThreshold: 0
+  controlDestructionFromAnotherScipt: 0
 --- !u!1001 &1915768368
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37495,7 +37716,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930810198 stripped
 GameObject:
@@ -37613,7 +37834,7 @@ Transform:
   m_LocalScale: {x: 0.82586, y: 0.82586, z: 0.82586}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1934459559
 PrefabInstance:
@@ -41858,6 +42079,10 @@ PrefabInstance:
       propertyPath: isLocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 483706190708713473, guid: 3f0edbc90fb925541adf82719cc0c09d, type: 3}
+      propertyPath: OpenDoor.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 35dc807cc0f8d2842add55278ebbfb82, type: 2}
     - target: {fileID: 754091143328614234, guid: 3f0edbc90fb925541adf82719cc0c09d, type: 3}
       propertyPath: m_Name
       value: Door
@@ -41984,6 +42209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Short Window Glass (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6782991483399772821, guid: 5d0e38a38d94b3b429dd29c53e4489de, type: 3}
+      propertyPath: ItemBreak.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d0e38a38d94b3b429dd29c53e4489de, type: 3}
 --- !u!33 &5179463640682504135
@@ -42057,6 +42286,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 325089438}
     m_Modifications:
+    - target: {fileID: 7929348300615704075, guid: 07554ad1d10c05e4280aed4f9bf32014, type: 3}
+      propertyPath: ItemBreak.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d44768ef1914694f930ee2df4f96f73, type: 2}
     - target: {fileID: 8349562761047515280, guid: 07554ad1d10c05e4280aed4f9bf32014, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.286
