@@ -10,8 +10,7 @@ public enum StartState
 }
 public class AIStateMachine : MonoBehaviour
 {
-    [SerializeField] bool startInIdle = false;
-    [SerializeField] Transform[] waypoints;
+    [SerializeField] Waypoint waypoint;
     [SerializeField] float timeWaitingBetweenWaypoints = 2f;
     [SerializeField] StartState startState;
     [SerializeField] float timeBeforeActingWhenSuspicious = 1f;
@@ -41,7 +40,7 @@ public class AIStateMachine : MonoBehaviour
         _navMeshAgent.speed = _ai.MoveSpeed;
         var idle = new Idle(_ai,_navMeshAgent);
         var talk = new Talk(_ai, _navMeshAgent, _ai.MoveSpeed);
-        var patrol = new Patrol(_ai,_navMeshAgent, waypoints, timeWaitingBetweenWaypoints, _ai.MoveSpeed);
+        var patrol = new Patrol(_ai,_navMeshAgent, waypoint, timeWaitingBetweenWaypoints, _ai.MoveSpeed);
         var sus = new Suspicious(_ai, _navMeshAgent, sweepRotationSpeedWhenSuspicious, sweepDurationWhenSuspicious, timeBeforeActingWhenSuspicious, _ai.MoveSpeed);
         var alert = new Alert(_ai, _navMeshAgent, investigationRange, timeInvestigatingWhenAlerted, timeBeforeActingWhenAlerted, alertMoveSpeed);
         var chase = new ChasePlayer(_ai, _navMeshAgent, alertMoveSpeed);

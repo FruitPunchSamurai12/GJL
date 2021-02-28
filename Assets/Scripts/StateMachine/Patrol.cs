@@ -5,16 +5,14 @@ public class Patrol : IState
 {
     NPC _ai;
     private NavMeshAgent _navMeshAgent;
-    Transform[] _waypoints;
-    int _waypointIndex = 0;
+    Waypoint _waypoint;
     float _waitTime;
     float timer = 0;
-    public Patrol(NPC ai, NavMeshAgent agent,Transform[] waypoints,float waitTime,float moveSpeed)
+    public Patrol(NPC ai, NavMeshAgent agent,Waypoint waypoint,float waitTime,float moveSpeed)
     {
         _ai = ai;
         _navMeshAgent = agent;
-        _waypoints = waypoints;
-        _waypointIndex = UnityEngine.Random.Range(0, _waypoints.Length - 1);
+        _waypoint = waypoint;
         _waitTime = waitTime;
         _navMeshAgent.speed = moveSpeed;
     }
@@ -35,22 +33,25 @@ public class Patrol : IState
 
     public void Tick()
     {
-        if (_navMeshAgent.transform.position.FlatDistance(_waypoints[_waypointIndex].position) < 2f)
+        if (_navMeshAgent.transform.position.FlatDistance(_waypoint.transform.position) < 2f)
         {
-            timer += Time.deltaTime;
-            if(timer>_waitTime)
+            if (_waypoint.waitAtWaypoint)
             {
-                int previousIndex = _waypointIndex;
-                do
+                timer += Time.deltaTime;
+                if (timer > _waitTime)
                 {
-                    _waypointIndex = UnityEngine.Random.Range(0, _waypoints.Length );
-                } while (previousIndex == _waypointIndex);
-                timer = 0;
+                    _waypoint = _waypoint.nextWaypoint;
+                    timer = 0;
+                }
+            }
+            else
+            {
+                _waypoint = _waypoint.nextWaypoint;
             }
         }
         else
         {
-            _navMeshAgent.SetDestination(_waypoints[_waypointIndex].position);
+            _navMeshAgent.SetDestination(_waypoint.transform.position);
         }
     }
 }

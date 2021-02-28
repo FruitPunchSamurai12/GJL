@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : MonoBehaviour,IInteractable
 {
     private CharacterController _characterController;
     private IMover _mover;
@@ -14,8 +14,10 @@ public class Character : MonoBehaviour
     [SerializeField] LayerMask whatCanWeInteractWith;
     [SerializeField] Transform pickedUpHeavyItemPosition;
     [SerializeField] Transform pickedUpLightItemPosition;
+    [SerializeField] Transform keyPosition;
     [SerializeField] float runSpeed = 7f;
     [SerializeField] float walkSpeed = 5f;
+    [SerializeField] float hardcodedYValue;
 
     public bool halfSpeed = false;
     
@@ -42,6 +44,12 @@ public class Character : MonoBehaviour
         {
             ability.OnTryUnuse();
         }
+        DropHeldItem();
+        var key = keyPosition.GetComponentInChildren<SafeKey>();
+        if (key != null)
+        {
+            key.Drop();
+        }
         _characterController.enabled = true;
     }
 
@@ -54,13 +62,16 @@ public class Character : MonoBehaviour
             _mover.Tick();
             _rotator.Tick();
         }
-        Interact();
+        TryInteract();
         foreach (var ability in _ability)
         {
             ability.Tick();
         }
         DoMelee();
         Animate();
+        _characterController.enabled = false;
+        transform.position = new Vector3(transform.position.x,hardcodedYValue,transform.position.z);
+        _characterController.enabled = true;
     }
 
     void DoMelee()
@@ -94,7 +105,7 @@ public class Character : MonoBehaviour
         _animator.SetFloat("Speed", magnitude);
     }
 
-    void Interact()
+    void TryInteract()
     {
         if (Controller.Instance.Interact)
         {
@@ -118,7 +129,18 @@ public class Character : MonoBehaviour
         var targets = Physics.OverlapBox(transform.position, transform.localScale, transform.rotation, whatCanWeInteractWith);
         if(targets.Length>0)
         {
-            interactableInFrontOfCharacter = targets[0].GetComponent<IInteractable>();
+            foreach (var target in targets)
+            {
+                if(target!=this)
+                {
+                    interactableInFrontOfCharacter = target.GetComponent<IInteractable>();
+                    return;
+                }
+                else
+                {
+                    interactableInFrontOfCharacter = null;
+                }
+            }            
         }
         else
         {
@@ -145,6 +167,13 @@ public class Character : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PickUpKey(Transform key)
+    {
+        key.SetParent(keyPosition);
+        key.localPosition = Vector3.zero;
+        key.localRotation = Quaternion.identity;
     }
 
     private void DropHeldItem()
@@ -206,6 +235,53 @@ public class Character : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public bool HasKey()
+    {
+        var key = keyPosition.GetComponentInChildren<Key>();
+        if (key != null)
+        {
+            Destroy(key);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool HasSafeKey()
+    {
+        var key = keyPosition.GetComponentInChildren<SafeKey>();
+        if (key != null)
+        {
+            Destroy(key);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool HasDocument()
+    {
+        var document = pickedUpLightItemPosition.GetComponentInChildren<Document>();
+        if (document != null)
+            return true;
+        else
+            return false;
+    }
+
+    public void Interact(Character character)
+    {
+        foreach(var key in keyPosition.GetComponentsInChildren<Transform>())
+        {
+            key.SetParent(character.keyPosition);
+            key.localPosition = Vector3.zero;
+            key.localRotation = Quaternion.identity;
+        }
     }
 
     //crappy functions for use for the hotbar
@@ -289,4 +365,5 @@ public class Character : MonoBehaviour
             }
         }
     }
+
 }

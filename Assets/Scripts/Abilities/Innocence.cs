@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Innocence : Ability
 {
+    public bool insideHouse = false;
     public override void OnTryUnuse()
     {
         Debug.Log("innocence lost");
@@ -14,7 +15,7 @@ public class Innocence : Ability
 
     public override void OnTryUse()
     {
-        if (character.UsingAbility())
+        if (character.UsingAbility() || insideHouse)
             return;
         Using = true;
         character.InSafeZone = true;

@@ -6,11 +6,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
     private List<Character> allCharacters = new List<Character>();
     private List<NPC> allEnemies = new List<NPC>();
-    [SerializeField] Transform checkpoint;
+    Transform _checkpoint;
 
     bool[] chasedCharacters = new bool[3];
+
+    public bool GameCleared { get; set; }
 
     public static GameManager Instance;
 
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void InitializeCheckpoint(Transform checkpoint) { _checkpoint = checkpoint; }
+
     public void InitializeGame()
     {
         allCharacters = FindObjectsOfType<Character>().ToList();
@@ -34,6 +39,17 @@ public class GameManager : MonoBehaviour
         foreach (var enemy in allEnemies)
         {
             enemy.CacheCharacters(allCharacters);
+        }
+    }
+
+    public void TryToCompleteLevel()
+    {
+        foreach (var character in allCharacters)
+        {
+            if(character.HasDocument())
+            {
+                GameCleared = true;
+            }
         }
     }
 

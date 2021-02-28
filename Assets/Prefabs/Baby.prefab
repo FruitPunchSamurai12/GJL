@@ -78,6 +78,7 @@ MonoBehaviour:
   pickedUpLightItemPosition: {fileID: 972708111721206021}
   runSpeed: 7
   walkSpeed: 5
+  hardcodedYValue: 0.5
   halfSpeed: 0
 --- !u!114 &7794958500278367567
 MonoBehaviour:
@@ -93,6 +94,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityNumber: 1
   animationBool: Cry
+  BabyCrying:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   cryRange: 15
 --- !u!114 &994092000
 MonoBehaviour:

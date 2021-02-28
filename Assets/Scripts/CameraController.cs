@@ -54,13 +54,13 @@ public class CameraController : MonoBehaviour
     {
         Vector2 direction = Vector2.zero;
         if (y >= Screen.height * 0.98f)
-            direction.y += 1;
-        else if (y <= Screen.height * 0.02f)
             direction.y -= 1;
+        else if (y <= Screen.height * 0.02f)
+            direction.y += 1;
         if (x >= Screen.width * 0.98f)
-            direction.x += 1;
-        else if (x <= Screen.width * 0.02f)
             direction.x -= 1;
+        else if (x <= Screen.width * 0.02f)
+            direction.x += 1;
         return direction;
     }
 

@@ -61,7 +61,7 @@ public class Controller : MonoBehaviour
 
     public Vector3 GetDirection()
     {
-        return new Vector3(Horizontal, 0, Vertical);
+        return new Vector3(-Horizontal, 0, -Vertical);
     }
 
 }

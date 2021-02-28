@@ -32,10 +32,7 @@ public class CharacterIndicator : MonoBehaviour
         {
             ActivateImages();
             Vector3 position = new Vector3(Mathf.Clamp(screenPoint.x,0.05f,0.95f), Mathf.Clamp(screenPoint.y,0.05f,0.95f),1);
-            Debug.Log(name + position);
             Vector3 screenPos = new Vector3(position.x * Screen.width, position.y * Screen.height, 1f);
-            Debug.Log(name + " world pos" + _cam.ScreenToWorldPoint(screenPos));
-           // transform.position = _cam.ScreenToWorldPoint(screenPos);
             rect.anchoredPosition = new Vector2(screenPos.x, screenPos.y);
             RotateIndicator(screenPoint.x, screenPoint.y);
         }

@@ -203,7 +203,7 @@ Transform:
   m_GameObject: {fileID: 9083286634807856742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.207, y: 1, z: -0.187}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 1, z: 1}
   m_Children:
   - {fileID: 857496567847369102}
   - {fileID: 465762325}
@@ -223,7 +223,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.6
+  m_Radius: 0.4
   m_SlopeLimit: 0
   m_StepOffset: 0
   m_SkinWidth: 0.08
@@ -247,8 +247,10 @@ MonoBehaviour:
     m_Bits: 15360
   pickedUpHeavyItemPosition: {fileID: 465762325}
   pickedUpLightItemPosition: {fileID: 857496567847369102}
+  keyPosition: {fileID: 0}
   runSpeed: 7
   walkSpeed: 5
+  hardcodedYValue: 1.1
   halfSpeed: 0
 --- !u!114 &1072005463209991118
 MonoBehaviour:
@@ -272,6 +274,10 @@ MonoBehaviour:
   throwMaxRange: 20
   chargeDuration: 2
   throwTime: 0.5
+  ThrowItem:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!95 &1585906812
 Animator:
   serializedVersion: 3

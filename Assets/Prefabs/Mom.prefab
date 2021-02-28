@@ -330,6 +330,7 @@ MonoBehaviour:
   pickedUpLightItemPosition: {fileID: 1931510215}
   runSpeed: 7
   walkSpeed: 5
+  hardcodedYValue: 1.1
   halfSpeed: 0
 --- !u!114 &8969853951094288602
 MonoBehaviour:
