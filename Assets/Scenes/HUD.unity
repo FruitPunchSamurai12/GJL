@@ -503,15 +503,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Inflitrate the house
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
+  m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280296231
+  m_fontColor: {r: 0.15294118, g: 0.13725491, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1742,15 +1742,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Find the key to the safe
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
+  m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280296231
+  m_fontColor: {r: 0.15294118, g: 0.13725491, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1952,15 +1952,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Escape unseen
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
+  m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280296231
+  m_fontColor: {r: 0.15294118, g: 0.13725491, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2211,15 +2211,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Objectives
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9195efcdb20ea954583f2f170137e9b5, type: 2}
+  m_sharedMaterial: {fileID: 1638686587779287712, guid: 9195efcdb20ea954583f2f170137e9b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280296231
+  m_fontColor: {r: 0.15294118, g: 0.13725491, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2457,15 +2457,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Locate house key in backyard
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
+  m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280296231
+  m_fontColor: {r: 0.15294118, g: 0.13725491, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2591,15 +2591,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Steal the document
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
+  m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280296231
+  m_fontColor: {r: 0.15294118, g: 0.13725491, b: 0.1254902, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4222,15 +4222,15 @@ MonoBehaviour:
   m_text: Tease an enemy with sultry words. Click to deactivate. Enemy becomes suspicious
     immediately afterwards.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
+  m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4283,7 +4283,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 10.050171, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4313,7 +4313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.9, y: -50}
+  m_AnchoredPosition: {x: 18.99997, y: -50}
   m_SizeDelta: {x: 486.1026, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1706009398
@@ -4356,15 +4356,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Flirt (Active)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
-  m_sharedMaterial: {fileID: -366867132078062562, guid: d9de9bc5163304143ab1d38529b31c33, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9195efcdb20ea954583f2f170137e9b5, type: 2}
+  m_sharedMaterial: {fileID: 1638686587779287712, guid: 9195efcdb20ea954583f2f170137e9b5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4381,8 +4381,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4447,7 +4447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 13.9, y: 0}
+  m_AnchoredPosition: {x: 19, y: 0}
   m_SizeDelta: {x: 301.0769, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1729745834
