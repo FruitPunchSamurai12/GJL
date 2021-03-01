@@ -294,6 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   images:
   - {fileID: 21300000, guid: f0b285eb91743d64e8d1bc6f9b287039, type: 3}
+  - {fileID: 21300000, guid: 9f3ff12201fb2d64288a821d17e49329, type: 3}
+  - {fileID: 21300000, guid: 873bf8218b0b03e49bf649ff58ed0f6f, type: 3}
 --- !u!1 &499411192
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +375,7 @@ GameObject:
   - component: {fileID: 1595506179}
   - component: {fileID: 1595506176}
   - component: {fileID: 1595506180}
+  - component: {fileID: 1595506181}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -504,6 +507,22 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &1595506181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595506175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cb56dad9c1a414bac8f7d7e0ab8cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 1595506178}
+  shakeDuration: 0.5
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &2114326618
 GameObject:
   m_ObjectHideFlags: 0
