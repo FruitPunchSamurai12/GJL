@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PickPocket : Ability
 {
+    [SerializeField]
+    LayerMask enemyMask;
     public override void OnTryUnuse()
     {
       
@@ -11,17 +13,19 @@ public class PickPocket : Ability
 
     public override void OnTryUse()
     {
-        var interactable = character.GetInteractable();
-        if(interactable!=null)
+        var box = GetComponent<InteractBox>();
+        var colliders = Physics.OverlapBox(transform.position + transform.forward + box.Center, box.Size / 2f, transform.rotation, enemyMask);
+        foreach (var col in colliders)
         {
-            var npc = interactable as NPC;
-            if(npc!=null)
+            var npc = col.GetComponent<NPC>();
+            if (npc != null)
             {
-                if(!npc.CanSeeSpecificCharacter(character))
+                if (!npc.CanSeeSpecificCharacter(character))
                 {
                     npc.StealItem(character);
                     Using = true;
                     StartCoroutine(AnimationDelay());
+                    break;
                 }
                 else
                 {

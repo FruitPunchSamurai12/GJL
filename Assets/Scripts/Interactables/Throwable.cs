@@ -29,8 +29,7 @@ public class Throwable : MonoBehaviour,IPickable
     {
         col = GetComponent<Collider>();
         sound = GetComponent<MakeSound>();
-        rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;
+        rb = GetComponent<Rigidbody>();        
     }
 
     public void Interact(Character character)

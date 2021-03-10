@@ -6,13 +6,13 @@ using UnityEngine;
 public class Character : MonoBehaviour,IInteractable
 {
     private CharacterController _characterController;
+    private InteractBox _interactBox;
     private IMover _mover;
     private Rotator _rotator;
     private Animator _animator;
     private Ability[] _ability;
     MakeSound _footstepSound;
     [SerializeField] int characterIndex = 1;
-    [SerializeField] LayerMask whatCanWeInteractWith;
     [SerializeField] Transform pickedUpHeavyItemPosition;
     [SerializeField] Transform pickedUpLightItemPosition;
     [SerializeField] Transform keyPosition;
@@ -23,7 +23,6 @@ public class Character : MonoBehaviour,IInteractable
     public bool halfSpeed = false;
     
     public bool RestrictMovement { get; set; }
-    IInteractable interactableInFrontOfCharacter;
     public float Speed { get { return halfSpeed?(Controller.Instance.Walk?walkSpeed:runSpeed)/2: Controller.Instance.Walk ? walkSpeed : runSpeed; } }
     public bool InSafeZone { get; set; }
     public int CharacterIndex => characterIndex;
@@ -34,6 +33,7 @@ public class Character : MonoBehaviour,IInteractable
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
+        _interactBox = GetComponent<InteractBox>();
         _mover = new WASDMover(this);
         _rotator = new Rotator(this);
         _animator = GetComponent<Animator>();
@@ -72,35 +72,12 @@ public class Character : MonoBehaviour,IInteractable
         {
             ability.Tick();
         }
-        DoMelee();
         Animate();
         _characterController.enabled = false;
         transform.position = new Vector3(transform.position.x,hardcodedYValue,transform.position.z);
         _characterController.enabled = true;
     }
-
-    void DoMelee()
-    {
-        bool usingAbility = false;
-        foreach (var ability in _ability)
-        {
-            if(ability.Using)
-            {
-                usingAbility = true;
-                break;
-            }
-        }
-        if (!usingAbility && Controller.Instance.LeftClick)
-        {
-            var weapon = pickedUpLightItemPosition.GetComponentInChildren<Melee>();
-            if(weapon!=null)
-            {
-                weapon.StartSwing();
-            }
-        }
-    }
-
-   
+  
 
     private void Animate()
     {
@@ -115,10 +92,10 @@ public class Character : MonoBehaviour,IInteractable
         if (Controller.Instance.Interact)
         {
             Debug.Log("trying to interact");
-            if (interactableInFrontOfCharacter != null)
+            if (_interactBox.Interactable != null)
             {
-                Debug.Log(interactableInFrontOfCharacter.GetType());
-                interactableInFrontOfCharacter.Interact(this);
+                Debug.Log(_interactBox.Interactable.GetType());
+                _interactBox.Interactable.Interact(this);
             }
             else
             {
@@ -130,41 +107,21 @@ public class Character : MonoBehaviour,IInteractable
 
     public void LookForInteractables()
     {
-        //RaycastHit hit;
-        var targets = Physics.OverlapBox(transform.position+transform.forward, transform.localScale*2f, transform.rotation, whatCanWeInteractWith);
-        if(targets.Length>0)
-        {
-            foreach (var target in targets)
-            {
-                if(target!=this)
-                {
-                    interactableInFrontOfCharacter = target.GetComponent<IInteractable>();
-                    return;
-                }
-                else
-                {
-                    interactableInFrontOfCharacter = null;
-                }
-            }            
-        }
-        else
-        {
-            interactableInFrontOfCharacter = null;
-        }
+        _interactBox.LookForInteractables();
     }
     //this is horrible T_T
     public void ToggleInteractPrompt()
     {
-        if (interactableInFrontOfCharacter == null)
+        if (_interactBox.Interactable == null)
             InteractPrompt.DeactivateInteractPrompt();
         else
         {
-            var e = interactableInFrontOfCharacter as IPickable;
+            IPickable e = _interactBox.Interactable as IPickable;
             if (e != null)
                 InteractPrompt.ActivateInteractPrompt(InteractType.pickUp);
             else
             {
-                var d = interactableInFrontOfCharacter as Door;
+                var d = _interactBox.Interactable as Door;
                 if (d != null)
                 {
                     if (d.IsLocked)
@@ -181,7 +138,7 @@ public class Character : MonoBehaviour,IInteractable
                 {
                     if (characterIndex == 2)
                     {
-                        var npc = interactableInFrontOfCharacter as NPC;
+                        var npc = _interactBox.Interactable as NPC;
                         if(npc!=null && !npc.CanSeeSpecificCharacter(this))
                         {
                             InteractPrompt.ActivateInteractPrompt(InteractType.flirt);
@@ -189,14 +146,14 @@ public class Character : MonoBehaviour,IInteractable
                     }
                     else
                     {
-                        var c = interactableInFrontOfCharacter as Character;
+                        var c = _interactBox.Interactable as Character;
                         if(c!=null && (c.HasKey(false) || c.HasSafeKey(false)))
                         {
                             InteractPrompt.ActivateInteractPrompt(InteractType.pickUp);
                         }
                         else
                         {
-                            var safe = interactableInFrontOfCharacter as Safe;
+                            var safe = _interactBox.Interactable as Safe;
                             if (HasSafeKey(false))
                                 InteractPrompt.ActivateInteractPrompt(InteractType.unlock);
                             else
@@ -216,19 +173,7 @@ public class Character : MonoBehaviour,IInteractable
         GameEvents.Instance.ChangedEquippedItem(true,pickable.Icon);
         pickable.transform.SetParent(pickable.Heavy?pickedUpHeavyItemPosition:pickedUpLightItemPosition);
         pickable.transform.localPosition = Vector3.zero;
-        pickable.transform.localRotation = Quaternion.identity;
-        var throwable = pickable as Throwable;
-        if (throwable != null)
-        {
-            foreach (var ability in _ability)
-            {               
-                var throwAbility = ability as ThrowObjects;
-                if (throwAbility != null)
-                {
-                    throwAbility.PickedUpObjectToThrow(throwable);
-                }
-            }
-        }
+        pickable.transform.localRotation = Quaternion.identity;      
     }
 
     public void PickUpKey(Transform key,Sprite icon)
@@ -259,28 +204,14 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
-    public void Flirt(bool flirtOn)
-    {
-        _animator.SetBool("Flirt", flirtOn);
-        RestrictMovement = flirtOn;
-        if (flirtOn)
-        {
-            PlayFlirt.Post(gameObject);
-            InSafeZone = true;
-        }
-        else
-        {
-            PlayFlirt.Stop(gameObject);
-            LeaveSafeZoneAfterDelay(2f);
-        }
-    }
+
 
     public void SetInteractable(IInteractable interactable)
     {
-        interactableInFrontOfCharacter = interactable;
+       // _interactBox.Interactable = interactable;
     }
 
-    public IInteractable GetInteractable() => interactableInFrontOfCharacter;
+    public IInteractable GetInteractable() => _interactBox.Interactable;
 
     public void LeaveSafeZoneAfterDelay(float delay)
     {
@@ -346,12 +277,30 @@ public class Character : MonoBehaviour,IInteractable
 
     public void Interact(Character character)
     {
-        foreach(var key in keyPosition.GetComponentsInChildren<Transform>())
+        foreach(var key in keyPosition.GetComponentsInChildren<Key>())
         {
-            key.SetParent(character.keyPosition);
-            key.localPosition = Vector3.zero;
-            key.localRotation = Quaternion.identity;
+            key.transform.SetParent(character.keyPosition);
+            key.transform.localPosition = Vector3.zero;
+            key.transform.localRotation = Quaternion.identity;
         }
+    }
+
+    public IPickable LightHeldObject()
+    {
+        var item = pickedUpLightItemPosition.GetComponentInChildren<IPickable>();
+        if (item != null)
+            return item;
+        else
+            return null;
+    }
+
+    public GameObject HeavyHeldObject()
+    {
+        var item = pickedUpHeavyItemPosition.GetComponentInChildren<Transform>();
+        if (item != null)
+            return item.gameObject;
+        else
+            return null;
     }
 
     //crappy functions for use for the hotbar
@@ -381,7 +330,7 @@ public class Character : MonoBehaviour,IInteractable
         }
         if (!usingAbility)
         {
-            var weapon = pickedUpLightItemPosition.GetComponentInChildren<Melee>();
+            var weapon = pickedUpLightItemPosition.GetComponentInChildren<Weapon>();
             if (weapon != null)
             {
                 weapon.StartSwing();
@@ -391,12 +340,12 @@ public class Character : MonoBehaviour,IInteractable
 
     public void MomDistraction()
     {
-        if(interactableInFrontOfCharacter!=null)
+        if(_interactBox.Interactable!=null)
         {
-            var npc = interactableInFrontOfCharacter as NPC;
+            var npc = _interactBox.Interactable as NPC;
             if (npc != null)
             {
-                npc.Interact(this);
+                //npc.Interact(this);
             }
         }
     }
@@ -445,4 +394,6 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
+
+   
 }

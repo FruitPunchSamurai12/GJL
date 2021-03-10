@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         cameraController.SetCameraTarget(GetCurrentCharacterTransform());
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void AddCharacter(Character character)

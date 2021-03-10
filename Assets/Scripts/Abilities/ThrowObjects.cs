@@ -79,11 +79,6 @@ public class ThrowObjects : Ability
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
 
-    public void PickedUpObjectToThrow(Throwable objToThrow)
-    {
-        _objectToThrow = objToThrow;
-        Debug.Log("ability armed");
-    }
 
     public override void OnTryUnuse()
     {
@@ -95,13 +90,18 @@ public class ThrowObjects : Ability
 
     public override void OnTryUse()
     {
-        if(_objectToThrow!=null)
+        var item = character.LightHeldObject();
+        if (item != null)
         {
-            Using = true;
-            startCharging = false;
-            chargeTimer = 0;
-            character.RestrictMovement = true;
-            currentThrowRange = throwMinRange;
+            _objectToThrow = item as Throwable;
+            if (_objectToThrow != null)
+            {
+                Using = true;
+                startCharging = false;
+                chargeTimer = 0;
+                character.RestrictMovement = true;
+                currentThrowRange = throwMinRange;
+            }
         }
     }
 

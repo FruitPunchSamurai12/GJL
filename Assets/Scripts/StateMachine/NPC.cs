@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NPC : MonoBehaviour,IInteractable
+public class NPC : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 7f;
     [SerializeField] float sightRange = 10f;
@@ -174,19 +174,16 @@ public class NPC : MonoBehaviour,IInteractable
         hasHeardSomething = false;
     }
 
-    public void Interact(Character character)
+    public void Flirt(Character character)
     {
         Debug.Log("interacting");
         
         if (!chitChatting)
         {
-            if (CanSeeSpecificCharacter(character))
-            return;
             transform.LookAt(character.transform.position);
             character.transform.LookAt(transform.position);
             Target = character.transform.position + character.transform.forward * 2f;
             chitChatting = true;
-            character.Flirt(true);
             characterTalkingWith = character;
         }
         else
@@ -199,7 +196,7 @@ public class NPC : MonoBehaviour,IInteractable
     {
         if(characterTalkingWith!=null)
         {
-            characterTalkingWith.SetInteractable(this);
+            //characterTalkingWith.SetInteractable(this);
             transform.LookAt(characterTalkingWith.transform.position);
         }        
     }
@@ -214,7 +211,6 @@ public class NPC : MonoBehaviour,IInteractable
         if (characterTalkingWith != null)
         {
             chitChatting = false;
-            characterTalkingWith.Flirt(false);
             characterTalkingWith = null;
         }
     }

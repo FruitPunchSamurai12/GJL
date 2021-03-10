@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee : Throwable
+public class Weapon : Throwable
 {
     [SerializeField]
     LayerMask enemyLayer;
@@ -92,5 +92,8 @@ public class Melee : Throwable
             MakeAttack();
     }
 
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(hitOrigin.position, radius);
+    }
 }

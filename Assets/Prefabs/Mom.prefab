@@ -182,7 +182,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5cd2d80f2672a8c4db7ad965ad0709c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -263,7 +263,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5cd2d80f2672a8c4db7ad965ad0709c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -297,8 +297,11 @@ GameObject:
   - component: {fileID: 8232987474828769379}
   - component: {fileID: 8232987474828769380}
   - component: {fileID: 8969853951094288602}
+  - component: {fileID: 4199432358523587671}
   - component: {fileID: 1060220396}
   - component: {fileID: -4404032677900050649}
+  - component: {fileID: 3195332907242476439}
+  - component: {fileID: 1181550038}
   m_Layer: 9
   m_Name: Mom
   m_TagString: Untagged
@@ -321,6 +324,7 @@ Transform:
   - {fileID: 33641965815443176}
   - {fileID: 1931510215}
   - {fileID: 2030872512}
+  - {fileID: 2252354852229495179}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -341,7 +345,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.02, z: 0}
 --- !u!114 &8232987474828769380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,15 +359,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterIndex: 2
-  whatCanWeInteractWith:
-    serializedVersion: 2
-    m_Bits: 36608
   pickedUpHeavyItemPosition: {fileID: 2030872512}
   pickedUpLightItemPosition: {fileID: 1931510215}
   keyPosition: {fileID: 33641965815443176}
   runSpeed: 7
   walkSpeed: 5
-  hardcodedYValue: 0.88
+  hardcodedYValue: 0.9
   halfSpeed: 0
   PlayFootsteps:
     idInternal: 0
@@ -372,7 +373,7 @@ MonoBehaviour:
   PlayFlirt:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 4aedfc37fd008664a9431d498dde4407, type: 2}
 --- !u!114 &8969853951094288602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +388,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityNumber: 1
   animationBool: Pickpocket
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &4199432358523587671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232987474828769381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdfdf4ac59393d4fa52b6d994edd7fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityNumber: 2
+  animationBool: Flirt
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!95 &1060220396
 Animator:
   serializedVersion: 3
@@ -428,6 +449,69 @@ MonoBehaviour:
   abilityName: Pickpocket
   abilityTooltip: Steal an item from an enemy.
   abilityImage: {fileID: 21300000, guid: 3520f642aae6a474fa3863bcfec4358e, type: 3}
+--- !u!114 &3195332907242476439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232987474828769381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8840efeeb86645146959fb5b962192d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: -0.44}
+  size: {x: 0.7, y: 1.8, z: 0.6}
+  whatCanWeInteractWith:
+    serializedVersion: 2
+    m_Bits: 36608
+--- !u!114 &1181550038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8232987474828769381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d240b5182d4e86479a0a40ff360b830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footsteps:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6f67c13a0d4128c45a0b1d7202642001, type: 2}
+--- !u!1 &8791697721140026286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2252354852229495179}
+  m_Layer: 9
+  m_Name: InteractBoxCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2252354852229495179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791697721140026286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8232987474828769378}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &920988124361889999
 PrefabInstance:
   m_ObjectHideFlags: 0

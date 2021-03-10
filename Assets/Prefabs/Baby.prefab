@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 6392733962945194442}
   - component: {fileID: 3116059284952489346}
   - component: {fileID: 4953767574056340121}
+  - component: {fileID: 1085096244800891963}
+  - component: {fileID: 991940266}
   m_Layer: 9
   m_Name: Baby
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3252945569734948689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.109, y: 0.5, z: -0.306}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3498448535630763015}
@@ -73,9 +75,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterIndex: 3
-  whatCanWeInteractWith:
-    serializedVersion: 2
-    m_Bits: 36352
   pickedUpHeavyItemPosition: {fileID: 8398723844360582651}
   pickedUpLightItemPosition: {fileID: 972708111721206021}
   keyPosition: {fileID: 3051703095008360140}
@@ -108,7 +107,7 @@ MonoBehaviour:
   BabyCrying:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: c241068e6f4ed034b9a1ecfd73d85ad3, type: 2}
   cryRange: 15
 --- !u!114 &994092000
 MonoBehaviour:
@@ -193,6 +192,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 1
+--- !u!114 &1085096244800891963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252945569734948689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8840efeeb86645146959fb5b962192d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  center: {x: 0, y: 0, z: -0.5}
+  size: {x: 0.5, y: 0.7, z: 0.5}
+  whatCanWeInteractWith:
+    serializedVersion: 2
+    m_Bits: 34816
+--- !u!114 &991940266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252945569734948689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d240b5182d4e86479a0a40ff360b830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Footsteps:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6f67c13a0d4128c45a0b1d7202642001, type: 2}
 --- !u!1 &3252945570460042820
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +284,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5cd2d80f2672a8c4db7ad965ad0709c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -334,7 +366,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5cd2d80f2672a8c4db7ad965ad0709c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
