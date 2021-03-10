@@ -13,22 +13,25 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID MX_PLAY_FINALE = 4065079687U;
         static const AkUniqueID MX_PLAY_MAIN_MENU = 890084909U;
         static const AkUniqueID MX_SETSTATE = 1128714786U;
         static const AkUniqueID PLAY_BABY_CRYING = 753280365U;
         static const AkUniqueID PLAY_BOTTLE_SMASH = 1131775195U;
         static const AkUniqueID PLAY_DOOR_CLOSE = 2292458263U;
         static const AkUniqueID PLAY_DOOR_OPEN = 1660008929U;
+        static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
         static const AkUniqueID PLAY_FLIRT = 1692061147U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_FRYING_PAN_KNOCKOUT = 3561477708U;
         static const AkUniqueID PLAY_FRYING_PAN_SWING = 4261233702U;
+        static const AkUniqueID PLAY_FRYING_PAN_THROW = 1939857692U;
+        static const AkUniqueID PLAY_GRAB_DOCUMENT = 3205592208U;
         static const AkUniqueID PLAY_ITEM_PICKUP = 2652605998U;
         static const AkUniqueID PLAY_ITEM_PUTDOWN = 4250118861U;
         static const AkUniqueID PLAY_ITEM_THROW = 3065584282U;
         static const AkUniqueID PLAY_ITEM_THROW_CHARGE = 3278353889U;
         static const AkUniqueID PLAY_PICKPOCKET_KEYS = 1684266438U;
+        static const AkUniqueID PLAY_SAFE_DOOR_OPEN = 2092973319U;
         static const AkUniqueID PLAY_UI_CHARACTER_SWITCH = 3663550651U;
         static const AkUniqueID PLAY_UI_CLICK_DECISION = 2581004938U;
         static const AkUniqueID PLAY_UI_CLICK_REGULAR = 1319291932U;
@@ -67,6 +70,7 @@ namespace AK
             {
                 static const AkUniqueID ALERT = 721787521U;
                 static const AkUniqueID ENTERED_HOUSE = 2563422499U;
+                static const AkUniqueID FINALE = 2540243936U;
                 static const AkUniqueID IDLE = 1874288895U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID SUSPICIOUS = 3270337040U;
@@ -103,6 +107,12 @@ namespace AK
 
     } // namespace SWITCHES
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MUSIC_VOLUME = 1006694123U;
+        static const AkUniqueID SOUND_VOLUME = 495870151U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -112,8 +122,8 @@ namespace AK
 
     namespace BUSSES
     {
-        static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
-        static const AkUniqueID MASTER_MUSIC_BUS = 48433064U;
+        static const AkUniqueID MASTER_AUDIO_BUS = 2392784291U;
+        static const AkUniqueID MASTER_MUSIC_BUS = 609974080U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

@@ -52,6 +52,7 @@ public class CameraShake : MonoBehaviour
             if(Controller.Instance.LeftClick)
             {
                 started = true;
+                AkSoundEngine.PostEvent("Play_Explosion", gameObject);
             }
         }
     }

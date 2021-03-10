@@ -44,7 +44,6 @@ public class Character : MonoBehaviour,IInteractable
     public void BackToCheckPoint()
     {
         _characterController.enabled = false;
-        transform.position = GameManager.Instance.GetCheckpointPosition().position;
         foreach (var ability in _ability)
         {
             ability.OnTryUnuse();
@@ -55,6 +54,7 @@ public class Character : MonoBehaviour,IInteractable
         {
             key.Drop();
         }
+        transform.position = GameManager.Instance.GetCheckpointPosition().position;
         _characterController.enabled = true;
     }
 
@@ -131,7 +131,7 @@ public class Character : MonoBehaviour,IInteractable
     public void LookForInteractables()
     {
         //RaycastHit hit;
-        var targets = Physics.OverlapBox(transform.position, transform.localScale, transform.rotation, whatCanWeInteractWith);
+        var targets = Physics.OverlapBox(transform.position+transform.forward, transform.localScale*2f, transform.rotation, whatCanWeInteractWith);
         if(targets.Length>0)
         {
             foreach (var target in targets)

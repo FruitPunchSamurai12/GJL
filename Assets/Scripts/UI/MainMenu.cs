@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
     }
     void Start()
     {
+        AkSoundEngine.StopAll();
         MX_MainMenu.Post(gameObject);
     }
 

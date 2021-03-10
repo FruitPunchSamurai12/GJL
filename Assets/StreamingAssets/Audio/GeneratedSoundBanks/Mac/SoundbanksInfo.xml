@@ -19,45 +19,53 @@
 		</File>
 		<File Id="938649116" Language="SFX">
 			<ShortName>sfx_amb_trees_02.wav</ShortName>
-			<Path>SFX\sfx_amb_trees_02_D79FB2B7.wem</Path>
+			<Path>SFX\sfx_amb_trees_02_64842ACC.wem</Path>
 		</File>
 	</StreamedFiles>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="2938568991">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1663838662">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="495870151" Name="Sound_Volume" ObjectPath="\Game Parameters\Default Work Unit\Sound_Volume"/>
+				<GameParameter Id="1006694123" Name="Music_Volume" ObjectPath="\Game Parameters\Default Work Unit\Music_Volume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3023356346" Language="SFX" Hash="3853492585">
+		<SoundBank Id="3023356346" Language="SFX" Hash="3287472123">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX_Main</ObjectPath>
 			<ShortName>SFX_Main</ShortName>
 			<Path>SFX_Main.bnk</Path>
 			<IncludedEvents>
-				<Event Id="753280365" Name="Play_Baby_Crying" ObjectPath="\Events\Default Work Unit\Interactions\Play_Baby_Crying" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
-				<Event Id="1131775195" Name="Play_Bottle_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Bottle_Smash" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="1.635762"/>
-				<Event Id="2292458263" Name="Play_Door_Close" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Close" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
-				<Event Id="1660008929" Name="Play_Door_Open" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Open" DurationType="OneShot" DurationMin="1.500000" DurationMax="1.500000"/>
-				<Event Id="1692061147" Name="Play_Flirt" ObjectPath="\Events\Default Work Unit\Interactions\Play_Flirt" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="753280365" Name="Play_Baby_Crying" ObjectPath="\Events\Default Work Unit\Interactions\Play_Baby_Crying" MaxAttenuation="35.000000" DurationType="Infinite"/>
+				<Event Id="1131775195" Name="Play_Bottle_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Bottle_Smash" MaxAttenuation="80.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="1.635762"/>
+				<Event Id="2292458263" Name="Play_Door_Close" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Close" DurationType="OneShot" DurationMin="1.781797" DurationMax="2.181015"/>
+				<Event Id="1660008929" Name="Play_Door_Open" ObjectPath="\Events\Default Work Unit\Interactions\Play_Door_Open" DurationType="OneShot" DurationMin="1.336348" DurationMax="1.635762"/>
+				<Event Id="4030404899" Name="Play_Explosion" ObjectPath="\Events\Default Work Unit\Interactions\Play_Explosion" DurationType="OneShot" DurationMin="6.000000" DurationMax="6.000000"/>
+				<Event Id="1692061147" Name="Play_Flirt" ObjectPath="\Events\Default Work Unit\Interactions\Play_Flirt" MaxAttenuation="35.000000" DurationType="OneShot" DurationMin="6.500000" DurationMax="6.500000"/>
 				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Interactions\Play_Footsteps" DurationType="OneShot" DurationMin="0.458502" DurationMax="0.612027"/>
 				<Event Id="3561477708" Name="Play_Frying_Pan_Knockout" ObjectPath="\Events\Default Work Unit\Interactions\Play_Frying_Pan_Knockout" DurationType="OneShot" DurationMin="1.785495" DurationMax="2.067421"/>
 				<Event Id="4261233702" Name="Play_Frying_Pan_Swing" ObjectPath="\Events\Default Work Unit\Interactions\Play_Frying_Pan_Swing" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
+				<Event Id="1939857692" Name="Play_Frying_Pan_Throw" ObjectPath="\Events\Default Work Unit\Interactions\Play_Frying_Pan_Throw" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
+				<Event Id="3205592208" Name="Play_Grab_Document" ObjectPath="\Events\Default Work Unit\Interactions\Play_Grab_Document" DurationType="OneShot" DurationMin="1.000000" DurationMax="1.000000"/>
 				<Event Id="2652605998" Name="Play_Item_Pickup" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Pickup" DurationType="OneShot" DurationMin="0.392612" DurationMax="0.531792"/>
 				<Event Id="4250118861" Name="Play_Item_Putdown" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Putdown" DurationType="OneShot" DurationMin="0.347854" DurationMax="0.380062"/>
 				<Event Id="3065584282" Name="Play_Item_Throw" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw" DurationType="OneShot" DurationMin="0.525236" DurationMax="0.572774"/>
 				<Event Id="3278353889" Name="Play_Item_Throw_Charge" ObjectPath="\Events\Default Work Unit\Interactions\Play_Item_Throw_Charge" DurationType="OneShot" DurationMin="1.434932" DurationMax="1.610656"/>
 				<Event Id="1684266438" Name="Play_Pickpocket_Keys" ObjectPath="\Events\Default Work Unit\Interactions\Play_Pickpocket_Keys" DurationType="OneShot" DurationMin="0.873685" DurationMax="1.235577"/>
+				<Event Id="2092973319" Name="Play_Safe_Door_Open" ObjectPath="\Events\Default Work Unit\Interactions\Play_Safe_Door_Open" DurationType="OneShot" DurationMin="2.596610" DurationMax="2.596610"/>
 				<Event Id="3663550651" Name="Play_UI_Character_Switch" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Character_Switch" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="2581004938" Name="Play_UI_Click_Decision" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Click_Decision" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="1319291932" Name="Play_UI_Click_Regular" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Click_Regular" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="1339559671" Name="Play_UI_Hover" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Hover" DurationType="OneShot" DurationMin="0.500000" DurationMax="0.500000"/>
 				<Event Id="703069780" Name="Play_UI_Main_Start_Button" ObjectPath="\Events\Default Work Unit\UI\Play_UI_Main_Start_Button" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
-				<Event Id="2250361604" Name="Play_Vase_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Vase_Smash" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="1.683693"/>
-				<Event Id="3352654671" Name="Play_Window_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Window_Smash" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
+				<Event Id="2250361604" Name="Play_Vase_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Vase_Smash" MaxAttenuation="80.000000" DurationType="OneShot" DurationMin="1.415811" DurationMax="1.683693"/>
+				<Event Id="3352654671" Name="Play_Window_Smash" ObjectPath="\Events\Default Work Unit\Interactions\Play_Window_Smash" MaxAttenuation="80.000000" DurationType="OneShot" DurationMin="2.000000" DurationMax="2.000000"/>
 				<Event Id="4278971852" Name="Start_Area_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Area_AMB" DurationType="Infinite"/>
 				<Event Id="2771104862" Name="Start_BBQ_Amb" ObjectPath="\Events\Default Work Unit\Ambience\Start_BBQ_Amb" MaxAttenuation="25.000000" DurationType="Infinite"/>
 				<Event Id="3194767864" Name="Start_Forest_Ambience" ObjectPath="\Events\Default Work Unit\Ambience\Start_Forest_Ambience" MaxAttenuation="40.000000" DurationType="Infinite"/>
-				<Event Id="3248596991" Name="Start_Fountain_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Fountain_AMB" MaxAttenuation="20.000000" DurationType="Infinite"/>
+				<Event Id="3248596991" Name="Start_Fountain_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Fountain_AMB" MaxAttenuation="35.000000" DurationType="Infinite"/>
 				<Event Id="3322761575" Name="Start_Leaves_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Leaves_AMB" MaxAttenuation="20.000000" DurationType="Infinite"/>
 				<Event Id="3630086782" Name="Start_Washing_Machine_AMB" ObjectPath="\Events\Default Work Unit\Ambience\Start_Washing_Machine_AMB" MaxAttenuation="10.000000" DurationType="Infinite"/>
 			</IncludedEvents>
@@ -109,9 +117,17 @@
 					<ShortName>sfx_amb_trees_birds-005.wav</ShortName>
 					<Path>SFX\sfx_amb_trees_birds-005_E5FEFA51.wem</Path>
 				</File>
+				<File Id="94718774" Language="SFX">
+					<ShortName>sx_ui_objective_complete-003.wav</ShortName>
+					<Path>SFX\sx_ui_objective_complete-003_4918C148.wem</Path>
+				</File>
 				<File Id="105727127" Language="SFX">
 					<ShortName>sfx_door_open.wav</ShortName>
 					<Path>SFX\sfx_door_open_E5FEFA51.wem</Path>
+				</File>
+				<File Id="127544163" Language="SFX">
+					<ShortName>sx_sfx_baby_crying-002.wav</ShortName>
+					<Path>SFX\sx_sfx_baby_crying-002_E5FEFA51.wem</Path>
 				</File>
 				<File Id="139189593" Language="SFX">
 					<ShortName>sx_sfx_fs_concrete-002.wav</ShortName>
@@ -149,6 +165,14 @@
 					<ShortName>sx_sfx_glass_bottle_shatter-003.wav</ShortName>
 					<Path>SFX\sx_sfx_glass_bottle_shatter-003_E5FEFA51.wem</Path>
 				</File>
+				<File Id="195338001" Language="SFX">
+					<ShortName>sx_sfx_safe_door_open.wav</ShortName>
+					<Path>SFX\sx_sfx_safe_door_open_E5FEFA51.wem</Path>
+				</File>
+				<File Id="202090875" Language="SFX">
+					<ShortName>sx_sfx_baby_crying-001.wav</ShortName>
+					<Path>SFX\sx_sfx_baby_crying-001_E5FEFA51.wem</Path>
+				</File>
 				<File Id="203145624" Language="SFX">
 					<ShortName>sx_amb_leaves_rustling-005.wav</ShortName>
 					<Path>SFX\sx_amb_leaves_rustling-005_C7840AB1.wem</Path>
@@ -157,9 +181,17 @@
 					<ShortName>sx_sfx_fs_grass-004.wav</ShortName>
 					<Path>SFX\sx_sfx_fs_grass-004_E5FEFA51.wem</Path>
 				</File>
+				<File Id="212520082" Language="SFX">
+					<ShortName>sx_sfx_baby_crying_water.wav</ShortName>
+					<Path>SFX\sx_sfx_baby_crying_water_A224571F.wem</Path>
+				</File>
 				<File Id="226528795" Language="SFX">
 					<ShortName>sx_sfx_glass_window_shards-002.wav</ShortName>
 					<Path>SFX\sx_sfx_glass_window_shards-002_E4E8F682.wem</Path>
+				</File>
+				<File Id="243536470" Language="SFX">
+					<ShortName>sx_sfx_c4_explosion.wav</ShortName>
+					<Path>SFX\sx_sfx_c4_explosion_E5FEFA51.wem</Path>
 				</File>
 				<File Id="244116871" Language="SFX">
 					<ShortName>sx_sfx_fs_grass-002.wav</ShortName>
@@ -205,6 +237,10 @@
 					<ShortName>sx_sfx_frying_pan_swing_2.wav</ShortName>
 					<Path>SFX\sx_sfx_frying_pan_swing_2_C7840AB1.wem</Path>
 				</File>
+				<File Id="391942179" Language="SFX">
+					<ShortName>sx_ui_objective_complete-002.wav</ShortName>
+					<Path>SFX\sx_ui_objective_complete-002_B3CCE637.wem</Path>
+				</File>
 				<File Id="401379032" Language="SFX">
 					<ShortName>sfx_amb_trees_birds-004.wav</ShortName>
 					<Path>SFX\sfx_amb_trees_birds-004_E5FEFA51.wem</Path>
@@ -228,6 +264,10 @@
 				<File Id="429599463" Language="SFX">
 					<ShortName>sx_sfx_vase_smash.wav</ShortName>
 					<Path>SFX\sx_sfx_vase_smash_E5FEFA51.wem</Path>
+				</File>
+				<File Id="458623974" Language="SFX">
+					<ShortName>sx_sfx_document_pickup.wav</ShortName>
+					<Path>SFX\sx_sfx_document_pickup_E5FEFA51.wem</Path>
 				</File>
 				<File Id="471301565" Language="SFX">
 					<ShortName>sx_sfx_glass_window_shatter-002.wav</ShortName>
@@ -281,9 +321,17 @@
 					<ShortName>sx_sfx_fs_interior-003.wav</ShortName>
 					<Path>SFX\sx_sfx_fs_interior-003_E5FEFA51.wem</Path>
 				</File>
+				<File Id="705116446" Language="SFX">
+					<ShortName>sx_sfx_baby_crying-003.wav</ShortName>
+					<Path>SFX\sx_sfx_baby_crying-003_E5FEFA51.wem</Path>
+				</File>
 				<File Id="705492196" Language="SFX">
 					<ShortName>sx_sfx_fs_interior-004.wav</ShortName>
 					<Path>SFX\sx_sfx_fs_interior-004_E5FEFA51.wem</Path>
+				</File>
+				<File Id="763369753" Language="SFX">
+					<ShortName>sx_sfx_mom_flirt.wav</ShortName>
+					<Path>SFX\sx_sfx_mom_flirt_E5FEFA51.wem</Path>
 				</File>
 				<File Id="765126809" Language="SFX">
 					<ShortName>sx_amb_bbq_layer2-002.wav</ShortName>
@@ -369,11 +417,19 @@
 					<ShortName>sx_sfx_glass_bottle_shatter-001.wav</ShortName>
 					<Path>SFX\sx_sfx_glass_bottle_shatter-001_E5FEFA51.wem</Path>
 				</File>
+				<File Id="1051478079" Language="SFX">
+					<ShortName>sx_ui_objective_complete-001.wav</ShortName>
+					<Path>SFX\sx_ui_objective_complete-001_624B7568.wem</Path>
+				</File>
 				<File Id="1065790181" Language="SFX">
 					<ShortName>sx_amb_bbq_layer3-003.wav</ShortName>
 					<Path>SFX\sx_amb_bbq_layer3-003_CA692E25.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
+			<GameParameters>
+				<GameParameter Id="495870151" Name="Sound_Volume" ObjectPath="\Game Parameters\Default Work Unit\Sound_Volume"/>
+				<GameParameter Id="1006694123" Name="Music_Volume" ObjectPath="\Game Parameters\Default Work Unit\Music_Volume"/>
+			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="4064446173" Name="Surface_Type" ObjectPath="\Switches\Default Work Unit\Surface_Type">
 					<Switches>
@@ -384,30 +440,12 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3991942870" Language="SFX" Hash="274626832">
+		<SoundBank Id="3991942870" Language="SFX" Hash="3577855861">
 			<ObjectPath>\SoundBanks\Default Work Unit\Music</ObjectPath>
 			<ShortName>Music</ShortName>
 			<Path>Music.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2749816896" Name="MX_Play_Base_Baby" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Base_Baby" DurationType="Infinite">
-					<ActionSetState>
-						<ActionSetStateEntry Id="1543097833" Name="Baby" ObjectPath="\States\Default Work Unit\Current_Character\Baby"/>
-						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
-					</ActionSetState>
-				</Event>
-				<Event Id="3691357135" Name="MX_Play_Base_Dad" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Base_Dad" DurationType="Infinite">
-					<ActionSetState>
-						<ActionSetStateEntry Id="311764516" Name="Dad" ObjectPath="\States\Default Work Unit\Current_Character\Dad"/>
-						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
-					</ActionSetState>
-				</Event>
-				<Event Id="3656668937" Name="MX_Play_Base_Mom" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Base_Mom" DurationType="Infinite">
-					<ActionSetState>
-						<ActionSetStateEntry Id="1082004790" Name="Mom" ObjectPath="\States\Default Work Unit\Current_Character\Mom"/>
-						<ActionSetStateEntry Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
-					</ActionSetState>
-				</Event>
-				<Event Id="890084909" Name="MX_Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Main_Menu" DurationType="OneShot" DurationMin="72.285698" DurationMax="72.285698"/>
+				<Event Id="890084909" Name="MX_Play_Main_Menu" ObjectPath="\Events\Default Work Unit\Music\MX_Play_Main_Menu" DurationType="Infinite"/>
 				<Event Id="1128714786" Name="MX_setState" ObjectPath="\Events\Default Work Unit\Music\MX_setState" DurationType="Infinite"/>
 			</IncludedEvents>
 			<ReferencedStreamedFiles>
@@ -415,6 +453,10 @@
 				<File Id="153803959"/>
 			</ReferencedStreamedFiles>
 			<IncludedMemoryFiles>
+				<File Id="70748159" Language="SFX">
+					<ShortName>dad_stem (1).wav</ShortName>
+					<Path>SFX\dad_stem (1)_A224571F.wem</Path>
+				</File>
 				<File Id="129827003" Language="SFX">
 					<ShortName>mom_stem.wav</ShortName>
 					<Path>SFX\mom_stem_A224571F.wem</Path>
@@ -427,6 +469,10 @@
 					<ShortName>baby_stem.wav</ShortName>
 					<Path>SFX\baby_stem_A224571F.wem</Path>
 				</File>
+				<File Id="169491693" Language="SFX">
+					<ShortName>finale.wav</ShortName>
+					<Path>SFX\finale_A224571F.wem</Path>
+				</File>
 				<File Id="227360718" Language="SFX">
 					<ShortName>inside_stem.wav</ShortName>
 					<Path>SFX\inside_stem_A224571F.wem</Path>
@@ -435,28 +481,12 @@
 					<ShortName>alert_stem (1).wav</ShortName>
 					<Path>SFX\alert_stem (1)_A224571F.wem</Path>
 				</File>
-				<File Id="665314860" Language="SFX">
-					<ShortName>dad_stem.wav</ShortName>
-					<Path>SFX\dad_stem_A224571F.wem</Path>
-				</File>
 				<File Id="681976144" Language="SFX">
 					<ShortName>mx_sus_stem.wav</ShortName>
 					<Path>SFX\mx_sus_stem_A224571F.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 			<StateGroups>
-				<StateGroup Id="311764516" Name="Dad" ObjectPath="\States\Default Work Unit\Current_Character\Dad">
-					<States/>
-				</StateGroup>
-				<StateGroup Id="1082004790" Name="Mom" ObjectPath="\States\Default Work Unit\Current_Character\Mom">
-					<States/>
-				</StateGroup>
-				<StateGroup Id="1543097833" Name="Baby" ObjectPath="\States\Default Work Unit\Current_Character\Baby">
-					<States/>
-				</StateGroup>
-				<StateGroup Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle">
-					<States/>
-				</StateGroup>
 				<StateGroup Id="2721494480" Name="Game_States" ObjectPath="\States\Default Work Unit\Game_States">
 					<States>
 						<State Id="748895195" Name="None" ObjectPath="\States\Default Work Unit\Game_States\None"/>
@@ -464,6 +494,7 @@
 						<State Id="3270337040" Name="Suspicious" ObjectPath="\States\Default Work Unit\Game_States\Suspicious"/>
 						<State Id="1874288895" Name="Idle" ObjectPath="\States\Default Work Unit\Game_States\Idle"/>
 						<State Id="2563422499" Name="Entered_House" ObjectPath="\States\Default Work Unit\Game_States\Entered_House"/>
+						<State Id="2540243936" Name="Finale" ObjectPath="\States\Default Work Unit\Game_States\Finale"/>
 					</States>
 				</StateGroup>
 			</StateGroups>

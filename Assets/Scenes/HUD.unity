@@ -1740,7 +1740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Find the key to the safe
+  m_text: Find the key inside the vase
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}
   m_sharedMaterial: {fileID: -2176676935229416748, guid: a56fbf697312a644cae32ae1ceeb32ae, type: 2}

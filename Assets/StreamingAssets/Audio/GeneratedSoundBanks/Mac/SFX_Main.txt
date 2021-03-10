@@ -7,6 +7,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1660008929	Play_Door_Open			\Default Work Unit\Interactions\Play_Door_Open	
 	1684266438	Play_Pickpocket_Keys			\Default Work Unit\Interactions\Play_Pickpocket_Keys	
 	1692061147	Play_Flirt			\Default Work Unit\Interactions\Play_Flirt	
+	1939857692	Play_Frying_Pan_Throw			\Default Work Unit\Interactions\Play_Frying_Pan_Throw	
+	2092973319	Play_Safe_Door_Open			\Default Work Unit\Interactions\Play_Safe_Door_Open	
 	2250361604	Play_Vase_Smash			\Default Work Unit\Interactions\Play_Vase_Smash	
 	2292458263	Play_Door_Close			\Default Work Unit\Interactions\Play_Door_Close	
 	2581004938	Play_UI_Click_Decision			\Default Work Unit\UI\Play_UI_Click_Decision	
@@ -14,6 +16,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2771104862	Start_BBQ_Amb			\Default Work Unit\Ambience\Start_BBQ_Amb	
 	3065584282	Play_Item_Throw			\Default Work Unit\Interactions\Play_Item_Throw	
 	3194767864	Start_Forest_Ambience			\Default Work Unit\Ambience\Start_Forest_Ambience	
+	3205592208	Play_Grab_Document			\Default Work Unit\Interactions\Play_Grab_Document	
 	3248596991	Start_Fountain_AMB			\Default Work Unit\Ambience\Start_Fountain_AMB	
 	3278353889	Play_Item_Throw_Charge			\Default Work Unit\Interactions\Play_Item_Throw_Charge	
 	3322761575	Start_Leaves_AMB			\Default Work Unit\Ambience\Start_Leaves_AMB	
@@ -22,6 +25,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3630086782	Start_Washing_Machine_AMB			\Default Work Unit\Ambience\Start_Washing_Machine_AMB	
 	3663550651	Play_UI_Character_Switch			\Default Work Unit\UI\Play_UI_Character_Switch	
 	3854155799	Play_Footsteps			\Default Work Unit\Interactions\Play_Footsteps	
+	4030404899	Play_Explosion			\Default Work Unit\Interactions\Play_Explosion	
 	4250118861	Play_Item_Putdown			\Default Work Unit\Interactions\Play_Item_Putdown	
 	4261233702	Play_Frying_Pan_Swing			\Default Work Unit\Interactions\Play_Frying_Pan_Swing	
 	4278971852	Start_Area_AMB			\Default Work Unit\Ambience\Start_Area_AMB	
@@ -33,6 +37,14 @@ Switch	ID	Name	Switch Group			Notes
 	841620460	Concrete	Surface_Type			
 	1132214669	Interior	Surface_Type			
 	4248645337	Grass	Surface_Type			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	495870151	Sound_Volume			\Default Work Unit\Sound_Volume	
+	1006694123	Music_Volume			\Default Work Unit\Music_Volume	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	609974080	Master_Music_Bus			\Default Work Unit\Master_Music_Bus	
+	2392784291	Master_Audio_Bus			\Default Work Unit\Master_Audio_Bus	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	11093955	sx_sfx_door_close	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_door_close_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Interactions\sx_sfx_door\sx_sfx_door_close		352864
@@ -46,7 +58,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	56553029	sx_sfx_fs_grass-005	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_grass-005_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_grass\sx_sfx_fs_grass-005		44164
 	62902393	sx_amb_leaves_rustling-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_leaves_rustling-001_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-001		529264
 	82314786	sfx_amb_trees_birds-005	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_amb_trees_birds-005_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_forest\sx_amb_forest\sx_amb_trees_birds\sfx_amb_trees_birds-005		2205064
+	94718774	sx_ui_objective_complete-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_ui_objective_complete-003_4918C148.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_objective_complete\sx_ui_objective_complete-003		28062
 	105727127	sx_sfx_door_open	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_door_open_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Interactions\sx_sfx_door\sx_sfx_door_open		264660
+	127544163	sx_sfx_baby_crying-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_baby_crying-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Abilities\sx_baby_crying\BabyCry\sx_sfx_baby_crying-002		499408
 	139189593	sx_sfx_fs_concrete-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_concrete-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_concrete\sx_sfx_fs_concrete-002		44164
 	141003708	sx_sfx_frying_pan_swing	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_frying_pan_swing_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Frying_Pan\sx_sfx_frying_pan_swing\sx_sfx_frying_pan_swing		88264
 	144258475	sx_sfx_fs_concrete-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_concrete-003_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_concrete\sx_sfx_fs_concrete-003		44164
@@ -56,9 +70,13 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	176426117	sx_sfx_fs_concrete-004	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_concrete-004_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_concrete\sx_sfx_fs_concrete-004		44164
 	177288706	sx_sfx_glass_bottle_shatter_mid-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_bottle_shatter_mid-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_bottle_breaks\sx_sfx_bottle_mids\sx_sfx_glass_bottle_shatter_mid-002		132364
 	180501363	sx_sfx_glass_bottle_shatter-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_bottle_shatter-003_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_bottle_breaks\sx_sfx_bottle_shatter\sx_sfx_glass_bottle_shatter-003		132364
+	195338001	sx_sfx_safe_door_open	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_safe_door_open_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Interactions\sx_sfx_safe_door_open\sx_sfx_safe_door_open		529264
+	202090875	sx_sfx_baby_crying-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_baby_crying-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Abilities\sx_baby_crying\BabyCry\sx_sfx_baby_crying-001		970264
 	203145624	sx_amb_leaves_rustling-005	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_leaves_rustling-005_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-005		631020
 	204035089	sx_sfx_fs_grass-004	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_grass-004_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_grass\sx_sfx_fs_grass-004		44164
+	212520082	sx_sfx_baby_crying_water	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_baby_crying_water_A224571F.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Abilities\sx_baby_crying\sx_sfx_baby_crying_water		2081584
 	226528795	sx_sfx_glass_window_shards-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_window_shards-002_E4E8F682.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_window_breaks\sx_sfx_window_shards\sx_sfx_glass_window_shards-002		128062
+	243536470	sx_sfx_explosion	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_c4_explosion_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Explosives\sx_sfx_explosion		1058464
 	244116871	sx_sfx_fs_grass-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_grass-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_grass\sx_sfx_fs_grass-002		44164
 	274142343	sx_sfx_pick_up-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_ux_pick_up-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_pickup\sx_sfx_pick_up-002		93872
 	294095654	sx_sfx_glass_window_impacts-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_window_impacts-002_E4E8F682.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_window_breaks\sx_sfx_window_impacts\sx_sfx_glass_window_impacts-002		96062
@@ -70,12 +88,14 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	356679941	sx_sfx_fs_concrete-005	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_concrete-005_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_concrete\sx_sfx_fs_concrete-005		44164
 	367184694	sx_sfx_throw_charge	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_throw_charge_C40F52F4.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_throw_charge\sx_sfx_throw_charge		253184
 	374762465	sx_sfx_frying_pan_swing_2	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_frying_pan_swing_2_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Frying_Pan\sx_sfx_frying_pan_swing\sx_sfx_frying_pan_swing_2		88264
+	391942179	sx_ui_objective_complete-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_ui_objective_complete-002_B3CCE637.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_objective_complete\sx_ui_objective_complete-002		30396
 	401379032	sfx_amb_trees_birds-004	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_amb_trees_birds-004_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_forest\sx_amb_forest\sx_amb_trees_birds\sfx_amb_trees_birds-004		2469664
 	404560654	sx_sfx_fs_concrete-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_concrete-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_concrete\sx_sfx_fs_concrete-001		44164
 	411417809	sx_sfx_glass_shards-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_shards-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_bottle_breaks\sx_bottle_shards\sx_sfx_glass_shards-001		132364
 	422480757	sx_sfx_glass_shards-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_shards-002_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_bottle_breaks\sx_bottle_shards\sx_sfx_glass_shards-002		132364
 	424676925	sx_sfx_pick_up-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_ux_pick_up-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Throwables\sx_sfx_item_pickup\sx_sfx_pick_up-001		73436
 	429599463	sx_sfx_vase_smash	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_vase_smash_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_vase_smash		132364
+	458623974	sx_sfx_document_pickup	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_document_pickup_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Interactions\sx_sfx_document_pickup\sx_sfx_document_pickup		176464
 	471301565	sx_sfx_glass_window_shatter-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_window_shatter-002_E4E8F682.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_window_breaks\sx_sfx_window_shatter\sx_sfx_glass_window_shatter-002		96062
 	475112875	sx_amb_wind_passbys-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_wind_passbys-003_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_wind_passbys\sx_amb_wind_passbys-003		308764
 	483575577	sfx_amb_trees_birds-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_amb_trees_birds-003_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_forest\sx_amb_forest\sx_amb_trees_birds\sfx_amb_trees_birds-003		2381464
@@ -89,7 +109,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	642453842	sx_ui_buttons_hover	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_ui_buttons_hover_C5D55EE6.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_buttons_hover		28094
 	656405936	sx_sfx_glass_window_mids-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_window_mids-001_E4E8F682.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_window_breaks\sx_sfx_window_mids\sx_sfx_glass_window_mids-001		96062
 	680283232	sx_sfx_fs_interior-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_interior-003_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_interior\sx_sfx_fs_interior-003		44164
+	705116446	sx_sfx_baby_crying-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_baby_crying-003_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Abilities\sx_baby_crying\BabyCry\sx_sfx_baby_crying-003		352864
 	705492196	sx_sfx_fs_interior-004	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_fs_interior-004_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Character_Movement\sx_fs_interior\sx_sfx_fs_interior-004		44164
+	763369753	sx_sfx_mom_flirt	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_mom_flirt_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Abilities\MomFlirt\sx_sfx_mom_flirt		573364
 	765126809	sx_amb_bbq_layer2-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_bbq_layer2-002_CA692E25.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_bbq\sx_amb_bbq_layer2\sx_amb_bbq_layer2-002		441096
 	785243468	sx_sfx_glass_window_shatter-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_window_shatter-001_E4E8F682.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_window_breaks\sx_sfx_window_shatter\sx_sfx_glass_window_shatter-001		96062
 	829987952	sx_amb_leaves_rustling-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_leaves_rustling-003_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-003		485164
@@ -111,8 +133,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	1034272133	sx_amb_washing_machine	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_washing_machine_cycle_F0EDCF02.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_washing_machine		1200094
 	1034697239	sx_amb_leaves_rustling-002	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_leaves_rustling-002_C7840AB1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_leaves\sx_amb_leaves_rustling\sx_amb_leaves_rustling-002		485164
 	1043318795	sx_sfx_glass_bottle_shatter-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_sfx_glass_bottle_shatter-001_E5FEFA51.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX\Breakables\sx_sfx_bottle_breaks\sx_sfx_bottle_shatter\sx_sfx_glass_bottle_shatter-001		132364
+	1051478079	sx_ui_objective_complete-001	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_ui_objective_complete-001_624B7568.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SX_ui_interactions\sx_ui_objective_complete\sx_ui_objective_complete-001		32168
 	1065790181	sx_amb_bbq_layer3-003	D:\GJL_WwiseProject\.cache\Mac\SFX\sx_amb_bbq_layer3-003_CA692E25.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_amb_bbq\sx_amb_bbq_layer3\sx_amb_bbq_layer3-003		441096
 
 Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
-	938649116	sx_area_amb	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_amb_trees_02_D79FB2B7.wem	938649116.wem	\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_area_amb	
+	938649116	sx_area_amb	D:\GJL_WwiseProject\.cache\Mac\SFX\sfx_amb_trees_02_64842ACC.wem	938649116.wem	\Actor-Mixer Hierarchy\Default Work Unit\Ambience\sx_area_amb	
 

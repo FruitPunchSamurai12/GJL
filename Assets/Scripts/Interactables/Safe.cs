@@ -5,6 +5,7 @@ using UnityEngine;
 public class Safe : MonoBehaviour, IInteractable
 {
     public AK.Wwise.Event OpenDoor;
+    public AK.Wwise.Event GrabDocument;
     Animator _animator;  
     bool isLocked = true;
     [SerializeField]
@@ -26,5 +27,7 @@ public class Safe : MonoBehaviour, IInteractable
         OpenDoor.Post(gameObject);
         _animator.SetTrigger("Open");
         document.Interact(character);
+        GrabDocument.Post(gameObject);
+
     }   
 }

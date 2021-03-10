@@ -94,7 +94,9 @@ public class EndCutscene : IState
     public void OnEnter()
     {
         Cuscene.completed = false;
+        AkSoundEngine.SetState("Game_States", "Finale");
         SceneManager.LoadSceneAsync("Cutscene2");
+
     }
 
     public void OnExit()

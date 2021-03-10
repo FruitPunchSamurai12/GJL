@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f21b4900e20d14ca228c4d4c9df5c2, type: 3}
+  m_Name: FA2FE6F7-8161-49C6-BBE7-DE7C9F3ADD73
+  m_EditorClassIdentifier: 
+  objectName: Play_Grab_Document
+  id: 3205592208
+  guid: FA2FE6F7-8161-49C6-BBE7-DE7C9F3ADD73

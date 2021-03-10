@@ -30,26 +30,26 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 64af32fcf5557c44bb2f80544b55a7c0
     GuidInternal: 
-    m_lastTime: -8585870622130458983
+    m_lastTime: -8585870387673770582
     List:
-    - name: Master Audio Bus
+    - name: Master_Audio_Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
-      id: 3803692087
+      id: 2392784291
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Master Audio Bus
+      - ElementName: Master_Audio_Bus
         ObjectType: 2
-      Path: Default Work Unit\Master Audio Bus
-    - name: Master Music Bus
+      Path: Default Work Unit\Master_Audio_Bus
+    - name: Master_Music_Bus
       guid: 25087e114d46ce45b7bab457e68ecc63
-      id: 48433064
+      id: 609974080
       PathAndIcons:
       - ElementName: Default Work Unit
         ObjectType: 12
-      - ElementName: Master Music Bus
+      - ElementName: Master_Music_Bus
         ObjectType: 2
-      Path: Default Work Unit\Master Music Bus
+      Path: Default Work Unit\Master_Music_Bus
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -58,7 +58,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: d44f0ce6e1e29d4fae18affe65690fcd
     GuidInternal: 
-    m_lastTime: -8585870550860975661
+    m_lastTime: -8585870540413081931
     List:
     - name: Music
       guid: e94e8064f20d024aa8fdd34172c912cb
@@ -143,7 +143,7 @@ MonoBehaviour:
       - ElementName: Start_Fountain_AMB
         ObjectType: 3
       Path: Default Work Unit\Ambience\Start_Fountain_AMB
-      maxAttenuation: 20
+      maxAttenuation: 35
       maxDuration: -1
       minDuration: -1
     - name: Start_Leaves_AMB
@@ -192,7 +192,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Interactions
     guid: 2479bdd108434642b0fad18f4a0971b5
     GuidInternal: 
-    m_lastTime: -8585870568886932477
+    m_lastTime: -8585870479728232585
     List:
     - name: Play_Baby_Crying
       guid: 35a91f460e103146aa65f113a55c8e47
@@ -205,9 +205,9 @@ MonoBehaviour:
       - ElementName: Play_Baby_Crying
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Baby_Crying
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 35
+      maxDuration: 5.5
+      minDuration: 2
     - name: Play_Bottle_Smash
       guid: c0ca21b46c3ab34693b9278dffa2179d
       id: 1131775195
@@ -250,6 +250,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.635762
       minDuration: 1.336348
+    - name: Play_Explosion
+      guid: 71cde262be9631499af87b6eae999b2c
+      id: 4030404899
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Explosion
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Explosion
+      maxAttenuation: 0
+      maxDuration: 6
+      minDuration: 6
     - name: Play_Flirt
       guid: d512b4e50155314caa0e9940f451eb2e
       id: 1692061147
@@ -261,9 +275,9 @@ MonoBehaviour:
       - ElementName: Play_Flirt
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Flirt
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxAttenuation: 35
+      maxDuration: 6.5
+      minDuration: 6.5
     - name: Play_Footsteps
       guid: de6f84d9c594f347bb72bd664adf1df0
       id: 3854155799
@@ -320,6 +334,20 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_Grab_Document
+      guid: f7e62ffa6181c649bbe7de7c9f3add73
+      id: 3205592208
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Interactions
+        ObjectType: 12
+      - ElementName: Play_Grab_Document
+        ObjectType: 3
+      Path: Default Work Unit\Interactions\Play_Grab_Document
+      maxAttenuation: 0
+      maxDuration: 1
+      minDuration: 1
     - name: Play_Item_Pickup
       guid: a4fec8d4c3fa2e4788f1054ade49b9c7
       id: 2652605998
@@ -402,8 +430,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Interactions\Play_Safe_Door_Open
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 2.59661
+      minDuration: 2.59661
     - name: Play_Vase_Smash
       guid: 1e59051aa0429647bef008770a5f1abe
       id: 2250361604
@@ -441,7 +469,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\Music
     guid: c57d352dfc16ba4591ed56c2f436c99d
     GuidInternal: 
-    m_lastTime: -8585870719679174693
+    m_lastTime: -8585870364239386586
     List:
     - name: MX_Play_Alert
       guid: 25796ec9e64cd149a60eb3ce42a2fc75
@@ -469,8 +497,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music\MX_Play_Finale
       maxAttenuation: 0
-      maxDuration: 59.076923
-      minDuration: 59.076923
+      maxDuration: -1
+      minDuration: -1
     - name: MX_Play_Inside
       guid: 17d53bf6abc6be45ac1edc8909f922e8
       id: 1925193974
@@ -497,8 +525,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Music\MX_Play_Main_Menu
       maxAttenuation: 0
-      maxDuration: 72.2857
-      minDuration: 72.2857
+      maxDuration: 0
+      minDuration: 0
     - name: MX_Play_Sus
       guid: 622bbdc406469440bbe8bc6031ea9847
       id: 3785699005
@@ -536,7 +564,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit\NPC
     guid: 6182b64fe17f134aa45cea768648da58
     GuidInternal: 
-    m_lastTime: -8585870565821022104
+    m_lastTime: -8585870490693166370
     List:
     - name: Play_NPC_Baby_Cry_React
       guid: 50cb906860163b4c928f77ea5a3187c6
@@ -648,8 +676,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\NPC\Play_NPC_Sus_React
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_NPC_Sus_Reset
       guid: 90b70506358c3c48b53ec2baafc0d84a
       id: 2206120793
@@ -662,8 +690,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\NPC\Play_NPC_Sus_Reset
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\UI.wwu
     PathAndIcons:
     - ElementName: Default Work Unit
@@ -767,7 +795,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: dad49a2a38bcda44a9ddbbf729dbd83e
     GuidInternal: 
-    m_lastTime: -8585870554765555992
+    m_lastTime: -8585870541292154359
     List:
     - name: Music_Volume
       guid: 95f96c932a74ce488193b8a4375fd8b7
@@ -795,7 +823,7 @@ MonoBehaviour:
     ParentPath: Default Work Unit
     guid: 5a4db2cf5f6d814b93187413c67f6ba3
     GuidInternal: 
-    m_lastTime: -8585870802264702242
+    m_lastTime: -8585870445390994583
     List:
     - name: Current_Character
       guid: 2498265beb32c3448bd3c3ba4b384a3b
@@ -855,6 +883,12 @@ MonoBehaviour:
         id: 2563422499
         PathAndIcons:
         - ElementName: Entered_House
+          ObjectType: 8
+      - name: Finale
+        guid: aaf806b5d8f1c94d9d187cf706167c83
+        id: 2540243936
+        PathAndIcons:
+        - ElementName: Finale
           ObjectType: 8
       - name: Idle
         guid: f490b806cfcb4b43b511f73595e0407d
@@ -963,7 +997,5 @@ MonoBehaviour:
   - /GJL_WwiseProject
   - /GJL_WwiseProject/Events
   - /GJL_WwiseProject/Events/Default Work Unit
-  - /GJL_WwiseProject/Events/Default Work Unit/Ambience
-  - /GJL_WwiseProject/Events/Default Work Unit/Interactions
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
