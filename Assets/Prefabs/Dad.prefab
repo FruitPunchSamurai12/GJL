@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8840efeeb86645146959fb5b962192d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: -0.28}
+  offset: 0.76
   size: {x: 0.78, y: 1.8, z: 0.74}
   whatCanWeInteractWith:
     serializedVersion: 2

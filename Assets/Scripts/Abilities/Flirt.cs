@@ -22,7 +22,7 @@ public class Flirt : Ability
     {
         Debug.Log("tried to use");
         var box = GetComponent<InteractBox>();
-        var colliders = Physics.OverlapBox(transform.position + transform.forward + box.Center, box.Size/2f, transform.rotation, enemyMask);
+        var colliders = Physics.OverlapBox(transform.position + transform.forward*box.Offset, box.Size/2f, transform.rotation, enemyMask);
         foreach (var col in colliders)
         {
             var npc = col.GetComponent<NPC>();

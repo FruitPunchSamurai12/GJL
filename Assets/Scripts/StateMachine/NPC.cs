@@ -43,11 +43,10 @@ public class NPC : MonoBehaviour
     List<Character> characters = new List<Character>();
     List<NPC> unseenKnockedOutNPCs = new List<NPC>();
 
-    event Action<NPC> onNPCKnockedOut;
     // Start is called before the first frame update
     void Start()
     {
-        onNPCKnockedOut += NPCKnockedOut;
+        GameEvents.Instance.OnEnemyStunned += NPCKnockedOut;
         _col = GetComponent<Collider>();
     }
 
@@ -265,7 +264,7 @@ public class NPC : MonoBehaviour
             key.EnableCollider();
         }
         stunned = stun;
-        onNPCKnockedOut?.Invoke(this);
+        GameEvents.Instance.EnemyStunned(this);
     }
 
     public void GetStunned(Vector3 velocity)

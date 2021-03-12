@@ -5,19 +5,19 @@ using UnityEngine;
 public class InteractBox : MonoBehaviour
 {
     [SerializeField]
-    Vector3 center;
+    float offset;
     [SerializeField]
     Vector3 size;
     [SerializeField]
     LayerMask whatCanWeInteractWith;
 
     public IInteractable Interactable { get; private set; }
-    public Vector3 Center => center;
+    public float Offset => offset;
     public Vector3 Size => size;
 
     public void LookForInteractables()
     {       
-        var targets = Physics.OverlapBox(transform.position+ transform.forward+ center, size/2f, transform.rotation, whatCanWeInteractWith);
+        var targets = Physics.OverlapBox(transform.position+ transform.forward*offset, size/2f, transform.rotation, whatCanWeInteractWith);
         if (targets.Length > 0)
         {
             foreach (var target in targets)
@@ -41,6 +41,6 @@ public class InteractBox : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireCube(transform.position + transform.forward + center, size);
+        Gizmos.DrawWireCube(transform.position + transform.forward*offset, size);
     }
 }

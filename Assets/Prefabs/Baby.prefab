@@ -124,6 +124,9 @@ MonoBehaviour:
   abilityType: 2
   animationBool: Innocence
   insideHouse: 0
+  noInnocenceZoneMask:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!95 &994092005
 Animator:
   serializedVersion: 3
@@ -204,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8840efeeb86645146959fb5b962192d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  center: {x: 0, y: 0, z: -0.5}
+  offset: 0.5
   size: {x: 0.5, y: 0.7, z: 0.5}
   whatCanWeInteractWith:
     serializedVersion: 2

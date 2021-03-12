@@ -12,6 +12,7 @@ public enum AIStateEvents
 
 public class GameEvents : MonoBehaviour
 {
+    public event Action<NPC> OnEnemyStunned;
     public event Action OnEnemyEnterSuspicious;
     public event Action OnEnemyExitSuspicious;
     public event Action OnEnemyEnterAlert;
@@ -32,6 +33,11 @@ public class GameEvents : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void EnemyStunned(NPC npc)
+    {
+        OnEnemyStunned?.Invoke(npc);
     }
 
     public void ClearedObjective()
