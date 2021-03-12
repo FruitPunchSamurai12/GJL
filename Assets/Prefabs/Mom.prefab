@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f9c028ae84e66b4fbbba8d0066f9321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 1
+  abilityType: 2
   animationBool: Pickpocket
   enemyMask:
     serializedVersion: 2
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bdfdf4ac59393d4fa52b6d994edd7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 2
+  abilityType: 1
   animationBool: Flirt
   enemyMask:
     serializedVersion: 2

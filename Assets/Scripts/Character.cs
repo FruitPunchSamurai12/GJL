@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Character : MonoBehaviour,IInteractable
 {
@@ -10,7 +11,7 @@ public class Character : MonoBehaviour,IInteractable
     private IMover _mover;
     private Rotator _rotator;
     private Animator _animator;
-    private Ability[] _ability;
+    private Ability[] _abilities;
     MakeSound _footstepSound;
     [SerializeField] int characterIndex = 1;
     [SerializeField] Transform pickedUpHeavyItemPosition;
@@ -37,14 +38,14 @@ public class Character : MonoBehaviour,IInteractable
         _mover = new WASDMover(this);
         _rotator = new Rotator(this);
         _animator = GetComponent<Animator>();
-        _ability = GetComponents<Ability>();
+        _abilities = GetComponents<Ability>();
         _footstepSound = GetComponent<MakeSound>();
     }
 
     public void BackToCheckPoint()
     {
         _characterController.enabled = false;
-        foreach (var ability in _ability)
+        foreach (var ability in _abilities)
         {
             ability.OnTryUnuse();
         }
@@ -68,7 +69,7 @@ public class Character : MonoBehaviour,IInteractable
             _rotator.Tick();
         }
         TryInteract();
-        foreach (var ability in _ability)
+        foreach (var ability in _abilities)
         {
             ability.Tick();
         }
@@ -226,7 +227,7 @@ public class Character : MonoBehaviour,IInteractable
 
     public bool UsingAbility()
     {
-        foreach (var ability in _ability)
+        foreach (var ability in _abilities)
         {
             if (ability.Using)
                 return true;
@@ -303,91 +304,15 @@ public class Character : MonoBehaviour,IInteractable
             return null;
     }
 
-    //crappy functions for use for the hotbar
-
-    public void DadDistraction()
+    public void HotbarAbilityPressed(AbilityType type)
     {
-        if(_ability[0].Using)
-        {
-            _ability[0].OnTryUnuse();
-        }
-        else
-        {
-            _ability[0].OnTryUnuse();
-        }
+        var ability = Array.Find(_abilities, ab => ab.GetAbilityType == type);
+        ability.AbilityInputPressed();
     }
 
-    public void DadMelee()
-    {
-        bool usingAbility = false;
-        foreach (var ability in _ability)
-        {
-            if (ability.Using)
-            {
-                usingAbility = true;
-                break;
-            }
-        }
-        if (!usingAbility)
-        {
-            var weapon = pickedUpLightItemPosition.GetComponentInChildren<Weapon>();
-            if (weapon != null)
-            {
-                weapon.StartSwing();
-            }
-        }
-    }
-
-    public void MomDistraction()
-    {
-        if(_interactBox.Interactable!=null)
-        {
-            var npc = _interactBox.Interactable as NPC;
-            if (npc != null)
-            {
-                //npc.Interact(this);
-            }
-        }
-    }
-
-    public void MomPickpocket()
-    {
-        _ability[0].OnTryUse();
-    }
-
-    public void BabyCry()
-    {
-        foreach (var ability in _ability)
-        {
-            var cry = ability as Cry;
-            if(cry!=null)
-            {
-                if (cry.Using)
-                    cry.OnTryUnuse();
-                else
-                    cry.OnTryUse();
-            }
-        }
-    }
-
-    public void BabyInnocence()
-    {
-        foreach (var ability in _ability)
-        {
-            var innocence = ability as Innocence;
-            if (innocence != null)
-            {
-                if (innocence.Using)
-                    innocence.OnTryUnuse();
-                else
-                    innocence.OnTryUse();
-            }
-        }
-    
-    }
     public void PlayCharacterFS()
     {
-        PlayFootsteps.Post(gameObject);
+        //PlayFootsteps.Post(gameObject);
         if (_footstepSound != null)
         {
             _footstepSound.PlaySound();

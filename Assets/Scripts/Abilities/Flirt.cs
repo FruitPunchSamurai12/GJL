@@ -18,7 +18,7 @@ public class Flirt : Ability
         currentFlirtTarget = null;
     }
 
-    public override void OnTryUse()
+    protected override void OnTryUse()
     {
         Debug.Log("tried to use");
         var box = GetComponent<InteractBox>();

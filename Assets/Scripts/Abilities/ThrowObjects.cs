@@ -88,7 +88,7 @@ public class ThrowObjects : Ability
         character.RestrictMovement = false;
     }
 
-    public override void OnTryUse()
+    protected override void OnTryUse()
     {
         var item = character.LightHeldObject();
         if (item != null)

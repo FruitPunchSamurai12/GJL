@@ -18,7 +18,7 @@ public class Cry : Ability
         BabyCrying.Stop(gameObject);
     }
 
-    public override void OnTryUse()
+    protected override void OnTryUse()
     {
         if (character.UsingAbility())
             return;

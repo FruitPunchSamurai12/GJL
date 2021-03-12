@@ -13,7 +13,7 @@ public class Innocence : Ability
         Using = false;
     }
 
-    public override void OnTryUse()
+    protected override void OnTryUse()
     {
         if (character.UsingAbility() || insideHouse)
             return;

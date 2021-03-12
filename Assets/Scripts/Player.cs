@@ -84,39 +84,8 @@ public class Player : MonoBehaviour
         return null;
     }
 
-    //this is ugly af
-    //sorry to whoever is reading this
     public void HandleAbilityClicked(AbilityType type)
     {
-        if(type==AbilityType.distraction)
-        {
-            if(currentCharacterIndex==0)
-            {
-                allCharacters[currentCharacterIndex].DadDistraction();
-            }
-            else if(currentCharacterIndex==1)
-            {
-                allCharacters[currentCharacterIndex].MomDistraction();
-            }
-            else
-            {
-                allCharacters[currentCharacterIndex].BabyCry();
-            }
-        }
-        else if(type == AbilityType.ability)
-        {
-            if (currentCharacterIndex == 0)
-            {
-                allCharacters[currentCharacterIndex].DadMelee();
-            }
-            else if (currentCharacterIndex == 1)
-            {
-                allCharacters[currentCharacterIndex].MomPickpocket();
-            }
-            else
-            {
-                allCharacters[currentCharacterIndex].BabyInnocence();
-            }
-        }
+        allCharacters[currentCharacterIndex].HotbarAbilityPressed(type);       
     }
 }

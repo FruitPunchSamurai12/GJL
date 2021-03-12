@@ -25,7 +25,7 @@ public class ChasePlayer : IState
         _ai.IgnoreSounds = true;
         reachedCharacter = false;
         GameManager.Instance.CharacterIsBeingChased(_ai.TargetCharacter);
-        AkSoundEngine.PostEvent("Play_NPC_Chase_Begins", _ai.gameObject);
+        //AkSoundEngine.PostEvent("Play_NPC_Chase_Begins", _ai.gameObject);
     }
 
     public void OnExit()

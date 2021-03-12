@@ -26,7 +26,7 @@ public class Reset:IState
         _ai.SetAnimatorBool("Move", true);
         _ai.SetAnimatorBool("Alert", false);
         _ai.ChangeMaterial(1);
-        AkSoundEngine.PostEvent("Play_NPC_Sus_Reset", _ai.gameObject);
+        //AkSoundEngine.PostEvent("Play_NPC_Sus_Reset", _ai.gameObject);
     }
 
     public void OnExit()

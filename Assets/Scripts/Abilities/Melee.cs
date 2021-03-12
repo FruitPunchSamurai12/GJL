@@ -13,7 +13,7 @@ public class Melee : Ability
         
     }
 
-    public override void OnTryUse()
+    protected override void OnTryUse()
     {
         if (character.UsingAbility())
             return;

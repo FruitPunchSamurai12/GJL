@@ -11,7 +11,7 @@ public class PickPocket : Ability
       
     }
 
-    public override void OnTryUse()
+    protected override void OnTryUse()
     {
         var box = GetComponent<InteractBox>();
         var colliders = Physics.OverlapBox(transform.position + transform.forward + box.Center, box.Size / 2f, transform.rotation, enemyMask);

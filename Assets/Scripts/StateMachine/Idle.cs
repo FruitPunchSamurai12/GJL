@@ -24,5 +24,6 @@ public class Idle : IState
 
     public void Tick()
     {
+        _ai.CanSeeCharacter();
     }
 }

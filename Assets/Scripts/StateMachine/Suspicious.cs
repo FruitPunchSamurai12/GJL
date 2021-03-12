@@ -44,7 +44,7 @@ public class Suspicious : IState
         _ai.StopChitChatting();
         _failSafeTimer = 0;
         _ai.ChangeMaterial(2);
-        AkSoundEngine.PostEvent("Play_NPC_Sus_React", _ai.gameObject);
+        //AkSoundEngine.PostEvent("Play_NPC_Sus_React", _ai.gameObject);
     }
 
     public void OnExit()
@@ -69,12 +69,12 @@ public class Suspicious : IState
         }
         else
         {
-            var path = new NavMeshPath();
-            bool canReach = _navMeshAgent.CalculatePath(_ai.Target, path);//this doesnt work
+            //var path = new NavMeshPath();
+            //bool canReach = _navMeshAgent.CalculatePath(_ai.Target, path);//this doesnt work
             _failSafeTimer += Time.deltaTime;
-            canReach = _failSafeTimer > _failSafeDuration;
-            Debug.Log("can reach " + canReach);
-            if (_ai.ReachedDestination() || !canReach)
+            //canReach = _failSafeTimer > _failSafeDuration;
+            //Debug.Log("can reach " + canReach);
+            if (_ai.ReachedDestination() || _failSafeTimer>_failSafeDuration)
             {
                 if(!_sweepStarted)
                 {
@@ -102,6 +102,7 @@ public class Suspicious : IState
             }
             else
             {
+                Debug.Log("got here");
                 _ai.SetAnimatorBool("Move", true);
                 _navMeshAgent.SetDestination(_ai.Target);
             }

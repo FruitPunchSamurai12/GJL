@@ -21,6 +21,7 @@ public class NPC : MonoBehaviour
     [SerializeField] Material alert;
 
     private Animator _animator;
+    private Collider _col;
 
     float timeCharacterInSight = 0;
     int audioCuePriority = 0;
@@ -47,6 +48,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         onNPCKnockedOut += NPCKnockedOut;
+        _col = GetComponent<Collider>();
     }
 
     public void CacheCharacters(List<Character> allcharacters)
@@ -114,22 +116,38 @@ public class NPC : MonoBehaviour
                 Vector3 targetDir = characterPosition - eyes.position;
                 float angle = Vector2.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
                 float distance = transform.position.FlatDistance(characterPosition);
- 
+
+                if (distance <= _col.bounds.size.x*1.1f || distance <= _col.bounds.size.z*1.1f)
+                {
+                    timeCharacterInSight += Time.deltaTime;
+                    Target = character.transform.position;
+                    TargetCharacter = character;
+                    return true;
+                }
                 if (distance < sightRange && angle < sightAngle)
                 {
+                    Debug.Log("character " + character.name + " in range and angle");
                     RaycastHit hit;
                     Physics.Raycast(eyes.position, targetDir.normalized, out hit, distance, sightLayer);
                     if (hit.collider == null)
                     {
+                        Debug.Log("i see you " + character.name);
                         timeCharacterInSight += Time.deltaTime;
                         Target = character.transform.position;
                         TargetCharacter = character;
                         return true;
                     }
+                    else
+                    {
+                        Debug.Log(hit.collider.name + " in the way ");
+                    }
                 }
             }
         }
-        timeCharacterInSight = 0;
+
+        timeCharacterInSight -= Time.deltaTime;
+        if (timeCharacterInSight < 0)
+            timeCharacterInSight = 0;
         return false;
     }
 
@@ -290,6 +308,16 @@ public class NPC : MonoBehaviour
             {
                 mesh.material = alert;
             }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        int angle = (int)(sightAngle);
+        for (int i = -angle;i< angle;i++)
+        {
+            Gizmos.DrawLine(eyes.transform.position, eyes.transform.position + Quaternion.Euler(0,i,0)*eyes.transform.forward * sightRange);
         }
     }
 }

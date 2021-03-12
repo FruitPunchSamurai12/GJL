@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0ae13b1fc1cb04ba5916af9da3be85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 2
+  abilityType: 1
   animationBool: Throw
   cursor: {fileID: 0}
   raycastLayer:
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc74fb238e39334dac7a449778740ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 1
+  abilityType: 2
   animationBool: 
   attackRate: 1
 --- !u!95 &1585906812

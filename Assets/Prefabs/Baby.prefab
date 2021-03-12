@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51f664c0fae3a434d851d31196613cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 2
+  abilityType: 1
   animationBool: Cry
   BabyCrying:
     idInternal: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594fec50a1ae7584aa7589f2bf5c96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityNumber: 1
+  abilityType: 2
   animationBool: Innocence
   insideHouse: 0
 --- !u!95 &994092005

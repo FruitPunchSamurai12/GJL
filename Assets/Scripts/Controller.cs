@@ -27,8 +27,8 @@ public class Controller : MonoBehaviour
     public bool LeftClickHold => Input.GetMouseButton(0);
     public bool LeftClickRelease => Input.GetMouseButtonUp(0);
 
-    public bool Ability1 => Input.GetKeyDown(KeyCode.Space);
-    public bool Ability2 => Input.GetKeyDown(KeyCode.Q);
+    public bool AbilityInput => Input.GetKeyDown(KeyCode.Space);
+    public bool DistractionInput => Input.GetKeyDown(KeyCode.Q);
 
     public bool Interact => Input.GetKeyDown(KeyCode.E);
 

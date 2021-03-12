@@ -4,12 +4,12 @@ using UnityEngine;
 public abstract class Ability:MonoBehaviour
 {
     [SerializeField]
-    [Range(1, 2)]
-    int abilityNumber = 1;
+    AbilityType abilityType;
     [SerializeField] protected string animationBool;
     protected Animator animator;
     public bool Using { get; protected set; }
     protected Character character;
+    public AbilityType GetAbilityType => abilityType;
     private void Awake()
     {
         character = GetComponent<Character>();
@@ -18,17 +18,22 @@ public abstract class Ability:MonoBehaviour
 
     public void Tick()
     {
-        bool input = abilityNumber == 1 ? Controller.Instance.Ability1 : Controller.Instance.Ability2;
+        bool input = abilityType == AbilityType.ability ? Controller.Instance.AbilityInput : Controller.Instance.DistractionInput;
         if(input)
         {
-            if (!Using)
-                OnTryUse();
-            else
-                OnTryUnuse();           
+            AbilityInputPressed();          
         }
         animator.SetBool(animationBool, Using);
     }
 
-    public abstract void OnTryUse();
+    public void AbilityInputPressed()
+    {
+        if (!Using)
+            OnTryUse();
+        else
+            OnTryUnuse();
+    }
+
+    protected abstract void OnTryUse();
     public abstract void OnTryUnuse();
 }

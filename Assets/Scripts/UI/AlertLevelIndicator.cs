@@ -68,19 +68,19 @@ public class AlertLevelIndicator : MonoBehaviour
         {
             _image.enabled = true;
             _image.sprite = _alertIndicator;
-            AkSoundEngine.SetState("Game_States", "Alert");
+            //AkSoundEngine.SetState("Game_States", "Alert");
             
         }
         else if(_numberOfSusEnemies>0)
         {
             _image.enabled = true;
             _image.sprite = _susIndicator;
-            AkSoundEngine.SetState("Game_States", "Suspicious");
+            //AkSoundEngine.SetState("Game_States", "Suspicious");
         }
         else
         {
             _image.enabled = false;
-            AkSoundEngine.SetState("Game_States", "Idle");
+            //AkSoundEngine.SetState("Game_States", "Idle");
         }
     }
 }
