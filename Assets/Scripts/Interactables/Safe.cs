@@ -11,6 +11,7 @@ public class Safe : MonoBehaviour, IInteractable
     [SerializeField]
     Document document;
 
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -29,5 +30,19 @@ public class Safe : MonoBehaviour, IInteractable
         document.Interact(character);
         GrabDocument.Post(gameObject);
 
-    }   
+    }
+
+
+    public InteractType GetInteractType(Character character)
+    {
+        if (isLocked)
+        {
+            if ((character.HasSafeKey(false)))
+            {
+                return InteractType.unlock;
+            }
+            return InteractType.none;
+        }
+        return InteractType.open;
+    }
 }

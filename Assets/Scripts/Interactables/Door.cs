@@ -13,6 +13,7 @@ public class Door : MonoBehaviour,IInteractable
 
     public bool IsLocked => isLocked;
 
+
     private void Awake()
     {
         _animator = GetComponentInParent<Animator>();
@@ -37,5 +38,16 @@ public class Door : MonoBehaviour,IInteractable
         }
     }
 
-   
+    public InteractType GetInteractType(Character character)
+    {
+        if (isLocked)
+        {
+            if ((character.HasKey(false)))
+            {
+                return InteractType.unlock;
+            }
+            return InteractType.none;
+        }
+        return InteractType.open;
+    }
 }

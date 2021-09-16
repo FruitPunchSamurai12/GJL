@@ -6,6 +6,8 @@ public class Key : MonoBehaviour,IInteractable
 {
     public AK.Wwise.Event PickupKey;
     public bool Heavy => false;
+
+
     public Sprite _icon;
     protected Collider col;
 
@@ -28,4 +30,9 @@ public class Key : MonoBehaviour,IInteractable
     }
 
     public void EnableCollider() { col.enabled = true; }
+
+    public InteractType GetInteractType(Character character)
+    {
+        return InteractType.pickUp;
+    }
 }

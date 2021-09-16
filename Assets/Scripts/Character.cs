@@ -27,7 +27,7 @@ public class Character : MonoBehaviour,IInteractable
     public float Speed { get { return halfSpeed?(Controller.Instance.Walk?walkSpeed:runSpeed)/2: Controller.Instance.Walk ? walkSpeed : runSpeed; } }
     public bool InSafeZone { get; set; }
     public int CharacterIndex => characterIndex;
-    
+
     public AK.Wwise.Event PlayFootsteps;
     public AK.Wwise.Event PlayFlirt;
 
@@ -44,6 +44,7 @@ public class Character : MonoBehaviour,IInteractable
 
     public void BackToCheckPoint()
     {
+        if (InSafeZone) return;
         _characterController.enabled = false;
         foreach (var ability in _abilities)
         {
@@ -110,61 +111,14 @@ public class Character : MonoBehaviour,IInteractable
     {
         _interactBox.LookForInteractables();
     }
-    //this is horrible T_T
+
     public void ToggleInteractPrompt()
     {
         if (_interactBox.Interactable == null)
             InteractPrompt.DeactivateInteractPrompt();
         else
         {
-            IPickable e = _interactBox.Interactable as IPickable;
-            if (e != null)
-                InteractPrompt.ActivateInteractPrompt(InteractType.pickUp);
-            else
-            {
-                var d = _interactBox.Interactable as Door;
-                if (d != null)
-                {
-                    if (d.IsLocked)
-                    {
-                        if (HasKey(false))
-                            InteractPrompt.ActivateInteractPrompt(InteractType.unlock);
-                    }
-                    else
-                    {
-                        InteractPrompt.ActivateInteractPrompt(InteractType.open);
-                    }
-                }
-                else
-                {
-                    if (characterIndex == 2)
-                    {
-                        var npc = _interactBox.Interactable as NPC;
-                        if(npc!=null && !npc.CanSeeSpecificCharacter(this))
-                        {
-                            InteractPrompt.ActivateInteractPrompt(InteractType.flirt);
-                        }
-                    }
-                    else
-                    {
-                        var c = _interactBox.Interactable as Character;
-                        if(c!=null && (c.HasKey(false) || c.HasSafeKey(false)))
-                        {
-                            InteractPrompt.ActivateInteractPrompt(InteractType.pickUp);
-                        }
-                        else
-                        {
-                            var safe = _interactBox.Interactable as Safe;
-                            if (HasSafeKey(false))
-                                InteractPrompt.ActivateInteractPrompt(InteractType.unlock);
-                            else
-                                InteractPrompt.DeactivateInteractPrompt();
-                        }
-                    }
-                
-
-                }
-            }
+            InteractPrompt.ActivateInteractPrompt(_interactBox.Interactable.GetInteractType(this));
         }
     }
 
@@ -319,6 +273,12 @@ public class Character : MonoBehaviour,IInteractable
         }
     }
 
-
-   
+    public InteractType GetInteractType(Character character)
+    {
+        if ((character.HasKey(false) || character.HasSafeKey(false)))
+        {
+            return InteractType.pickUp;
+        }
+        return InteractType.none;
+    }
 }

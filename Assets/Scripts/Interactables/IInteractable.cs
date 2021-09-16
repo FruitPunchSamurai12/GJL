@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IInteractable
 {
     void Interact(Character character);
+
+    InteractType GetInteractType(Character character);
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using System;
+using Pathfinding;
 
 public enum StartState
 {
@@ -25,7 +26,7 @@ public class AIStateMachine : MonoBehaviour
     [SerializeField] float sentryAngle = 90;
 
     StateMachine _stateMachine;
-    NavMeshAgent _navMeshAgent;
+    AIPath _aiPath;
     NPC _ai;
     public Type CurrentStateType => _stateMachine.CurrentState.GetType();
     public event Action<IState> OnAIStateChanged;
@@ -35,18 +36,18 @@ public class AIStateMachine : MonoBehaviour
         var player = FindObjectOfType<Player>();
         _stateMachine = new StateMachine();
         _stateMachine.OnStateChanged += state => OnAIStateChanged?.Invoke(state);
-        _navMeshAgent = GetComponent<NavMeshAgent>();
+        _aiPath = GetComponent<AIPath>();
         _ai = GetComponent<NPC>();
-        _navMeshAgent.speed = _ai.MoveSpeed;
-        var idle = new Idle(_ai,_navMeshAgent);
-        var talk = new Talk(_ai, _navMeshAgent, _ai.MoveSpeed);
-        var patrol = new Patrol(_ai,_navMeshAgent, waypoint, timeWaitingBetweenWaypoints, _ai.MoveSpeed);
-        var sus = new Suspicious(_ai, _navMeshAgent, sweepRotationSpeedWhenSuspicious, sweepDurationWhenSuspicious, timeBeforeActingWhenSuspicious, _ai.MoveSpeed);
-        var alert = new Alert(_ai, _navMeshAgent, investigationRange, timeInvestigatingWhenAlerted, timeBeforeActingWhenAlerted, alertMoveSpeed);
-        var chase = new ChasePlayer(_ai, _navMeshAgent, alertMoveSpeed);
-        var stun = new Stun(_ai,_navMeshAgent);
-        var sentry = new Sentry(_ai, _navMeshAgent, sentryRotationDuration, sentryWaitTime, sentryAngle);
-        var reset = new Reset(_ai, _navMeshAgent, _ai.MoveSpeed);
+        _aiPath.maxSpeed = _ai.MoveSpeed;
+        var idle = new Idle(_ai,_aiPath);
+        var talk = new Talk(_ai, _aiPath, _ai.MoveSpeed);
+        var patrol = new Patrol(_ai,_aiPath, waypoint, timeWaitingBetweenWaypoints, _ai.MoveSpeed);
+        var sus = new Suspicious(_ai, _aiPath, sweepRotationSpeedWhenSuspicious, sweepDurationWhenSuspicious, timeBeforeActingWhenSuspicious, _ai.MoveSpeed);
+        var alert = new Alert(_ai, _aiPath, investigationRange, timeInvestigatingWhenAlerted, timeBeforeActingWhenAlerted, alertMoveSpeed);
+        var chase = new ChasePlayer(_ai, _aiPath, alertMoveSpeed);
+        var stun = new Stun(_ai,_aiPath);
+        var sentry = new Sentry(_ai, _aiPath, sentryRotationDuration, sentryWaitTime, sentryAngle);
+        var reset = new Reset(_ai, _aiPath, _ai.MoveSpeed);
         _stateMachine.AddTransition(idle, sus, _ai.CanSeeCharacter);
         _stateMachine.AddTransition(idle, sus, _ai.HeardSomething);
         _stateMachine.AddTransition(idle, talk, _ai.IsChitChatting);

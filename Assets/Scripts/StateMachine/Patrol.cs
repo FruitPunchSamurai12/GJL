@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using Pathfinding;
 
 public class Patrol : IState
 {
     NPC _ai;
-    private NavMeshAgent _navMeshAgent;
+    private AIPath _aiPath;
     Waypoint _waypoint;
     float _waitTime;
     float _moveSpeed;
     float timer = 0;
-    public Patrol(NPC ai, NavMeshAgent agent,Waypoint waypoint,float waitTime,float moveSpeed)
+    public Patrol(NPC ai, AIPath path,Waypoint waypoint,float waitTime,float moveSpeed)
     {
         _ai = ai;
-        _navMeshAgent = agent;
+        _aiPath = path;
         _waypoint = waypoint;
         _waitTime = waitTime;
         _moveSpeed = moveSpeed;
@@ -21,12 +22,14 @@ public class Patrol : IState
     public void OnEnter()
     {
         _ai.ResetHearing();
-        _navMeshAgent.enabled = true;
-        _navMeshAgent.isStopped = false;
-        _navMeshAgent.speed = _moveSpeed;
+        _aiPath.enabled = true;
+        _aiPath.isStopped = false;
+        _aiPath.maxSpeed = _moveSpeed;
         _ai.SetAnimatorBool("Move", true);
         _ai.SetAnimatorBool("Alert", false);
         _ai.ChangeMaterial(1);
+        _ai.Target = _waypoint.transform.position;
+        _ai.SetDestination();
     }
 
     public void OnExit()
@@ -36,7 +39,7 @@ public class Patrol : IState
 
     public void Tick()
     {
-        if (_navMeshAgent.transform.position.FlatDistance(_waypoint.transform.position) < 1f)
+        if (_aiPath.transform.position.FlatDistance(_waypoint.transform.position) < 1f)
         {
             if (_waypoint.waitAtWaypoint)
             {
@@ -46,17 +49,20 @@ public class Patrol : IState
                 {
                     _ai.SetAnimatorBool("Move", true);
                     _waypoint = _waypoint.nextWaypoint;
+                    _ai.Target = _waypoint.transform.position;
                     timer = 0;
                 }
             }
             else
             {
                 _waypoint = _waypoint.nextWaypoint;
+                _ai.Target = _waypoint.transform.position;
             }
         }
         else
         {
-            _navMeshAgent.SetDestination(_waypoint.transform.position);
+            //_navMeshAgent.SetDestination(_waypoint.transform.position);
+            _ai.SetDestination();
         }
     }
 }

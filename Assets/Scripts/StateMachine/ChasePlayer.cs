@@ -1,17 +1,18 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
+using Pathfinding;
 
 public class ChasePlayer : IState
 {
     NPC _ai;
-    private NavMeshAgent _navMeshAgent;
+    private AIPath _aiPath;
     bool reachedCharacter;
     float _moveSpeed;
 
-    public ChasePlayer(NPC ai, NavMeshAgent agent,float moveSpeed)
+    public ChasePlayer(NPC ai, AIPath path, float moveSpeed)
     {
         _ai = ai;
-        _navMeshAgent = agent;
+        _aiPath = path;
         
         _moveSpeed = moveSpeed;
     }
@@ -19,9 +20,9 @@ public class ChasePlayer : IState
     public void OnEnter()
     {
         GameEvents.Instance.FireAIEvent(AIStateEvents.enterAlert);
-        _navMeshAgent.enabled = true;
-        _navMeshAgent.isStopped = false;
-        _navMeshAgent.speed = _moveSpeed;
+        _aiPath.enabled = true;
+        _aiPath.isStopped = false;
+        _aiPath.maxSpeed = _moveSpeed;
         _ai.IgnoreSounds = true;
         reachedCharacter = false;
         GameManager.Instance.CharacterIsBeingChased(_ai.TargetCharacter);
@@ -37,9 +38,10 @@ public class ChasePlayer : IState
 
     public void Tick()
     {
-        _ai.transform.LookAt(_ai.TargetCharacter.transform);
-        _navMeshAgent.SetDestination(_ai.TargetCharacter.transform.position);
-        if(_ai.transform.position.FlatDistance(_ai.TargetCharacter.transform.position) < 1.5)
+        _ai.transform.LookAt(new Vector3(_ai.TargetCharacter.transform.position.x, 0, _ai.TargetCharacter.transform.position.z));
+        //_navMeshAgent.SetDestination(_ai.TargetCharacter.transform.position);
+        _ai.SetDestination();
+        if (_ai.transform.position.FlatDistance(_ai.TargetCharacter.transform.position) < 1.5)
         {
             _ai.TargetCharacter.BackToCheckPoint();
             reachedCharacter = true;

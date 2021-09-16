@@ -211,7 +211,7 @@ MonoBehaviour:
   size: {x: 0.5, y: 0.7, z: 0.5}
   whatCanWeInteractWith:
     serializedVersion: 2
-    m_Bits: 34816
+    m_Bits: 36352
 --- !u!114 &991940266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +521,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 3498448535630763015}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -533,6 +537,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
@@ -542,14 +550,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}
-      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c533bc2c6478ef34f831229e409894fd, type: 3}

@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
-
+using Pathfinding;
 public class Alert : IState
 {
     NPC _ai;
-    private NavMeshAgent _navMeshAgent;
+    private AIPath _aiPath;
 
     float _searchDistance;
     float _searchDuration;
@@ -14,10 +14,10 @@ public class Alert : IState
     bool justEntered = true;
     float _moveSpeed;
 
-    public Alert(NPC ai, NavMeshAgent agent, float searchDistance, float searchDuration, float idleTime,float moveSpeed)
+    public Alert(NPC ai, AIPath path, float searchDistance, float searchDuration, float idleTime,float moveSpeed)
     {
         _ai = ai;
-        _navMeshAgent = agent;
+        _aiPath = path;
         _searchDistance = searchDistance;
         _searchDuration = searchDuration;
         _idleTime = idleTime;
@@ -28,12 +28,12 @@ public class Alert : IState
     public void OnEnter()
     {
         GameEvents.Instance.FireAIEvent(AIStateEvents.enterAlert);
-        _navMeshAgent.enabled = true;
-        _navMeshAgent.speed = _moveSpeed;
+        _aiPath.enabled = true;
+        _aiPath.maxSpeed = _moveSpeed;
         _idleTimer = 0;
         _totalTimer = 0;
         justEntered = true;
-        _navMeshAgent.isStopped = true;
+        _aiPath.isStopped = true;
         _ai.SetAnimatorBool("Alert", true);
         _ai.ChangeMaterial(3);
     }
@@ -52,9 +52,10 @@ public class Alert : IState
             _idleTimer += Time.deltaTime;
             if (_idleTimer > _idleTime)
             {
-                _navMeshAgent.isStopped = false;
+                _aiPath.isStopped = false;
                 _idleTimer = 0;
-                _navMeshAgent.SetDestination(_ai.Target);
+                // _navMeshAgent.SetDestination(_ai.Target);
+                _ai.SetDestination();
                 justEntered = false;
             }
         }
@@ -71,7 +72,8 @@ public class Alert : IState
             else
             {
                 _idleTimer = 0;
-                _navMeshAgent.SetDestination(_ai.Target);
+                //_navMeshAgent.SetDestination(_ai.Target);
+                _ai.SetDestination();
             }
             _totalTimer += Time.deltaTime;
         }

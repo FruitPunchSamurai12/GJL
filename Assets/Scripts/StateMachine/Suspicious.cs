@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using Pathfinding;
 
 public class Suspicious : IState
 {
     NPC _ai;
-    private NavMeshAgent _navMeshAgent;
+    private AIPath _aiPath;
 
     float _sweepAngle = 180;
     float _sweepDuration;
@@ -22,24 +23,24 @@ public class Suspicious : IState
     Quaternion endRotation;
     bool _sweepStarted = false;
 
-    public Suspicious(NPC ai,NavMeshAgent agent,float sweepRotationSpeed, float sweepDuration, float idleTime,float moveSpeed)
+    public Suspicious(NPC ai, AIPath path,float sweepRotationSpeed, float sweepDuration, float idleTime,float moveSpeed)
     {
         _ai = ai;
-        _navMeshAgent = agent;
+        _aiPath = path;
         _sweepRotationSpeed = sweepRotationSpeed;
         _sweepDuration = sweepDuration;
         _idleTime = idleTime;
-        _navMeshAgent.speed = moveSpeed;
+        _aiPath.maxSpeed = moveSpeed;
     }
 
     public void OnEnter()
     {
         GameEvents.Instance.FireAIEvent(AIStateEvents.enterSuspicious);
-        _navMeshAgent.enabled = true;
+        _aiPath.enabled = true;
         _idleTimer = 0;
         _sweepTimer = 0;
         justEntered = true;
-        _navMeshAgent.isStopped = true;
+        _aiPath.isStopped = true;
         _sweepStarted = false;
         _ai.StopChitChatting();
         _failSafeTimer = 0;
@@ -50,7 +51,7 @@ public class Suspicious : IState
     public void OnExit()
     {
         GameEvents.Instance.FireAIEvent(AIStateEvents.exitSuspicious);
-        _navMeshAgent.isStopped = false;
+        _aiPath.isStopped = false;
     }
 
     public void Tick()
@@ -61,16 +62,17 @@ public class Suspicious : IState
             _idleTimer += Time.deltaTime;
             if (_idleTimer > _idleTime)
             {
-                _navMeshAgent.isStopped = false;
+                _aiPath.isStopped = false;
                 _idleTimer = 0;
-                _navMeshAgent.SetDestination(_ai.Target);
+                //_navMeshAgent.SetDestination(_ai.Target);
+                _ai.SetDestination();
                 justEntered = false;
             }
         }
         else
         {
             //var path = new NavMeshPath();
-            //bool canReach = _navMeshAgent.CalculatePath(_ai.Target, path);//this doesnt work
+            //bool canReach = _navMeshAgent.CalculatePath(_ai.Target, path);//this doesnt work           
             _failSafeTimer += Time.deltaTime;
             //canReach = _failSafeTimer > _failSafeDuration;
             //Debug.Log("can reach " + canReach);
@@ -104,7 +106,8 @@ public class Suspicious : IState
             {
                 Debug.Log("got here");
                 _ai.SetAnimatorBool("Move", true);
-                _navMeshAgent.SetDestination(_ai.Target);
+                //_navMeshAgent.SetDestination(_ai.Target);
+                _ai.SetDestination();
             }
             
         }

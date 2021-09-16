@@ -8,7 +8,8 @@ public enum InteractType
     flirt,
     pickUp,
     unlock,
-    open
+    open,
+    none
 }
 
 public class InteractPrompt : MonoBehaviour
@@ -33,8 +34,13 @@ public class InteractPrompt : MonoBehaviour
 
     public static void ActivateInteractPrompt(InteractType type)
     {
-        interactableInFront = true;
-        interactableType = type;
+        if (type == InteractType.none)
+            DeactivateInteractPrompt();
+        else
+        {
+            interactableInFront = true;
+            interactableType = type;
+        }
     }
 
     public static void DeactivateInteractPrompt()

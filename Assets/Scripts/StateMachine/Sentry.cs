@@ -1,10 +1,11 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
+using Pathfinding;
 
 public class Sentry : IState
 {
     NPC _ai;
-    private NavMeshAgent _navMeshAgent;
+    private AIPath _aiPath;
     private float _waitTime;
     private float _waitTimer;
     private float _timeLerpStarted;
@@ -12,10 +13,10 @@ public class Sentry : IState
     Quaternion startRotation;
     Quaternion endRotation;
 
-    public Sentry(NPC ai, NavMeshAgent agent, float rotationDuration,float waitTime,float angle)
+    public Sentry(NPC ai, AIPath path, float rotationDuration,float waitTime,float angle)
     {
         _ai = ai;
-        _navMeshAgent = agent;
+        _aiPath = path;
         _lerpDuration = rotationDuration;
         _waitTime = waitTime;
         startRotation = _ai.transform.rotation;
@@ -26,7 +27,7 @@ public class Sentry : IState
 
     public void OnEnter()
     {
-        _navMeshAgent.enabled = false;
+        _aiPath.enabled = false;
         _timeLerpStarted = Time.time;
         _waitTimer = 0;
         _ai.SetAnimatorBool("Move", false);

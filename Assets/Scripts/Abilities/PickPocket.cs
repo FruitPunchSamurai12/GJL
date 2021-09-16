@@ -6,6 +6,16 @@ public class PickPocket : Ability
 {
     [SerializeField]
     LayerMask enemyMask;
+
+    InteractBox box;
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        box = GetComponent<InteractBox>();
+    }
+
     public override void OnTryUnuse()
     {
       
@@ -13,11 +23,9 @@ public class PickPocket : Ability
 
     protected override void OnTryUse()
     {
-        var box = GetComponent<InteractBox>();
-        var colliders = Physics.OverlapBox(transform.position + transform.forward*box.Offset, box.Size / 2f, transform.rotation, enemyMask);
-        foreach (var col in colliders)
+        if (box.Interactable != null)
         {
-            var npc = col.GetComponent<NPC>();
+            var npc = box.Interactable as NPC;
             if (npc != null)
             {
                 if (!npc.CanSeeSpecificCharacter(character))
@@ -25,7 +33,6 @@ public class PickPocket : Ability
                     npc.StealItem(character);
                     Using = true;
                     StartCoroutine(AnimationDelay());
-                    break;
                 }
                 else
                 {

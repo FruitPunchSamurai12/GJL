@@ -1,18 +1,18 @@
-﻿using UnityEngine.AI;
+﻿using Pathfinding;
 
 public class Idle : IState
 {
     NPC _ai;
-    NavMeshAgent _navMeshAgent;
-    public Idle(NPC ai,NavMeshAgent navMeshAgent)
+    AIPath _aiPath;
+    public Idle(NPC ai, AIPath path)
     {
         _ai = ai;
-        _navMeshAgent = navMeshAgent;
+        _aiPath = path;
     }
 
     public void OnEnter()
     {
-        _navMeshAgent.enabled = false;
+        _aiPath.enabled = false;
         _ai.SetAnimatorBool("Move", false);
         _ai.ChangeMaterial(1);
     }
@@ -24,6 +24,6 @@ public class Idle : IState
 
     public void Tick()
     {
-        _ai.CanSeeCharacter();
+        
     }
 }

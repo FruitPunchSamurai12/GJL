@@ -15,6 +15,8 @@ public class SafeKey : MonoBehaviour, IPickable
     Sprite _icon;
 
     public Sprite Icon => _icon;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,6 +44,11 @@ public class SafeKey : MonoBehaviour, IPickable
         col.enabled = true;
         rb.isKinematic = false;
         rb.useGravity = true;
+    }
+
+    public InteractType GetInteractType(Character character)
+    {
+        return InteractType.pickUp;
     }
 }
 

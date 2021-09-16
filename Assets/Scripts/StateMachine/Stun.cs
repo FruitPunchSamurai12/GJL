@@ -1,21 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using Pathfinding;
 
 public class Stun : IState
 {
     NPC _ai;
-    NavMeshAgent _navMeshAgent;
+    AIPath _aiPath;
 
-    public Stun(NPC ai,NavMeshAgent agent)
+    public Stun(NPC ai, AIPath path)
     {
         _ai = ai;
-        _navMeshAgent = agent;
+        _aiPath = path;
     }
 
     public void OnEnter()
     {
         _ai.IgnoreSounds = true;
-        _navMeshAgent.enabled = false;
+        _aiPath.enabled = false;
         _ai.SetAnimatorBool("Alert", false);
         _ai.SetAnimatorBool("Move", false);
         _ai.ChangeMaterial(1);

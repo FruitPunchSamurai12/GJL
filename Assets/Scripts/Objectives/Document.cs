@@ -13,6 +13,8 @@ public class Document : MonoBehaviour,IPickable
     Sprite _icon;
 
     public Sprite Icon => _icon;
+
+
     private void Awake()
     {
         col = GetComponent<Collider>();
@@ -40,4 +42,8 @@ public class Document : MonoBehaviour,IPickable
         rb.useGravity = true;
     }
 
+    public InteractType GetInteractType(Character character)
+    {
+        return InteractType.pickUp;
+    }
 }

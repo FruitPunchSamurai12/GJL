@@ -5,12 +5,20 @@ public class Flirt : Ability
     [SerializeField]
     LayerMask enemyMask;
     NPC currentFlirtTarget;
+    InteractBox box;
+
+
+    protected override void Awake()
+    {
+        base.Awake();
+        box = GetComponent<InteractBox>();
+    }
 
     public override void OnTryUnuse()
     {
         if(currentFlirtTarget!=null)
         {
-            currentFlirtTarget.Flirt(character);
+            currentFlirtTarget.Interact(character);
         }
         Using = false;
         character.RestrictMovement = false;
@@ -20,32 +28,31 @@ public class Flirt : Ability
 
     protected override void OnTryUse()
     {
-        Debug.Log("tried to use");
-        var box = GetComponent<InteractBox>();
-        var colliders = Physics.OverlapBox(transform.position + transform.forward*box.Offset, box.Size/2f, transform.rotation, enemyMask);
-        foreach (var col in colliders)
+        if(box.Interactable !=null)
         {
-            var npc = col.GetComponent<NPC>();
+            var npc = box.Interactable as NPC;
             if(npc!=null)
             {
                 currentFlirtTarget = npc;
-                break;
             }
             else
             {
                 currentFlirtTarget = null;
             }
         }
-        Debug.Log(currentFlirtTarget);
+        else
+        {
+            currentFlirtTarget = null;
+        }
         if (currentFlirtTarget != null)
         {
             if (!currentFlirtTarget.CanSeeSpecificCharacter(character))
             {
-                currentFlirtTarget.Flirt(character);
+                currentFlirtTarget.Interact(character);
                 Using = true;
                 character.RestrictMovement = true;
                 character.InSafeZone = true;
             }
-        }
+        }    
     }
 }

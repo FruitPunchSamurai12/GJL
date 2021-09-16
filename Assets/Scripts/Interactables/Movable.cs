@@ -46,4 +46,8 @@ public class Movable : MonoBehaviour,IPickable
         Pickup.Post(gameObject);
     }
 
+    public InteractType GetInteractType(Character character)
+    {
+        return InteractType.pickUp;
+    }
 }

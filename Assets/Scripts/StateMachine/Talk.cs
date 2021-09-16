@@ -1,31 +1,33 @@
 ﻿using UnityEngine.AI;
+using Pathfinding;
 
 public class Talk : IState
 {
     NPC _ai;
-    private NavMeshAgent _navMeshAgent;
-    public Talk(NPC ai, NavMeshAgent agent, float moveSpeed)
+    private AIPath _aiPath;
+    public Talk(NPC ai, AIPath path, float moveSpeed)
     {
         _ai = ai;
-        _navMeshAgent = agent;       
-        _navMeshAgent.speed = moveSpeed;
+        _aiPath = path;
+        _aiPath.maxSpeed = moveSpeed;
     }
 
     public void OnEnter()
     {
         _ai.ResetHearing();
-        _navMeshAgent.enabled = true;
+        _aiPath.enabled = true;
         _ai.SetAnimatorBool("Move", false);
         _ai.ChangeMaterial(1);
     }
 
     public void OnExit()
     {
-        _navMeshAgent.enabled = false;
+        _aiPath.enabled = false;
     }
 
     public void Tick()
     {
-        _navMeshAgent.SetDestination(_ai.Target);
+        //_navMeshAgent.SetDestination(_ai.Target);
+        _ai.SetDestination();
     }
 }

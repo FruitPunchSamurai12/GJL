@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Pathfinding;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour,IInteractable
 {
     [SerializeField] float moveSpeed = 7f;
     [SerializeField] float sightRange = 10f;
@@ -22,6 +23,7 @@ public class NPC : MonoBehaviour
 
     private Animator _animator;
     private Collider _col;
+    private AIDestinationSetter _destinationSetter;
 
     float timeCharacterInSight = 0;
     int audioCuePriority = 0;
@@ -88,7 +90,7 @@ public class NPC : MonoBehaviour
         {
             Vector3 npcPosition = npc.transform.position;
             Vector3 targetDir = npcPosition - eyes.position;
-            float angle = Vector2.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
+            float angle = Vector3.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
             float distance = transform.position.FlatDistance(npcPosition);
 
             if (distance < sightRange && angle < sightAngle)
@@ -113,12 +115,12 @@ public class NPC : MonoBehaviour
             {
                 Vector3 characterPosition = character.transform.position;
                 Vector3 targetDir = characterPosition - eyes.position;
-                float angle = Vector2.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
+                float angle = Vector3.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
                 float distance = transform.position.FlatDistance(characterPosition);
 
                 if (distance <= _col.bounds.size.x*1.1f || distance <= _col.bounds.size.z*1.1f)
                 {
-                    timeCharacterInSight += Time.deltaTime;
+                    timeCharacterInSight += 0.5f;
                     Target = character.transform.position;
                     TargetCharacter = character;
                     return true;
@@ -154,7 +156,7 @@ public class NPC : MonoBehaviour
     {
         Vector3 characterPosition = character.transform.position;
         Vector3 targetDir = characterPosition - eyes.position;
-        float angle = Vector2.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
+        float angle = Vector3.Angle(targetDir.FlatVector(), transform.forward.FlatVector());
         float distance = transform.position.FlatDistance(characterPosition);
 
         if (distance < sightRange && angle < sightAngle)
@@ -191,30 +193,13 @@ public class NPC : MonoBehaviour
         hasHeardSomething = false;
     }
 
-    public void Flirt(Character character)
-    {
-        Debug.Log("interacting");
-        
-        if (!chitChatting)
-        {
-            transform.LookAt(character.transform.position);
-            character.transform.LookAt(transform.position);
-            Target = character.transform.position + character.transform.forward * 2f;
-            chitChatting = true;
-            characterTalkingWith = character;
-        }
-        else
-        {
-            StopChitChatting();
-        }
-    }
 
     private void Update()
     {
         if(characterTalkingWith!=null)
         {
             //characterTalkingWith.SetInteractable(this);
-            transform.LookAt(characterTalkingWith.transform.position);
+            transform.LookAt(new Vector3(characterTalkingWith.transform.position.x,transform.position.y, characterTalkingWith.transform.position.z));
         }        
     }
 
@@ -310,6 +295,40 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public void SetDestination()
+    {
+        if (_destinationSetter == null)
+            _destinationSetter = GetComponent<AIDestinationSetter>();
+        _destinationSetter.target = Target;
+    }
+
+
+    public void Interact(Character character)
+    {
+        Debug.Log("interacting");
+
+        if (!chitChatting)
+        {
+            transform.LookAt(character.transform.position);
+            character.transform.LookAt(transform.position);
+            Target = character.transform.position + character.transform.forward * 2f;
+            chitChatting = true;
+            characterTalkingWith = character;
+        }
+        else
+        {
+            StopChitChatting();
+        }
+    }
+
+    public InteractType GetInteractType(Character character)
+    {
+        if (!CanSeeSpecificCharacter(character))
+        {
+            return InteractType.flirt;
+        }
+        return InteractType.none;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -10,7 +10,7 @@ public abstract class Ability:MonoBehaviour
     public bool Using { get; protected set; }
     protected Character character;
     public AbilityType GetAbilityType => abilityType;
-    private void Awake()
+    protected virtual void Awake()
     {
         character = GetComponent<Character>();
         animator = GetComponent<Animator>();

@@ -19,6 +19,7 @@ public class Throwable : MonoBehaviour,IPickable
 
     public Sprite Icon => _icon;
 
+
     public AK.Wwise.Event ItemThrow;
     public AK.Wwise.Event ItemPickup;
     public AK.Wwise.Event ItemDrop;
@@ -109,5 +110,11 @@ public class Throwable : MonoBehaviour,IPickable
             _pickedUp = false;
             _thrown = false;
         }
+    }
+
+
+    public InteractType GetInteractType(Character character)
+    {
+        return InteractType.pickUp;
     }
 }
